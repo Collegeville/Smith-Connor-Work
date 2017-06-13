@@ -1,0 +1,61 @@
+Neurons: each neuron receives input from other neurons
+	-Effect of input line on neuron is controlled by synaptic weight (+ or -)
+		-Weights adapt so network can learn computations (recognizing objects, language, controlling body)
+
+Learning occurs in synapses the more they are used over time (very slow compared to computer)
+
+Cortex: made of "general purpose stuff" that can turn into special purpose hardware in response to experience
+
+Sigmoid Neurons: Large input drives output to 0, & vice versa
+
+Weights: coefficient that represents strength between neurons; ultimately what the number stands for is not completely interpretable
+
+Training and Testing are similar to other supervised learning algorithms
+
+Training Neurons:
+*****************
+-Show network an image and increment weights from active pixels to correct class
+-Decrement weights from active pixels to whatever class the network guesses
+*****************
+
+Feed-forward neural networks: most common type of neural network
+	-First layer is input; last layer is output
+	-If there is more than one hidden layer, called "deep" neural networks
+	-Compute series of transformations that change similarities between classes
+	-Activities in each layer are non-linear function of activities in layer below
+
+Statistical pattern recognition:
+	1. Convert raw input vector into vector of feature activations
+		-Hand written programs based on common sense used to define features
+	2. Learn how to weight each of the feature activations to get single scalar quantity
+	3. If quantity is above some threshold, decide that input vector is positive example of target
+
+Linear neurons: 
+	-Neurons have real-valued output which is weighted sum of its inputs
+	-Aim of learning is to minimiz error summed over all training cases
+		-Error is squared difference between desired output and actual output
+
+Logistic neurons: 
+	-Give real-values output that is smooth and bounded function of total input
+
+Backpropagation algorithm: effecient way to compute error derivative for every weight on single training case
+	-Starts at output layer, works backwords through hidden layers
+	-Calculates the error derivative by comparing error derivative of neuron in next layer with and without
+	output of current neuron
+
+Learning rate: how easily weights change among the neurons 
+	-If learning is going efficiently, higher learning rate is better
+	-If learning is going slowly, lower learning rate is better
+
+Mini-batch training: use small samples of training data to slowly reduce error
+
+Sampling error: incorrect patterns may be identified if the training set is too small
+
+Replicated feature detectors: result in equivariant neural activities, invariance in weights
+
+Pooling: finds the max (or average) of several neighboring units
+
+Dropout: randomly removing hidden units during training in order to prevent overfitting
+
+Cross-entropy: error measure when output represents multiple concepts
+	
