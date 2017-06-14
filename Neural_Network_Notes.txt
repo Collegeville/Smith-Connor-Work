@@ -1,22 +1,14 @@
+Basic definitions:
+***********************************************************************************************************
 Neurons: each neuron receives input from other neurons
 	-Effect of input line on neuron is controlled by synaptic weight (+ or -)
 		-Weights adapt so network can learn computations (recognizing objects, language, controlling body)
 
-Learning occurs in synapses the more they are used over time (very slow compared to computer)
+(Goal in training neural network is to find weights and biases which minimize cost function)
 
-Cortex: made of "general purpose stuff" that can turn into special purpose hardware in response to experience
-
-Sigmoid Neurons: Large input drives output to 0, & vice versa
-
-Weights: coefficient that represents strength between neurons; ultimately what the number stands for is not completely interpretable
-
-Training and Testing are similar to other supervised learning algorithms
-
-Training Neurons:
-*****************
--Show network an image and increment weights from active pixels to correct class
--Decrement weights from active pixels to whatever class the network guesses
-*****************
+Sigmoid Neurons: Similar to perceptrons, but small changes in weight and biases result in small changes
+in output (more fine-tuned)
+	-Inputs can take any values between 0 and 1, as opposed to 0 and 1 for perceptron
 
 Feed-forward neural networks: most common type of neural network
 	-First layer is input; last layer is output
@@ -38,11 +30,6 @@ Linear neurons:
 Logistic neurons: 
 	-Give real-values output that is smooth and bounded function of total input
 
-Backpropagation algorithm: effecient way to compute error derivative for every weight on single training case
-	-Starts at output layer, works backwords through hidden layers
-	-Calculates the error derivative by comparing error derivative of neuron in next layer with and without
-	output of current neuron
-
 Learning rate: how easily weights change among the neurons 
 	-If learning is going efficiently, higher learning rate is better
 	-If learning is going slowly, lower learning rate is better
@@ -53,9 +40,82 @@ Sampling error: incorrect patterns may be identified if the training set is too 
 
 Replicated feature detectors: result in equivariant neural activities, invariance in weights
 
-Pooling: finds the max (or average) of several neighboring units
+Weight initialization: limit possible starting weights for hidden units, helping to speed up learning process
 
-Dropout: randomly removing hidden units during training in order to prevent overfitting
+Softmax: extra output layer that outputs probablility distribution among input units
 
-Cross-entropy: error measure when output represents multiple concepts
+Validation data: type of training data that helps us learn good hyper-parameters
+
+Weights: coefficient that represents strength between neurons; ultimately what the number stands for is not completely interpretable
+	-Also represent importance of certain outputs to certain inputs
+
+Bias: How easy it is to get unit to output 1 (threshold)
+	-Very positive, easy to get 1; very negative, hard to get 1
+
+
+Gradient of cost function represents vector of derivatives of (cost) / (bias & weight values)
+
+Gradient descent: technique used to minimize quadratic cost function
+	-Repeatedly compute gradient of cost function, then move in opposite direction, down into slope of valley towards
+	global minimum in cost (error)
+
+Stochastic gradient descent: estimates gradient of descent for small sample of randomly chosen training examples (works quite well)
+
+Activation: output of specified neuron
+	-Each neuron has multiple input activations, but only one output activation
+	-Computed by multiplying input value and weight, adding the bias (this results in the weighted sum of inputs), then
+	the weighted sum is put into function of unit
+
+One of best ways to reduce overfitting is to increase size of training data
+***********************************************************************************************************
+
+
+
+
+Backpropagation algorithm: 
+***************************
+-Fast algorithm for computing gradient of cost function
+-OTHER DEF: a clever way of keeping track of small perturbations to the weights (and biases) as they 
+propogate through the network, reach the outpu, and then affect the cost (error)
+-Starts at output layer, works backwords through hidden layers
+-Calculates the error derivative by comparing error derivative of neuron in next layer with and without
+output of current neuron
+-After calculating error for each desired output on each unit, process is repeated until network is 
+considered trained
+-Hadamard product: multiplicatiton between same positioned elements in two vectors of same dimension 
+-Calculates error separately from output activation (helps algebraically)
+-Weight in the final layer will learn slowly if the output neuron is close to 0 or 1
+***************************
+
+
+Dropout: 
+********
+1. Randomly deletes half of the hidden neurons
+2. Forward/back-propogate x through modified network, update weights and biases
+3. Repeat process, first restoring dropout neurons, then choosing new random subset of neurons to drop
+-To compensate for less neurons, halve weights outgoing from hidden neurons
+-Simulates averaging effects of large number of different networks
+-Good to use in training deep networks where overfitting in common
+********
+
+
+Regularization:
+***************
+-Techniques that can reduce overfitting with a fixed network and fixed training data
+-Method of compromising between finding small weights and minimizing original cost function
+-L2 regularization: add extra term (regularization term) to the cost function
+	-Keeps weights low so that noise won't affect weights as much; in order for weights to change 
+	significantly, the pattern must be relevant across large amounts of data
+-Can change value of extra term using lmda in example code
+-No need to regularize bias, as large biases are sometimes desirable
+***************
+
+
+Cross-entropy: 
+**************
+-Measure of cost that tends toward zero as neuron gets better at computing desired output
+-Unlike quadratic cost, avoids problem of learning slowing down
+-The larger the cross-entropy error, the faster the neuron will learn
+-Better than quadratic cost in most cases, as initial weights and bias are usually random
+**************
 	
