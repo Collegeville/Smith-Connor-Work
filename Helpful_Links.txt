@@ -1,0 +1,8 @@
+Video explaining basics of neural network and backpropogation:
+https://www.youtube.com/watch?v=WZDMNM36PsM
+
+Introduction to neural networks:
+http://neuralnetworksanddeeplearning.com/chap1.html
+
+Great explanation of backpropogation:
+http://neuralnetworksanddeeplearning.com/chap2.html
