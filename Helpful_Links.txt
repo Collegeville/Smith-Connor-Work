@@ -6,3 +6,15 @@ http://neuralnetworksanddeeplearning.com/chap1.html
 
 Great explanation of backpropogation:
 http://neuralnetworksanddeeplearning.com/chap2.html
+
+Improving neural networks:
+http://neuralnetworksanddeeplearning.com/chap3.html
+
+Hyper-parameter selection:
+https://arxiv.org/abs/1206.5533
+
+Deep neural networks (in particular convolutional image-detection):
+http://neuralnetworksanddeeplearning.com/chap6.html
+
+Great explanation of RNNs, including visualization:
+https://deeplearning4j.org/lstm.html#recurrent

@@ -9,6 +9,7 @@ Neurons: each neuron receives input from other neurons
 Sigmoid Neurons: Similar to perceptrons, but small changes in weight and biases result in small changes
 in output (more fine-tuned)
 	-Inputs can take any values between 0 and 1, as opposed to 0 and 1 for perceptron
+	-Stop learning when they become saturated (close to 0 or 1)
 
 Feed-forward neural networks: most common type of neural network
 	-First layer is input; last layer is output
@@ -67,6 +68,12 @@ Activation: output of specified neuron
 	the weighted sum is put into function of unit
 
 One of best ways to reduce overfitting is to increase size of training data
+
+-Tanh neurons:
+	-Similar to sigmoid neurons, but output ranges from -1 to 1 instead of 0 to 1
+	-Possibly better than sigmoid??
+
+Activation functions: the specific functions within the neurons that produce output of the neurons
 ***********************************************************************************************************
 
 
@@ -76,7 +83,7 @@ Backpropagation algorithm:
 ***************************
 -Fast algorithm for computing gradient of cost function
 -OTHER DEF: a clever way of keeping track of small perturbations to the weights (and biases) as they 
-propogate through the network, reach the outpu, and then affect the cost (error)
+propogate through the network, reach the output, and then affect the cost (error)
 -Starts at output layer, works backwords through hidden layers
 -Calculates the error derivative by comparing error derivative of neuron in next layer with and without
 output of current neuron
@@ -119,3 +126,77 @@ Cross-entropy:
 -Better than quadratic cost in most cases, as initial weights and bias are usually random
 **************
 	
+
+Hyper-Parameter optimization:
+*****************************
+-Strip down number of expected outputs (greatly reduces amount of training data, increases speed for testing params)
+-Decrease number of layers (increases speed)
+-As you figure out better params, slowly re-introduce all elements of network
+-Learning rate:
+	-Estimate threshold for LR at which cost on training data immediately begins decreasing (start with .01, try larger
+	values until one oscillates)
+	-Choose initial LR smaller than threshold by about factor of two
+	-Learning schedule: similar to early stopping, but instead decrease by factor of two or ten when learning worsens
+		-Repeat until learning rate is factor 1000ish times lower than initial value
+	-Early experimentation use constant learning rate
+-Regularization parameter (lmda):
+	-Start with no regularization, determine value for LR
+	-Using that value of LR, use validation data to select good value for lmda
+		-Start w/ 1, then increase or decrease by factors of 10
+-Early stopping:
+	-Compute classification acc. on validation data at end of each epoch
+	-When acc. stops improving, terminate
+	-Early stages of experimentation might be better to turn off early stopping to see overfitting
+	-Use no-improvement-in-ten rule initially, slowly become more lenient
+-Mini-batch size:
+	-Too small, don't get to take full advantage of benefits of good matrix libraries 
+	-Too large, not updating weights often enough
+	-Use acceptable values for other hyper-parameters, then trial different mini-batch sizes
+	-Choose which size gives most rapid improvement in performance
+-Automatically choosing parameters:
+	-Random search for hyper-parameter optimization by Bergstra and Bengio
+		-Manual parameter selection is not worse than grid search
+-Always carefully monitor validation accuracy when tuning parameters
+*****************************
+
+
+
+Universality:
+*************
+-A neural network can compute any function
+	-Not exactly compute, but can come close (the more hidden neurons the closer we get)
+	-Only continuous functions can be truely computed
+-Empirical evidence suggests that deep networks are the networks best adapted to learn the functions in
+solving many real-world problems
+*************
+
+
+Deep neural networks:
+*********************
+-In at least some deep neural networks, gradient tends to get smaller as we move backwards thru hidden layers
+	-Vanishing gradient problem
+-Gradient in deep neural networks is unstable (tends to explode or vanish in earlier layers)
+*********************
+
+
+Convolutional neural networks:
+******************************
+-Networks that use special architecture that specializes in classifying images
+-Local receptive field: small window on input pixels of picture
+	-Each hidden neuron learns to analyze its particular receptive field
+	-Stride length: how far apart each receptive field is
+-Shared weights/bias: all neurons in first hidden layer detect same feature, but in different locations in image
+	-Feature map: map from input layer to hidden layer
+-Pooling layers: simplify information in the output from the convolutional layer
+******************************
+
+
+Recurrent neural networks: (https://deeplearning4j.org/lstm.html#recurrent)
+**************************
+-Networks in which there is some notion of dynamic change over time
+-Neurons take into account what they learned one step back in time
+	-Neurons have two inputs: present and recent past, combined to determine how they respond to new data 
+-Long short-term memory units (LSTMs): help address unstable gradient in RNNs
+-Useful for language recognition because language is presented in sequence, requiring network to remember 
+previous aspects of sentence
+**************************
