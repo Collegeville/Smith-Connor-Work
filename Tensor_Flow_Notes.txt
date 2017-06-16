@@ -1,0 +1,28 @@
+TensorFlow Core: lowest level API, better for fine control 
+
+High-level TensorFlow: many contain 'contrib', these are still in development
+
+Tensor: Central unit of data in TensorFlow
+	-Consists of primitive values in an array of any dimension
+	-Rank: number of dimensions
+
+Computational graph: series of TensorFlow operations arranged into a graph of nodes
+
+Session: C++ backend that is used to do all computations
+	-e.g. adding two nodes into a third node; using session to computate result
+
+TensorBoard: utility that can display picture of computational graph
+
+Placeholder: 'promise' to provide value later
+	-e.g. a = tf.placeholder(..) b = tf.placeholder(..) adder_node = a + b (shortcut for tf.add(a,b))
+	-Use to imput values for network
+
+global_variables_initializer: initialize all variables in a TensorFlow program
+
+assign: changes values of assigned variables
+
+Optimizers: functions that slowly change variables to minimize loss function (i.e. gradient descent)
+
+contrib.learn: high-level TensorFlow library that simplifies mechanics of machine learning
+
+one-hot vectors: vector with 0 in most dimensions, 1 in a single dimension
