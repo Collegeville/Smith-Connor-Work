@@ -3,7 +3,7 @@ Created on Jun 19, 2017
 
 @author: conds
 
-Builds deep neural network with 3 hidden layers using high-level TensorFlow api.
+Builds deep neural network with 2 hidden layers using high-level TensorFlow api.
 '''
 import tensorflow as tf
 import numpy as np
