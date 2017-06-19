@@ -18,3 +18,6 @@ http://neuralnetworksanddeeplearning.com/chap6.html
 
 Great explanation of RNNs, including visualization:
 https://deeplearning4j.org/lstm.html#recurrent
+
+TensorFlow programmer's guide:
+https://www.tensorflow.org/programmers_guide/

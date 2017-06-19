@@ -74,6 +74,8 @@ One of best ways to reduce overfitting is to increase size of training data
 	-Possibly better than sigmoid??
 
 Activation functions: the specific functions within the neurons that produce output of the neurons
+
+Reinforcement learning: type of learning meant to maximize a specific reward, based on outside interactions
 ***********************************************************************************************************
 
 

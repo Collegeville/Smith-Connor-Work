@@ -2,9 +2,17 @@ TensorFlow Core: lowest level API, better for fine control
 
 High-level TensorFlow: many contain 'contrib', these are still in development
 
-Tensor: Central unit of data in TensorFlow
-	-Consists of primitive values in an array of any dimension
-	-Rank: number of dimensions
+Tensor: 
+*******
+-Central unit of data in TensorFlow
+-Consists of primitive values in an array of any dimension
+-Rank: number of dimensions
+	-e.g. rank two tensor is a matrix; rank one tensor is a vector
+	-Access rank two tensor using t[i, j]
+-Shape: used to represent number of values in each dimension
+	-e.g. 2D tensor with shape [2,3] = [[1,2,3], [4,5,6]]
+-Data type: type of data within tensor, incl. tf.float32, tf.int8, tf.bool...
+*******
 
 Computational graph: series of TensorFlow operations arranged into a graph of nodes
 
@@ -17,12 +25,50 @@ Placeholder: 'promise' to provide value later
 	-e.g. a = tf.placeholder(..) b = tf.placeholder(..) adder_node = a + b (shortcut for tf.add(a,b))
 	-Use to imput values for network
 
-global_variables_initializer: initialize all variables in a TensorFlow program
+Initialization: must be run explicitly before other ops can be run
+	-global_variables_initializer: initialize all variables in a TensorFlow program 
+	(only after fully constructing model and launched session)
 
-assign: changes values of assigned variables
+Variables: pass a tensor as initial variable value
+	-Must specify shape of tensor at inital creation
 
 Optimizers: functions that slowly change variables to minimize loss function (i.e. gradient descent)
 
 contrib.learn: high-level TensorFlow library that simplifies mechanics of machine learning
 
-one-hot vectors: vector with 0 in most dimensions, 1 in a single dimension
+one-hot vectors: vector with 0 in most dimensions, 1 in a single dimension (digit recognizer)
+
+Saving and restoring:
+*********************
+-Easiest way to save and restore is tf.train.Saver (construct after creating variables)
+	-Saver_name.save(Session_name, path)
+	-Saver_name.restore(Session_name, path)
+-Save checkpoint of trained parameters when done training
+*********************
+
+
+Variable sharing:
+*****************
+-Variable Scope mechanism allows easy sharing of named variables when constructing a graph
+	-tf.get_variable creates variable with given name (uses built-in initializer)
+	-tf.variable_scope manages namespaces for names passed to get_variable
+-Must use reuse_variables in order to use scope without throwing error
+*****************
+
+
+Queues:
+*******
+-Powerful mechanism for asynchronous computation
+-Common input architecture is to use RandomShuffleQueue to prepare inputs for training
+-Coordinator: helps multiple threads stop together
+-QueueRunner: creates number of threads that repeatedly run enqueue op (use coordinator to stop together)
+*******
+
+
+Reading data:
+*************
+-Three methods for getting data into TensorFlow program
+	-Feeding: Python code provides data when running each step
+	-Reading from files: input pipeline reads data from files at beginning of TensorFlow graph
+	-Preloaded data: constant or variable in TensorFlow graph holds all data (only small data sets)
+*************
