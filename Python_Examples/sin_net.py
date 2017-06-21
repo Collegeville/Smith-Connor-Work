@@ -1,58 +1,136 @@
 '''
-Created on Jun 19, 2017
+author: Connor Smith
 
-@author: conds
-
-Neural network that approximates sin curve using low-level TensorFlow api.
+Creates a feed-forward neural network that is designed to 
+approximate sin function. Training and testing data read
+from a .csv file.
 '''
+
 
 import tensorflow as tf
 import numpy as np
-import math
+
+DATA_FILE = 'sin_data.csv'
 
 
-FLAGS = None
+#Number of neurons in each layer
+neurons_layer1 = 50
+neurons_layer2 = 60
+neurons_layer3 = 50
 
-#Create 2 hidden layers for neural network; activation: tanh
-def inference(radians, hidden1_units, hidden2_units):
-    #First hidden layer (only 1 input because sine function only takes 1)
-    with tf.name_scope('hidden1'):
-        weights = tf.Variable(tf.truncated_normal([1, hidden1_units], stddev=1), name='weights')
-        biases = tf.Variable(tf.zeros([hidden1_units]), name='biases')        
-        hidden1 = tf.tanh(tf.matmul(radians, weights) + biases)
-    #Second hidden layer
-    with tf.name_scope('hidden2'):
-        weights = tf.Variable(tf.truncated_normal([hidden1_units, hidden2_units], stddev=1.0 / math.sqrt(float(hidden1_units)), name='weights'))
-        biases = tf.Variable(tf.zeros([hidden2_units]), name='biases')
-        hidden2 = tf.tanh(tf.matmul(radians, weights) + biases)
+#batch_size =  (not large enough data set)
 
-        logits = tf.matmul(hidden2, weights) + biases
-    return logits
+x = tf.placeholder('float')
+y = tf.placeholder('float')
 
-#Compute cost function and use reduce_mean to compute mean of elements
-def loss(logits, labels):
-    cross_entropy = tf.nn.sigmoid_cross_entropy_with_logits(labels=labels, logits=logits, name='xentropy')
-    return tf.reduce_mean(cross_entropy, name='xentropy_mean')
+#Extracts training and testing data from single file
+#Returns training and testing inputs and outputs (four values)
+def get_data(filename):
+	filename_queue = tf.train.string_input_producer([filename])
 
-#Initialize optimizer and return one training step
-def training(loss, learning_rate):
-    tf.summary.scalar('Loss', loss)
+	reader = tf.TextLineReader()
+	key, value = reader.read(filename_queue)
 
-    optimizer = tf.train.AdamOptimizer(learning_rate)
+    # Default values, in case of empty columns. Also specifies the type of the
+    # decoded result.
+	record_defaults = [[1.], [1.]]
+	col1, col2 = tf.decode_csv(value, record_defaults=record_defaults)
+	features = tf.stack([col1])
 
-    global_step = tf.Variable(0, name='global_step', trainable=False)
+	#Utilizes built-in TensorFlow functions to 
+	with tf.Session() as sess:
+		sess.run(tf.global_variables_initializer())
+		coord = tf.train.Coordinator()
+		threads = tf.train.start_queue_runners(coord=coord)
+		rad_list = list()
+		sin_list = list()
+		test_rad_list = list()
+		test_val_list = list()
 
-    train_op = optimizer.minimize(loss, global_step=global_step)
-    return train_op
+		data_size = 721
 
-#Compute sum of correct elements 
-def evaluation(logits, labels):
-    correct = tf.nn.in_top_k(logits, labels, 1)
-    return tf.reduce_sum((tf.cast(correct, tf.int32))
-        
-    
-                              
-                              
+		for i in range(data_size):
+			example, label = sess.run([features, col2])
+			if i <= 500:
+				rad_list.append(example)
+				sin_list.append(label)
+			else:
+				test_rad_list.append(example)
+				test_val_list.append(label)
 
-        
-        
+		#Normalize data between 0 and 1(temporary fix for debugging)
+		rad = [(r-min(rad_list))/(max(rad_list)-min(rad_list)) for r in rad_list]
+		sin = [(s-min(sin_list))/(max(sin_list)-min(sin_list)) for s in sin_list]
+		test_rad = [(tr-min(test_rad_list))/(max(test_rad_list)-min(test_rad_list)) for tr in test_rad_list]
+		test_sin = [(ts-min(test_val_list))/(max(test_val_list)-min(test_val_list)) for ts in test_val_list]
+
+
+	coord.request_stop()
+	coord.join(threads)
+
+	return rad, sin, test_rad, test_sin
+
+
+
+#Creates neural network model with three hidden layers
+def model(input_data):
+	hidden1 = {'weights': tf.Variable(tf.random_normal([1, neurons_layer1])),
+						'biases': tf.Variable(tf.zeros(neurons_layer1))}
+	hidden2 = {'weights': tf.Variable(tf.random_normal([neurons_layer1, neurons_layer2])),
+						'biases': tf.Variable(tf.zeros(neurons_layer2))}
+	hidden3 = {'weights': tf.Variable(tf.random_normal([neurons_layer2, neurons_layer3])),
+						'biases': tf.Variable(tf.zeros(neurons_layer3))}
+	output = {'weights': tf.Variable(tf.random_normal([neurons_layer3, 1])),
+						'biases': tf.Variable(tf.zeros(1))}
+
+
+	layer1 = tf.add(tf.multiply(input_data, hidden1['weights']), hidden1['biases'])
+	layer1 = tf.nn.relu(layer1)
+
+	layer2 = tf.add(tf.matmul(layer1, hidden2['weights']), hidden2['biases'])
+	layer2 = tf.nn.relu(layer2)
+
+	layer3 = tf.add(tf.matmul(layer2, hidden3['weights']), hidden3['biases'])
+	layer3 = tf.nn.relu(layer3)
+
+	output = tf.add(tf.matmul(layer3, output['weights']), output['biases'])
+
+	return output
+
+#Train the neural network model
+def train_net(x,y):
+	pred = model(x)
+	cost = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=pred,labels=y))
+
+	#Optimize weights and biases in order to minimize cost function
+	optimizer = tf.train.AdamOptimizer(learning_rate=.1).minimize(cost)
+
+	epochs = 2
+
+	#Run computation graph that feeds 
+	with tf.Session() as sess:
+		sess.run(tf.global_variables_initializer())
+
+		train_x, train_y, test_x, test_y = get_data(DATA_FILE)
+
+		for epoch in range(epochs):
+			epoch_loss = 0
+			step = 0
+			for _ in range((len(train_x))):
+				_, c = sess.run([optimizer, cost], feed_dict = {x: train_x, y: train_y})
+				epoch_loss += c
+
+				step += 1
+
+			print('Epoch: ', epoch, ' loss: ', epoch_loss)
+
+		correct = tf.equal(tf.argmax(pred), tf.argmax(y))
+		accuracy = tf.reduce_mean(tf.cast(correct,'float'))
+		print('Accuracy:', accuracy.eval({x: test_x, y: test_y}))
+
+train_net(x,y)
+				
+
+
+
+
