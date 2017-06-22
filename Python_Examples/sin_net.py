@@ -14,9 +14,9 @@ DATA_FILE = 'sin_data.csv'
 
 
 #Number of neurons in each layer
-neurons_layer1 = 50
-neurons_layer2 = 50
-neurons_layer3 = 75
+neurons_layer1 = 5
+neurons_layer2 = 10
+neurons_layer3 = 10
 
 
 x = tf.placeholder('float')
@@ -46,11 +46,11 @@ def get_data(filename):
 		test_deg_list = list()
 		test_val_list = list()
 
-		data_size = 721
+		data_size = 25000
 
 		for i in range(data_size):
 			example, label = sess.run([features, col2])
-			if i <= 500:
+			if i <= 20000:
 				deg_list.append(example)
 				sin_list.append(label)
 			else:
@@ -67,6 +67,8 @@ def get_data(filename):
 	coord.request_stop()
 	coord.join(threads)
 
+	print("DEBUG", len(deg_list))
+
 	return deg_list, sin_list, test_deg_list, test_val_list
 
 
@@ -79,21 +81,20 @@ def model(input_data):
 						'biases': tf.Variable(tf.zeros(neurons_layer2))}
 	hidden3 = {'weights': tf.Variable(tf.random_normal([neurons_layer2, neurons_layer3])),
 						'biases': tf.Variable(tf.zeros(neurons_layer3))}
-	output = {'weights': tf.Variable(tf.random_normal([neurons_layer2, 1])),
+	output = {'weights': tf.Variable(tf.random_normal([neurons_layer3, 1])),
 						'biases': tf.Variable(tf.zeros(1))}
 
 
 	layer1 = tf.add(tf.multiply(input_data, hidden1['weights']), hidden1['biases'])
-	layer1 = tf.nn.relu(layer1)
+	layer1 = tf.sigmoid(layer1)
 
 	layer2 = tf.add(tf.matmul(layer1, hidden2['weights']), hidden2['biases'])
-	layer2 = tf.nn.relu(layer2)
+	layer2 = tf.sigmoid(layer2)
 
-	#layer3 = tf.add(tf.matmul(layer2, hidden3['weights']), hidden3['biases'])
-	#layer3 = tf.nn.relu(layer3)
-	#layer3 = tf.nn.dropout(layer3, .5)
+	layer3 = tf.add(tf.matmul(layer2, hidden3['weights']), hidden3['biases'])
+	layer3 = tf.sigmoid(layer3)
 
-	output = tf.add(tf.matmul(layer2, output['weights']), output['biases'])
+	output = tf.add(tf.matmul(layer3, output['weights']), output['biases'])
 
 	return output
 
@@ -103,9 +104,9 @@ def train_net(x,y):
 	cost = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(labels=y,logits=pred))
 
 	#Optimize weights and biases in order to minimize cost function
-	optimizer = tf.train.AdamOptimizer(.01).minimize(cost)
+	optimizer = tf.train.AdamOptimizer(.001).minimize(cost)
 
-	epochs = 10
+	epochs = 15
 
 	saver = tf.train.Saver()
 
@@ -120,7 +121,8 @@ def train_net(x,y):
 		for epoch in range(epochs):
 			epoch_loss = 0
 
-			batch_size = 5
+			#Size of each data sample to feed through network
+			batch_size = 100
 			i = 0
 			while i < (len(train_x)):
 				start = i 
@@ -136,17 +138,21 @@ def train_net(x,y):
 
 			print('Epoch: ', epoch, ' loss: ', epoch_loss)
 
-		#saver.save(sess,'.\model')
+		#saver.save(sess,'66')
 
+		#Calculate accuracy of model
 		correct = tf.equal(tf.round(pred), tf.round(y))
 		accuracy = tf.reduce_mean(tf.cast(correct,'float'))
 		print('Accuracy:', accuracy.eval({x: test_x, y: test_y}))
 
-		input_for_pred = input("Enter degree value to be approximated \n")
-		input_for_pred = float(input_for_pred)
-		feed_dict = {x: input_for_pred}
-		approx = pred.eval(feed_dict)
-		print(approx)
+		#Allow up to 100 user inputs to make predictions based on model
+		test_inputs = 100
+		for _ in range(test_inputs):
+			input_for_pred = input("Enter degree value to be approximated \n")
+			input_for_pred = float(input_for_pred)
+			feed_dict = {x: input_for_pred}
+			approx = pred.eval(feed_dict)
+			print(approx)
 
 train_net(x,y)
 				
