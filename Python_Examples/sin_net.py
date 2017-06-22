@@ -84,10 +84,10 @@ def model(input_data):
 
 
 	layer1 = tf.add(tf.multiply(input_data, hidden1['weights']), hidden1['biases'])
-	layer1 = tf.nn.tanh(layer1)
+	layer1 = tf.nn.relu(layer1)
 
 	layer2 = tf.add(tf.matmul(layer1, hidden2['weights']), hidden2['biases'])
-	layer2 = tf.nn.tanh(layer2)
+	layer2 = tf.nn.relu(layer2)
 
 	#layer3 = tf.add(tf.matmul(layer2, hidden3['weights']), hidden3['biases'])
 	#layer3 = tf.nn.relu(layer3)
@@ -105,7 +105,7 @@ def train_net(x,y):
 	#Optimize weights and biases in order to minimize cost function
 	optimizer = tf.train.AdamOptimizer(.01).minimize(cost)
 
-	epochs = 3
+	epochs = 10
 
 	saver = tf.train.Saver()
 
@@ -136,7 +136,7 @@ def train_net(x,y):
 
 			print('Epoch: ', epoch, ' loss: ', epoch_loss)
 
-		saver.save(sess,'.\model')
+		#saver.save(sess,'.\model')
 
 		correct = tf.equal(tf.round(pred), tf.round(y))
 		accuracy = tf.reduce_mean(tf.cast(correct,'float'))
