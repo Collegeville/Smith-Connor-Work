@@ -36,7 +36,8 @@ def get_data(filename):
 	col1, col2 = tf.decode_csv(value, record_defaults=record_defaults)
 	features = tf.stack([col1])
 
-	#Utilizes built-in TensorFlow functions to 
+	#Utilizes built-in TensorFlow functions to read data from .csv file
+	#with particular number of feature columns (in this case 1)
 	with tf.Session() as sess:
 		sess.run(tf.global_variables_initializer())
 		coord = tf.train.Coordinator()
@@ -86,13 +87,13 @@ def model(input_data):
 
 
 	layer1 = tf.add(tf.multiply(input_data, hidden1['weights']), hidden1['biases'])
-	layer1 = tf.sigmoid(layer1)
+	layer1 = tf.nn.relu(layer1)
 
 	layer2 = tf.add(tf.matmul(layer1, hidden2['weights']), hidden2['biases'])
-	layer2 = tf.sigmoid(layer2)
+	layer2 = tf.nn.relu(layer2)
 
 	layer3 = tf.add(tf.matmul(layer2, hidden3['weights']), hidden3['biases'])
-	layer3 = tf.sigmoid(layer3)
+	layer3 = tf.nn.relu(layer3)
 
 	output = tf.add(tf.matmul(layer3, output['weights']), output['biases'])
 
@@ -100,13 +101,17 @@ def model(input_data):
 
 #Train the neural network model
 def train_net(x,y):
+	#Size of each data sample to feed through network
+	batch_size = 100
+
 	pred = model(x)
-	cost = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(labels=y,logits=pred))
+	cost = tf.reduce_sum(tf.pow(pred-y, 2))/(2*batch_size)
+	#tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels=y,logits=pred))
 
 	#Optimize weights and biases in order to minimize cost function
 	optimizer = tf.train.AdamOptimizer(.001).minimize(cost)
 
-	epochs = 15
+	epochs = 10
 
 	saver = tf.train.Saver()
 
@@ -121,8 +126,6 @@ def train_net(x,y):
 		for epoch in range(epochs):
 			epoch_loss = 0
 
-			#Size of each data sample to feed through network
-			batch_size = 100
 			i = 0
 			while i < (len(train_x)):
 				start = i 
@@ -141,9 +144,10 @@ def train_net(x,y):
 		#saver.save(sess,'66')
 
 		#Calculate accuracy of model
-		correct = tf.equal(tf.round(pred), tf.round(y))
+		correct = tf.equal(tf.round(tf.multiply(x,100)), tf.round(tf.multiply(y,100)))
 		accuracy = tf.reduce_mean(tf.cast(correct,'float'))
 		print('Accuracy:', accuracy.eval({x: test_x, y: test_y}))
+		print(pred.eval({x: test_x}))
 
 		#Allow up to 100 user inputs to make predictions based on model
 		test_inputs = 100
