@@ -14,7 +14,7 @@ DATA_FILE = 'sin_data.csv'
 
 
 #Number of neurons in each layer
-neurons_layer1 = 5
+neurons_layer1 = 50
 neurons_layer2 = 10
 neurons_layer3 = 10
 
@@ -68,7 +68,6 @@ def get_data(filename):
 	coord.request_stop()
 	coord.join(threads)
 
-	print("DEBUG", len(deg_list))
 
 	return deg_list, sin_list, test_deg_list, test_val_list
 
@@ -82,20 +81,20 @@ def model(input_data):
 						'biases': tf.Variable(tf.zeros(neurons_layer2))}
 	hidden3 = {'weights': tf.Variable(tf.random_normal([neurons_layer2, neurons_layer3])),
 						'biases': tf.Variable(tf.zeros(neurons_layer3))}
-	output = {'weights': tf.Variable(tf.random_normal([neurons_layer3, 1])),
+	output = {'weights': tf.Variable(tf.random_normal([neurons_layer1, 1])),
 						'biases': tf.Variable(tf.zeros(1))}
 
 
 	layer1 = tf.add(tf.multiply(input_data, hidden1['weights']), hidden1['biases'])
-	layer1 = tf.nn.relu(layer1)
+	layer1 = tf.tanh(layer1)
 
-	layer2 = tf.add(tf.matmul(layer1, hidden2['weights']), hidden2['biases'])
-	layer2 = tf.nn.relu(layer2)
+	#layer2 = tf.add(tf.matmul(layer1, hidden2['weights']), hidden2['biases'])
+	#layer2 = tf.tanh(layer2)
 
-	layer3 = tf.add(tf.matmul(layer2, hidden3['weights']), hidden3['biases'])
-	layer3 = tf.nn.relu(layer3)
+	#layer3 = tf.add(tf.matmul(layer2, hidden3['weights']), hidden3['biases'])
+	#layer3 = tf.tanh(layer3)
 
-	output = tf.add(tf.matmul(layer3, output['weights']), output['biases'])
+	output = tf.add(tf.matmul(layer1, output['weights']), output['biases'])
 
 	return output
 
@@ -105,13 +104,13 @@ def train_net(x,y):
 	batch_size = 100
 
 	pred = model(x)
-	cost = tf.reduce_sum(tf.pow(pred-y, 2))/(2*batch_size)
+	cost = tf.reduce_mean(tf.square(pred - y))
 	#tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels=y,logits=pred))
 
 	#Optimize weights and biases in order to minimize cost function
-	optimizer = tf.train.AdamOptimizer(.001).minimize(cost)
+	optimizer = tf.train.GradientDescentOptimizer(.001).minimize(cost)
 
-	epochs = 10
+	epochs = 20
 
 	saver = tf.train.Saver()
 
@@ -144,9 +143,9 @@ def train_net(x,y):
 		#saver.save(sess,'66')
 
 		#Calculate accuracy of model
-		correct = tf.equal(tf.round(tf.multiply(x,100)), tf.round(tf.multiply(y,100)))
-		accuracy = tf.reduce_mean(tf.cast(correct,'float'))
-		print('Accuracy:', accuracy.eval({x: test_x, y: test_y}))
+		#correct = tf.equal(tf.round(tf.multiply(x,100)), tf.round(tf.multiply(y,100)))
+		#accuracy = tf.reduce_mean(tf.cast(correct,'float'))
+		#print('Accuracy:', accuracy.eval({x: test_x, y: test_y}))
 		print(pred.eval({x: test_x}))
 
 		#Allow up to 100 user inputs to make predictions based on model
