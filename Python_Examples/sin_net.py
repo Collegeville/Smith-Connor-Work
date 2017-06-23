@@ -10,13 +10,13 @@ from a .csv file.
 import tensorflow as tf
 import numpy as np
 
-DATA_FILE = 'sin_data.csv'
+DATA_FILE = 'sin_data_random.csv'
 
 
 #Number of neurons in each layer
-neurons_layer1 = 50
-neurons_layer2 = 10
-neurons_layer3 = 10
+neurons_layer1 = 20
+neurons_layer2 = 5
+neurons_layer3 = 5
 
 
 x = tf.placeholder('float')
@@ -35,6 +35,7 @@ def get_data(filename):
 	record_defaults = [[1.], [1.]]
 	col1, col2 = tf.decode_csv(value, record_defaults=record_defaults)
 	features = tf.stack([col1])
+	targets = tf.stack([col2])
 
 	#Utilizes built-in TensorFlow functions to read data from .csv file
 	#with particular number of feature columns (in this case 1)
@@ -47,11 +48,11 @@ def get_data(filename):
 		test_deg_list = list()
 		test_val_list = list()
 
-		data_size = 25000
+		data_size = 23000
 
 		for i in range(data_size):
-			example, label = sess.run([features, col2])
-			if i <= 20000:
+			example, label = sess.run([features, targets])
+			if i <= 15000:
 				deg_list.append(example)
 				sin_list.append(label)
 			else:
@@ -101,16 +102,16 @@ def model(input_data):
 #Train the neural network model
 def train_net(x,y):
 	#Size of each data sample to feed through network
-	batch_size = 100
+	batch_size = 10
 
 	pred = model(x)
 	cost = tf.reduce_mean(tf.square(pred - y))
 	#tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels=y,logits=pred))
 
 	#Optimize weights and biases in order to minimize cost function
-	optimizer = tf.train.GradientDescentOptimizer(.001).minimize(cost)
+	optimizer = tf.train.AdamOptimizer(.0001).minimize(cost)
 
-	epochs = 20
+	epochs = 300
 
 	saver = tf.train.Saver()
 
@@ -140,13 +141,7 @@ def train_net(x,y):
 
 			print('Epoch: ', epoch, ' loss: ', epoch_loss)
 
-		#saver.save(sess,'66')
-
-		#Calculate accuracy of model
-		#correct = tf.equal(tf.round(tf.multiply(x,100)), tf.round(tf.multiply(y,100)))
-		#accuracy = tf.reduce_mean(tf.cast(correct,'float'))
-		#print('Accuracy:', accuracy.eval({x: test_x, y: test_y}))
-		print(pred.eval({x: test_x}))
+		saver.save(sess,'.\sin_model')
 
 		#Allow up to 100 user inputs to make predictions based on model
 		test_inputs = 100
