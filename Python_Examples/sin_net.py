@@ -116,7 +116,7 @@ def train_net(x,y):
 	#Optimize weights and biases in order to minimize cost function
 	optimizer = tf.train.AdamOptimizer(.0001).minimize(cost)
 
-	epochs = 300
+	epochs = 400
 
 	#Initialize Saver object to save state of weights and biases for later use
 	saver = tf.train.Saver()
