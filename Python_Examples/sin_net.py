@@ -3,7 +3,7 @@ author: Connor Smith
 
 Creates a feed-forward neural network that is designed to 
 approximate sin function. Training and testing data read
-from a .csv file.
+from same .csv file.
 '''
 
 
@@ -15,8 +15,8 @@ DATA_FILE = 'sin_data_random.csv'
 
 #Number of neurons in each layer
 neurons_layer1 = 20
-neurons_layer2 = 5
-neurons_layer3 = 5
+#neurons_layer2 = 15
+#neurons_layer3 = 5
 
 
 x = tf.placeholder('float')
@@ -78,20 +78,24 @@ def get_data(filename):
 def model(input_data):
 	hidden1 = {'weights': tf.Variable(tf.random_normal([1, neurons_layer1])),
 						'biases': tf.Variable(tf.zeros(neurons_layer1))}
-	hidden2 = {'weights': tf.Variable(tf.random_normal([neurons_layer1, neurons_layer2])),
-						'biases': tf.Variable(tf.zeros(neurons_layer2))}
-	hidden3 = {'weights': tf.Variable(tf.random_normal([neurons_layer2, neurons_layer3])),
-						'biases': tf.Variable(tf.zeros(neurons_layer3))}
+	#hidden2 = {'weights': tf.Variable(tf.random_normal([neurons_layer1, neurons_layer2])),
+						#'biases': tf.Variable(tf.zeros(neurons_layer2))}
+	#hidden3 = {'weights': tf.Variable(tf.random_normal([neurons_layer2, neurons_layer3])),
+						#'biases': tf.Variable(tf.zeros(neurons_layer3))}
 	output = {'weights': tf.Variable(tf.random_normal([neurons_layer1, 1])),
 						'biases': tf.Variable(tf.zeros(1))}
 
 
 	layer1 = tf.add(tf.multiply(input_data, hidden1['weights']), hidden1['biases'])
+
+	#Use hyperbolic tangent activation function because output is between -1 and 1,
+	#resulting in fastest reduction of cost
 	layer1 = tf.tanh(layer1)
 
+	#Only one layer required for optimal output, as there is only one input feature
+	#and one output, but infinite possible output values
 	#layer2 = tf.add(tf.matmul(layer1, hidden2['weights']), hidden2['biases'])
 	#layer2 = tf.tanh(layer2)
-
 	#layer3 = tf.add(tf.matmul(layer2, hidden3['weights']), hidden3['biases'])
 	#layer3 = tf.tanh(layer3)
 
@@ -105,14 +109,16 @@ def train_net(x,y):
 	batch_size = 10
 
 	pred = model(x)
+
+	#Utilize root-mean-squared cost function
 	cost = tf.reduce_mean(tf.square(pred - y))
-	#tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels=y,logits=pred))
 
 	#Optimize weights and biases in order to minimize cost function
 	optimizer = tf.train.AdamOptimizer(.0001).minimize(cost)
 
 	epochs = 300
 
+	#Initialize Saver object to save state of weights and biases for later use
 	saver = tf.train.Saver()
 
 	#Run computation graph that feeds pre-processed data through network
@@ -120,9 +126,12 @@ def train_net(x,y):
 	with tf.Session() as sess:
 		sess.run(tf.global_variables_initializer())
 
+
+		#Get data from user-created function that extracts data from .csv file
 		train_x, train_y, test_x, test_y = get_data(DATA_FILE)
 
-
+		#For loop runs in range of epochs variable, each loop feeds data through
+		#network using TensorFlow "magic"
 		for epoch in range(epochs):
 			epoch_loss = 0
 
@@ -141,7 +150,7 @@ def train_net(x,y):
 
 			print('Epoch: ', epoch, ' loss: ', epoch_loss)
 
-		saver.save(sess,'.\sin_model')
+		saver.save(sess,'.\sin-model')
 
 		#Allow up to 100 user inputs to make predictions based on model
 		test_inputs = 100
