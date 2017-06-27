@@ -1,0 +1,18 @@
+Parameter Estimation for Process Control (1991): A+
+	-Many important parameters that effect output of Process Control Algorithms
+	-Training examples
+		-Input: sampled process input and output vectors
+		-Output: estimated associated process parameters
+	-Network implements function for estimating parameters from input/output
+	-IMPORTANT: paper is from 1991, several techniques have been outdated
+	-LOOK INTO: dynamic generation of training examples (during training?)
+	-Trained on 6 million examples
+	-When trained with 50% noise, test results significantly better (regularization)
+	-Trained for one particular parameter at a time
+
+Fast cosmological parameter estimation (2008):
+	-Power spectra parameter computationally difficult to calculate
+	-Around 10000 data points used to train
+	-Training examples
+		-Calculate required spectra and corresponding likelihoods for experiments of interest
+		-Points chosen within specified parameter space 
