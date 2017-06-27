@@ -3,9 +3,9 @@ import numpy as np
 
 DATA_FILE = 'wine.csv'
 
-neurons_layer1 = 9
-neurons_layer2 = 5
-neurons_layer3 = 8
+neurons_layer1 = 10
+neurons_layer2 = 15
+neurons_layer3 = 15
 
 x = tf.placeholder(tf.float32)
 y = tf.placeholder(tf.int32)
@@ -54,19 +54,19 @@ def model(input_data):
 						'biases': tf.Variable(tf.zeros(neurons_layer2))}
 	hidden3 = {'weights': tf.Variable(tf.random_normal([neurons_layer2, neurons_layer3])),
 						'biases': tf.Variable(tf.zeros(neurons_layer3))}
-	output = {'weights': tf.Variable(tf.random_normal([neurons_layer1, 4])),
+	output = {'weights': tf.Variable(tf.random_normal([neurons_layer3, 4])),
 						'biases': tf.Variable(tf.zeros(4))}
 
 	layer1 = tf.add(tf.matmul(input_data, hidden1['weights']), hidden1['biases'])
-	layer1 = tf.nn.relu(layer1)
+	layer1 = tf.nn.dropout(tf.nn.relu(layer1), .5)
 
-	#layer2 = tf.add(tf.matmul(layer1, hidden2['weights']), hidden2['biases'])
-	#layer2 = tf.nn.relu(layer2)
+	layer2 = tf.add(tf.matmul(layer1, hidden2['weights']), hidden2['biases'])
+	layer2 = tf.nn.dropout(tf.nn.relu(layer2), .5)
 
-	#layer3 = tf.add(tf.matmul(layer2, hidden3['weights']), hidden3['biases'])
-	#layer3 = tf.tanh(layer3)
+	layer3 = tf.add(tf.matmul(layer2, hidden3['weights']), hidden3['biases'])
+	layer3 = tf.nn.dropout(tf.nn.relu(layer3), .5)
 
-	output = tf.add(tf.matmul(layer1, output['weights']), output['biases'])
+	output = tf.add(tf.matmul(layer3, output['weights']), output['biases'])
 
 	return output
 
@@ -79,7 +79,7 @@ def train_net(x,y):
 
 	optimizer = tf.train.AdagradOptimizer(.01).minimize(cost)
 
-	epochs = 5000
+	epochs = 1000
 
 	with tf.Session() as sess:
 		sess.run(tf.global_variables_initializer())
