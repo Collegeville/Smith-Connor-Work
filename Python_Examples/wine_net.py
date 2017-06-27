@@ -3,9 +3,9 @@ import numpy as np
 
 DATA_FILE = 'wine.csv'
 
-neurons_layer1 = 100
-neurons_layer2 = 100
-neurons_layer3 = 100
+neurons_layer1 = 9
+neurons_layer2 = 5
+neurons_layer3 = 8
 
 x = tf.placeholder(tf.float32)
 y = tf.placeholder(tf.int32)
@@ -34,7 +34,7 @@ def get_data(filename):
 
 		for i in range(data_size):
 			example, label = sess.run([features, targets])
-			if i <= 125:
+			if i <= 150:
 				feature_list.append(example)
 				label_list.append(label)
 			else:
@@ -64,7 +64,7 @@ def model(input_data):
 	#layer2 = tf.nn.relu(layer2)
 
 	#layer3 = tf.add(tf.matmul(layer2, hidden3['weights']), hidden3['biases'])
-	#layer3 = tf.nn.relu(layer3)
+	#layer3 = tf.tanh(layer3)
 
 	output = tf.add(tf.matmul(layer1, output['weights']), output['biases'])
 
@@ -77,9 +77,9 @@ def train_net(x,y):
 
 	cost = tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_with_logits(labels=tf.reshape(y, [batch_size]), logits=pred))
 
-	optimizer = tf.train.AdamOptimizer(.0001).minimize(cost)
+	optimizer = tf.train.AdagradOptimizer(.01).minimize(cost)
 
-	epochs = 1000
+	epochs = 5000
 
 	with tf.Session() as sess:
 		sess.run(tf.global_variables_initializer())
@@ -98,15 +98,17 @@ def train_net(x,y):
 				batch_y = np.array(train_y[start:end])
 
 				_, c = sess.run([optimizer, cost], feed_dict = {x: batch_x, y: batch_y})
+
 				epoch_loss += c
 
 				i += batch_size
 
 			print('Epoch: ', epoch, ' loss: ', epoch_loss)
 
-		correct_prediction = tf.equal(tf.argmax(pred, 1), tf.argmax(y, 1))
+		correct_prediction = tf.equal(tf.argmax(pred,1), tf.cast(y, tf.int64))
+
 		accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
-		feed_dict = {x: test_x, y: test_y}
-		print(accuracy.eval(feed_dict=feed_dict))
+
+		print("Accuracy: ", accuracy.eval(feed_dict={x: test_x, y: test_y}))
 
 train_net(x,y)
