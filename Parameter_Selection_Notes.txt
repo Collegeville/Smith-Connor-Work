@@ -1,3 +1,7 @@
+CENTRAL IDEA: Neural Network helps find initial parameter estimations, making complex equations
+more efficient
+
+
 Parameter Estimation for Process Control (1991): A+
 	-Many important parameters that effect output of Process Control Algorithms
 	-Training examples
@@ -10,9 +14,17 @@ Parameter Estimation for Process Control (1991): A+
 	-When trained with 50% noise, test results significantly better (regularization)
 	-Trained for one particular parameter at a time
 
-Fast cosmological parameter estimation (2008):
+Fast cosmological parameter estimation (2008): B-
 	-Power spectra parameter computationally difficult to calculate
 	-Around 10000 data points used to train
-	-Training examples
+	-PICO machine learning technique (outdated)
 		-Calculate required spectra and corresponding likelihoods for experiments of interest
 		-Points chosen within specified parameter space 
+		-Training set used to divide parameter space into ~100 smaller regions using k-means 
+	-One network used for each power spectra (4)
+
+Artificial Neural Network Approx... Parameter Estimation: A-
+	-Parameter estimation key step in development of high-fidelity 
+	-Parameter estimation decomposed into two subproblems
+		1. Approximate NN model from given data
+		2. Use derived NN model to solve simplified optimization problem to obtain parameter estimates
