@@ -1,0 +1,1 @@
+CENTRAL IDEA: Neural Networks can be used to approximate highly nonlinear functions very efficiently
