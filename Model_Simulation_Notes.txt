@@ -1,1 +1,6 @@
 CENTRAL IDEA: Neural Networks can be used to approximate highly nonlinear functions very efficiently
+
+Probability Density Estimation Using Artificial Neural Networks (2000): B
+	-Probability Density Functions (pdf): important computational problem with applications all over physics
+	-Training data comes from non-parametric technique for pdf estimation (least amount of parameters as possible)
+		-Train data across many parameter values
