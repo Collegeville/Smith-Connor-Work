@@ -1,0 +1,2 @@
+Photometric redshifts with neural network:
+https://www.aanda.org/articles/aa/full/2004/32/aa3658/aa3658.right.html
