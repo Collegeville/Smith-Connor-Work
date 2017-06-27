@@ -1,6 +1,6 @@
 CENTRAL IDEA: Neural Network helps find initial parameter estimations, making complex equations
 more efficient
-
+	-Usually much faster than traditional parameter estimation
 
 Parameter Estimation for Process Control (1991): A+
 	-Many important parameters that effect output of Process Control Algorithms
@@ -28,3 +28,7 @@ Artificial Neural Network Approx... Parameter Estimation: A-
 	-Parameter estimation decomposed into two subproblems
 		1. Approximate NN model from given data
 		2. Use derived NN model to solve simplified optimization problem to obtain parameter estimates
+
+Hurst Parameter Estimation: B
+	-Neural Network estimation method at least ten times faster than traditional methods
+	-Powers of each series are inputs to NN, Hurst parameter estimate is NN output

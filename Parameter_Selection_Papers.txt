@@ -11,8 +11,5 @@ https://pdfs.semanticscholar.org/1715/e25a0d873dcc6ba00c4519926c57d095e56b.pdf
 Hurst Parameter Estimation Using Artificial Neural Networks:
 http://amcath.ccadet.unam.mx/jart/vol9_2/hurst_8.pdf
 
-Probability Density Estimation Using Artificial Neural Networks:
-http://www.cs.uoi.gr/~arly/papers/CPC2001.pdf
-
 Estimating Reaction Rate Constants with Neural Networks:
 http://math.bme.hu/~jtoth/pubtexts/kovacstoth.pdf
