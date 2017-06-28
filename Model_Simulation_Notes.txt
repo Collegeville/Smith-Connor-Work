@@ -3,6 +3,7 @@ CENTRAL IDEA: Neural Networks can be used to approximate highly nonlinear functi
 		-Very good understanding of data 
 			-What is it that you're solving for?
 			-What kinds of input features do you have access to? (Not too many, as this may result in noise)
+	-Most useful when relationships between parameters in equation are unknown, but large amounts of data exist
 
 
 Probability Density Estimation Using Artificial Neural Networks (2000): B
@@ -34,3 +35,15 @@ Neural Network Modelling of Coastal Algal Blooms (2003): A+
 		-Data from 1982-1992 used to train; data from 1993-2000 used to test
 		-Based on simplest number of input variables known to affect algal dynamics (nine variables)
 	-Architecture: one hidden layer with 3 neurons
+
+
+Neural Network Modelling of Wave Overtopping at Coastal Structures (2007): B-
+	-For safety assessment of coastal structures, reliable predictions of wave overtopping are required
+	-Each data point described by number of parameters that represent hydraulic/structural information
+	-Data preprocessed to remove bad outliers 
+	-Training data:
+		-Total database consisted of 8372 tests
+		-15 total parameters used 
+		-All inputs and outputs scaled 
+	-Cost function: Root-mean-squared
+	-Architecture: 1 hidden layer with 20 neurons
