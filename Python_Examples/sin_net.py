@@ -106,7 +106,7 @@ def model(input_data):
 #Train the neural network model
 def train_net(x,y):
 	#Size of each data sample to feed through network
-	batch_size = 10
+	batch_size = 64
 
 	pred = model(x)
 
@@ -116,7 +116,7 @@ def train_net(x,y):
 	#Optimize weights and biases in order to minimize cost function
 	optimizer = tf.train.AdamOptimizer(.0001).minimize(cost)
 
-	epochs = 700
+	epochs = 1000
 
 	#Initialize Saver object to save state of weights and biases for later use
 	saver = tf.train.Saver()
@@ -152,14 +152,21 @@ def train_net(x,y):
 
 		saver.save(sess,'.\sin-model')
 
+
+		correct_prediction = tf.equal(tf.round(tf.multiply(pred,100)), tf.round(tf.multiply(y,100)))
+
+		accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
+
+		print("Accuracy: ", accuracy.eval(feed_dict={x: test_x, y: test_y}))
+
 		#Allow up to 100 user inputs to make predictions based on model
-		test_inputs = 100
-		for _ in range(test_inputs):
-			input_for_pred = input("Enter degree value to be approximated \n")
-			input_for_pred = float(input_for_pred)
-			feed_dict = {x: input_for_pred}
-			approx = pred.eval(feed_dict)
-			print(approx)
+		#test_inputs = 100
+		#for _ in range(test_inputs):
+		#	input_for_pred = input("Enter degree value to be approximated \n")
+		#	input_for_pred = float(input_for_pred)
+		#	feed_dict = {x: input_for_pred}
+		#	approx = pred.eval(feed_dict)
+		#	print(approx)
 
 train_net(x,y)
 				

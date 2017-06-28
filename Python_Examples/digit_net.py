@@ -10,12 +10,12 @@ import numpy as np
 
 DATA_FILE = "digits.csv"
 
-neurons_layer1 = 8
-neurons_layer2 = 7
+neurons_layer1 = 20
+neurons_layer2 = 20
 neurons_layer3 = 10
 
 x = tf.placeholder(tf.float32)
-y = tf.placeholder(tf.int32)
+y = tf.placeholder(tf.int32, [64])
 
 #Reusable method used to read data from .csv file (By Connor Smith)
 def get_data(filename):
@@ -65,11 +65,11 @@ def model(input_data):
 	output = {'weights': tf.Variable(tf.random_normal([neurons_layer1, 10])),
 				'biases': tf.Variable(tf.zeros(10))}
 
-	layer1 = tf.add(tf.matmul(input_data, hidden1['weights']), hidden1['biases'])
-	#layer1 = tf.nn.softmax(layer1)
+	layer1 = tf.add(tf.multiply(input_data, hidden1['weights']), hidden1['biases'])
+	layer1 = tf.nn.relu(layer1)
 
 	#layer2 = tf.add(tf.matmul(layer1, hidden2['weights']), hidden2['biases'])
-	#layer2 = tf.nn.softmax(layer2)
+	#layer2 = tf.nn.dropout(tf.nn.relu(layer2), .7)
 
 	#layer3 = tf.add(tf.matmul(layer2, hidden3['weights']), hidden3['biases'])
 	#layer3 = tf.nn.relu(layer3)
@@ -79,15 +79,17 @@ def model(input_data):
 	return output
 
 def train_model(x,y):
-	batch_size = 5
+	batch_size = 64
 
 	pred = model(x)
 
-	cost = tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_with_logits(labels=tf.reshape(y, [batch_size]), logits=pred))
+	#Problem= data is reshaped so all points in sparse matrix are same
+
+	cost = tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_with_logits(labels=y,logits=pred))
 
 	optimizer = tf.train.AdamOptimizer(.0001).minimize(cost)
 
-	epochs = 1000
+	epochs = 2000
 
 	with tf.Session() as sess:
 			sess.run(tf.global_variables_initializer())
@@ -101,10 +103,13 @@ def train_model(x,y):
 
 				while i < (len(train_x) / batch_size):
 					start = i
-					end = i + batch_size
+					end = i + (batch_size - 1)
 
-					batch_x = np.array(train_x[start:end])
-					batch_y = np.array(train_y[start:end])
+					batch_x = np.array(batch_size)
+					batch_y = np.array(batch_size)
+
+					batch_x = np.append(batch_x, train_x[start:end])
+					batch_y = np.append(batch_y, train_y[start:end])
 
 					_, c = sess.run([optimizer, cost], feed_dict= {x: batch_x, y: batch_y})
 
@@ -114,12 +119,15 @@ def train_model(x,y):
 
 				print("Epoch: ", epoch, " loss: ", epoch_loss)
 
+				
+			
+
+
 				if epoch % 5 == 0:
 					correct_prediction = tf.equal(tf.argmax(pred,1), tf.cast(y, tf.int64))
 
 					accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
 					print("Accuracy: ", accuracy.eval(feed_dict={x: test_x, y: test_y}))
-
 
 train_model(x,y)
