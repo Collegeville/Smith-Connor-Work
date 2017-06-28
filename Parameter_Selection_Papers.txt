@@ -13,3 +13,6 @@ http://amcath.ccadet.unam.mx/jart/vol9_2/hurst_8.pdf
 
 Estimating Reaction Rate Constants with Neural Networks:
 http://math.bme.hu/~jtoth/pubtexts/kovacstoth.pdf
+
+Parameter Estimation of Aeroelastic Aircraft Using Neural Networks
+http://www.ias.ac.in/article/fulltext/sadh/025/02/0181-0191
