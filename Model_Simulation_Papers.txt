@@ -3,3 +3,21 @@ https://www.aanda.org/articles/aa/full/2004/32/aa3658/aa3658.right.html
 
 Probability Density Estimation Using Artificial Neural Networks:
 http://www.cs.uoi.gr/~arly/papers/CPC2001.pdf
+
+Neural Network Modelling and Prediction...London NOx and NO2 concentrations:
+http://ac.els-cdn.com/S1352231098002301/1-s2.0-S1352231098002301-main.pdf?_tid=fa156572-5c14-11e7-a141-00000aacb361&acdnat=1498663263_ae51f12b5ef63baab72762e1c72c5fcb
+
+Neural Network Modelling of Costal Algal Blooms:
+http://ac.els-cdn.com/S0304380002002818/1-s2.0-S0304380002002818-main.pdf?_tid=28152250-5c15-11e7-b612-00000aab0f6c&acdnat=1498663340_1a744e4d072b21ecfb26f35af4aeec54
+
+Neural Network Modelling of Wave Overtopping at Costal Structures:
+https://www.researchgate.net/profile/Marcel_Gent/publication/222634858_Neural_network_modelling_of_wave_overtopping_at_coastal_structures/links/0046352aad1eec6852000000.pdf
+
+Neural Network for Bankruptcy Prediction:
+https://www.researchgate.net/profile/Marcus_Odom/publication/224755073_A_Neural_Network_Model_for_Bankruptcy_Prediction/links/54c6b3ec0cf238bb7d095bad/A-Neural-Network-Model-for-Bankruptcy-Prediction.pdf
+
+Neural Network to Predict Color Change in Dehydrated Pumpkin:
+http://iopscience.iop.org/article/10.1088/1757-899X/206/1/012036/pdf
+
+Applications of Artificial Neural Network: A Survey:
+http://www.ijarcs.in/index.php/Ijarcs/article/viewFile/3462/3439
