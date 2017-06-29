@@ -58,7 +58,7 @@ Neural Network Model for Bankruptcy Prediction (1990): A
 	-Output: scale between 0 and 1; firms below .5 classified as bankrupt, firms above .5 non-bankrupt
 	-Converged after 191,400 iterations
 
-Neural Network for Predicting Features of Osmotically Dehydrated Pumpkin (2017):
+Neural Network for Predicting Features of Osmotically Dehydrated Pumpkin (2017): A-
 	-Pumpkin is very sensitive to spoilage, so it must be dried or frozen
 	-Color of food product is most important quality parameter considered by consumers
 	-Input: three variables (sucrose concentration, solution temperature, immersion time)
@@ -67,5 +67,10 @@ Neural Network for Predicting Features of Osmotically Dehydrated Pumpkin (2017):
 	-Activation function: tangent sigmoid transfer function
 	-27 sets of data used (three of each input variable)
 	-Input and output normalized between 0 and 1
+
+Applications of Artificial Neural Networks (2017): C+
+	-Data mining: extracting knowledge from large amounts of data
+	-Accuracy increases with number of training cases
+	-NNs represent one type of data mining
 
 
