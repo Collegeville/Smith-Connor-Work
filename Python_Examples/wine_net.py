@@ -1,14 +1,4 @@
-'''
-TO DO:
--Batch size changes a lot
--Small (under 10 neurons), single layer seems to work best
--BEST PARAMS SO FAR:
-	-Two 5 neuron layers
-	-.0001 learning rate
-	-Batch_size = 3
 
--Accuracy begins to decrease after epoch 75
-'''
 import tensorflow as tf 
 import numpy as np
 
@@ -18,8 +8,8 @@ neurons_layer1 = 7
 neurons_layer2 = 7
 neurons_layer3 = 45
 
-x = tf.placeholder(tf.float32)
-y = tf.placeholder(tf.int32)
+x = tf.placeholder(tf.float32, [13, None])
+y = tf.placeholder(tf.int32, [1])
 
 def get_data(filename):
 	filename_queue = tf.train.string_input_producer([filename])
@@ -45,7 +35,7 @@ def get_data(filename):
 
 		for i in range(data_size):
 			example, label = sess.run([features, targets])
-			if i <= 150:
+			if i <= 125:
 				feature_list.append(example)
 				label_list.append(label)
 			else:
@@ -65,8 +55,8 @@ def model(input_data):
 						'biases': tf.Variable(tf.zeros(neurons_layer2))}
 	hidden3 = {'weights': tf.Variable(tf.random_normal([neurons_layer2, neurons_layer3])),
 						'biases': tf.Variable(tf.zeros(neurons_layer3))}
-	output = {'weights': tf.Variable(tf.random_normal([neurons_layer1, 4])),
-						'biases': tf.Variable(tf.zeros(4))}
+	output = {'weights': tf.Variable(tf.random_normal([neurons_layer1, 1])),
+						'biases': tf.Variable(tf.zeros(1))}
 
 	layer1 = tf.add(tf.matmul(input_data, hidden1['weights']), hidden1['biases'])
 
@@ -75,22 +65,20 @@ def model(input_data):
 	#layer3 = tf.add(tf.matmul(layer2, hidden3['weights']), hidden3['biases'])
 	#layer3 = tf.nn.relu(layer3)
 
-	output = tf.add(tf.matmul(layer1, output['weights']), output['biases'])
+	output = tf.transpose(tf.add(tf.matmul(layer1, output['weights']), output['biases']))
 
 	return output
 
 def train_net(x,y):
-	batch_size = 2
+	batch_size = 1
 
 	pred = model(x)
 
-	sparse_y = tf.reshape(y, [batch_size])
-
-	cost = tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_with_logits(labels=sparse_y, logits=pred))
+	cost = tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_with_logits(labels=y, logits=pred))
 
 	optimizer = tf.train.AdamOptimizer(.0001).minimize(cost)
 
-	epochs = 700
+	epochs = 200
 
 	with tf.Session() as sess:
 		sess.run(tf.global_variables_initializer())
@@ -101,12 +89,12 @@ def train_net(x,y):
 			epoch_loss = 0
 
 			i = 0
-			while i < (len(train_x) / batch_size):
+			while i < (len(train_x)):
 				start = i 
-				end = i + batch_size
+				end = i + batch_size 
 
-				batch_x = np.array(train_x[start:end])
-				batch_y = np.array(train_y[start:end])
+				batch_x = train_x[start]
+				batch_y = train_y[start]
 
 				_, c = sess.run([optimizer, cost], feed_dict = {x: batch_x, y: batch_y})
 
@@ -116,11 +104,12 @@ def train_net(x,y):
 
 			print('Epoch: ', epoch, ' loss: ', epoch_loss)
 
-			if epoch % 5 == 0:
-				correct_prediction = tf.equal(tf.argmax(pred,1), tf.cast(y, tf.int64))
 
-				accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
-				print("Accuracy: ", accuracy.eval(feed_dict={x: test_x, y: test_y}))
+		correct_prediction = tf.equal(tf.argmax(pred,1), tf.cast(y, tf.int64))
+
+		accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float64))
+
+		print("Accuracy: ", accuracy.eval(feed_dict={x: test_x, y: test_y}))
 
 train_net(x,y)
