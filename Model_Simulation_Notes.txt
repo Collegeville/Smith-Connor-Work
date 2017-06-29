@@ -47,3 +47,25 @@ Neural Network Modelling of Wave Overtopping at Coastal Structures (2007): B-
 		-All inputs and outputs scaled 
 	-Cost function: Root-mean-squared
 	-Architecture: 1 hidden layer with 20 neurons
+
+Neural Network Model for Bankruptcy Prediction (1990): A
+	-Generalization: method for using neural networks for predictions
+	-Sample: firms that went bankrupt between 1975 and 1982 (129 firms, 65 bankrupt, 64 non-bankrupt)
+	-Training data:
+		-74 firms data (last financial statements issued before firms declared bankruptcy)
+		-Input: 5 fincancial ratios 
+	-Architecture: 1 hidden layer with 5 nodes
+	-Output: scale between 0 and 1; firms below .5 classified as bankrupt, firms above .5 non-bankrupt
+	-Converged after 191,400 iterations
+
+Neural Network for Predicting Features of Osmotically Dehydrated Pumpkin (2017):
+	-Pumpkin is very sensitive to spoilage, so it must be dried or frozen
+	-Color of food product is most important quality parameter considered by consumers
+	-Input: three variables (sucrose concentration, solution temperature, immersion time)
+	-Output: three variables, three networks (color changes, shrinkage, texture)
+	-Architecture: 1 hidden layer with 4 neurons 
+	-Activation function: tangent sigmoid transfer function
+	-27 sets of data used (three of each input variable)
+	-Input and output normalized between 0 and 1
+
+
