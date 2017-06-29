@@ -4,6 +4,8 @@ author: Connor Smith
 Creates a feed-forward neural network that is designed to 
 approximate sin function. Training and testing data read
 from same .csv file.
+
+Best accuracy: 89%
 '''
 
 
@@ -92,6 +94,8 @@ def model(input_data):
 	#resulting in fastest reduction of cost
 	layer1 = tf.tanh(layer1)
 
+	w_h = tf.summary.histogram("weights", hidden1['weights'])
+	b_h = tf.summary.histogram("biases", hidden1['biases'])
 	#Only one layer required for optimal output, as there is only one input feature
 	#and one output, but infinite possible output values
 	#layer2 = tf.add(tf.matmul(layer1, hidden2['weights']), hidden2['biases'])
@@ -110,13 +114,16 @@ def train_net(x,y):
 
 	pred = model(x)
 
-	#Utilize root-mean-squared cost function
+	#Utilize mean-squared cost function
 	cost = tf.reduce_mean(tf.square(pred - y))
+	tf.summary.scalar("cost", cost)
 
 	#Optimize weights and biases in order to minimize cost function
 	optimizer = tf.train.AdamOptimizer(.0001).minimize(cost)
 
-	epochs = 1000
+	epochs = 700
+
+	merged_summary_op = tf.summary.merge_all()
 
 	#Initialize Saver object to save state of weights and biases for later use
 	saver = tf.train.Saver()
@@ -126,6 +133,7 @@ def train_net(x,y):
 	with tf.Session() as sess:
 		sess.run(tf.global_variables_initializer())
 
+		summary_writer = tf.summary.FileWriter('.\logs', graph = sess.graph)
 
 		#Get data from user-created function that extracts data from .csv file
 		train_x, train_y, test_x, test_y = get_data(DATA_FILE)
@@ -145,6 +153,10 @@ def train_net(x,y):
 
 				_, c = sess.run([optimizer, cost], feed_dict = {x: batch_x, y: batch_y})
 				epoch_loss += c
+
+				summary_str = sess.run(merged_summary_op, feed_dict={x: batch_x, y: batch_y})
+				
+				summary_writer.add_summary(summary_str, epoch*len(train_x) + i)
 
 				i += batch_size
 
