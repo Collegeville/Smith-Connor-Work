@@ -21,7 +21,7 @@ neurons_layer1 = 20
 #neurons_layer3 = 5
 
 
-x = tf.placeholder('float')
+x = tf.placeholder('float', name='input')
 y = tf.placeholder('float')
 
 #Extracts training and testing data from single file
@@ -78,17 +78,17 @@ def get_data(filename):
 
 #Creates neural network model with three hidden layers
 def model(input_data):
-	hidden1 = {'weights': tf.Variable(tf.random_normal([1, neurons_layer1])),
-						'biases': tf.Variable(tf.zeros(neurons_layer1))}
+	hidden1 = {'weights': tf.Variable(tf.random_normal([1, neurons_layer1]), name='w1'),
+						'biases': tf.Variable(tf.zeros(neurons_layer1), name='b1')}
 	#hidden2 = {'weights': tf.Variable(tf.random_normal([neurons_layer1, neurons_layer2])),
 						#'biases': tf.Variable(tf.zeros(neurons_layer2))}
 	#hidden3 = {'weights': tf.Variable(tf.random_normal([neurons_layer2, neurons_layer3])),
 						#'biases': tf.Variable(tf.zeros(neurons_layer3))}
-	output = {'weights': tf.Variable(tf.random_normal([neurons_layer1, 1])),
-						'biases': tf.Variable(tf.zeros(1))}
+	output = {'weights': tf.Variable(tf.random_normal([neurons_layer1, 1]), name='wO'),
+						'biases': tf.Variable(tf.zeros(1), name='bO')}
 
 
-	layer1 = tf.add(tf.multiply(input_data, hidden1['weights']), hidden1['biases'])
+	layer1 = tf.add(tf.multiply(input_data, hidden1['weights']), hidden1['biases'], name='layer1')
 
 	#Use hyperbolic tangent activation function because output is between -1 and 1,
 	#resulting in fastest reduction of cost
@@ -103,7 +103,7 @@ def model(input_data):
 	#layer3 = tf.add(tf.matmul(layer2, hidden3['weights']), hidden3['biases'])
 	#layer3 = tf.tanh(layer3)
 
-	output = tf.add(tf.matmul(layer1, output['weights']), output['biases'])
+	output = tf.add(tf.matmul(layer1, output['weights']), output['biases'], name='output')
 
 	return output
 
