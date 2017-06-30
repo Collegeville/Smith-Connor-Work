@@ -16,7 +16,7 @@ neurons_layer2 = 20
 neurons_layer3 = 10
 
 x = tf.placeholder(tf.float32, [None, 16])
-y = tf.placeholder(tf.float32)
+y = tf.placeholder(tf.int32)
 
 #Reusable method used to read data from .csv file (By Connor Smith)
 def get_data(filename):
@@ -63,8 +63,8 @@ def model(input_data):
 				'biases': tf.Variable(tf.zeros(neurons_layer2))}
 	hidden3 = {'weights': tf.Variable(tf.random_normal([neurons_layer2, neurons_layer3])),
 				'biases': tf.Variable(tf.zeros(neurons_layer3))}
-	output = {'weights': tf.Variable(tf.random_normal([neurons_layer1, 1])),
-				'biases': tf.Variable(tf.zeros(1))}
+	output = {'weights': tf.Variable(tf.random_normal([neurons_layer1, 10])),
+				'biases': tf.Variable(tf.zeros(10))}
 
 	layer1 = tf.add(tf.matmul(input_data, hidden1['weights']), hidden1['biases'])
 	layer1 = tf.nn.relu(layer1)
@@ -75,22 +75,21 @@ def model(input_data):
 	#layer3 = tf.add(tf.matmul(layer2, hidden3['weights']), hidden3['biases'])
 	#layer3 = tf.nn.relu(layer3)
 
-	output = tf.add(tf.matmul(layer1, output['weights']), output['biases'])
+	output = tf.transpose(tf.add(tf.matmul(layer1, output['weights']), output['biases']))
 
 	return output
 
 def train_model(x,y):
-	batch_size = 64
+	batch_size = 1
 
 	pred = model(x)
 
-	#Problem= data is reshaped so all points in sparse matrix are same
+	cost = tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_with_logits(labels=y, logits=pred))
+	#tf.reduce_mean(tf.square(pred - y))
 
-	cost = tf.reduce_mean(tf.square(pred - y))
+	optimizer = tf.train.AdamOptimizer(.001).minimize(cost)
 
-	optimizer = tf.train.AdamOptimizer(.00099).minimize(cost)
-
-	epochs = 5000
+	epochs = 10
 
 	with tf.Session() as sess:
 			sess.run(tf.global_variables_initializer())
@@ -104,10 +103,13 @@ def train_model(x,y):
 
 				while i < len(train_x):
 					start = i
-					end = i + (batch_size - 1)
+					end = i + batch_size
 
-					batch_x = np.array(train_x[start:end])
-					batch_y = np.array(train_y[start:end])
+					batch_x = np.zeros(())
+					batch_y = np.array((batch_size))
+					batch_x = np.append(batch_x, train_x[start])
+					batch_y = np.append(batch_y, train_y[start])
+
 
 					_, c = sess.run([optimizer, cost], feed_dict= {x: batch_x, y: batch_y})
 
@@ -118,12 +120,12 @@ def train_model(x,y):
 				print("Epoch: ", epoch, " loss: ", epoch_loss)
 
 
-				if epoch % 5 == 0:
+				#if epoch % 5 == 0:
 
-					correct_prediction = tf.equal(tf.round(pred), tf.round(y))
+				#	correct_prediction = tf.equal(tf.round(pred), tf.round(y))
 
-					accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float64))
+				#	accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float64))
 
-					print("Accuracy: ", accuracy.eval(feed_dict={x: test_x, y: test_y}))
+				#	print("Accuracy: ", accuracy.eval(feed_dict={x: test_x, y: test_y}))
 
 train_model(x,y)
