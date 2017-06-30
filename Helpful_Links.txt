@@ -21,3 +21,6 @@ https://deeplearning4j.org/lstm.html#recurrent
 
 TensorFlow programmer's guide:
 https://www.tensorflow.org/programmers_guide/
+
+Recurrent Neural Networks:
+http://colah.github.io/posts/2015-08-Understanding-LSTMs/
