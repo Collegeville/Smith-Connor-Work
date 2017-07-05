@@ -21,3 +21,6 @@ http://iopscience.iop.org/article/10.1088/1757-899X/206/1/012036/pdf
 
 Applications of Artificial Neural Network: A Survey:
 http://www.ijarcs.in/index.php/Ijarcs/article/viewFile/3462/3439
+
+Recurrent Models of Visual Attention:
+https://arxiv.org/pdf/1406.6247.pdf
