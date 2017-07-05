@@ -75,19 +75,20 @@ def model(input_data):
 	#layer3 = tf.add(tf.matmul(layer2, hidden3['weights']), hidden3['biases'])
 	#layer3 = tf.nn.relu(layer3)
 
-	output = tf.transpose(tf.add(tf.matmul(layer1, output['weights']), output['biases']))
+	output = tf.add(tf.matmul(layer1, output['weights']), output['biases'])
 
 	return output
 
 def train_model(x,y):
-	batch_size = 1
+	batch_size = 10
 
 	pred = model(x)
 
+	#ERROR: labels must be 1-D, but got shape [batch_size,1]
 	cost = tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_with_logits(labels=y, logits=pred))
 	#tf.reduce_mean(tf.square(pred - y))
 
-	optimizer = tf.train.AdamOptimizer(.001).minimize(cost)
+	optimizer = tf.train.AdamOptimizer(.0001).minimize(cost)
 
 	epochs = 10
 
@@ -101,15 +102,13 @@ def train_model(x,y):
 
 				i = 0
 
-				while i < len(train_x):
+				while i < len(train_x) / batch_size:
 					start = i
-					end = i + batch_size
+					end = i + batch_size 
 
-					batch_x = np.zeros(())
-					batch_y = np.array((batch_size))
-					batch_x = np.append(batch_x, train_x[start])
-					batch_y = np.append(batch_y, train_y[start])
-
+					batch_x = np.array(train_x[start:end])
+					batch_y = np.array(train_y[start:end])
+					batch_y = np.reshape(batch_y, (batch_size))
 
 					_, c = sess.run([optimizer, cost], feed_dict= {x: batch_x, y: batch_y})
 
@@ -122,10 +121,13 @@ def train_model(x,y):
 
 				#if epoch % 5 == 0:
 
-				#	correct_prediction = tf.equal(tf.round(pred), tf.round(y))
+			#correct_prediction = tf.equal(tf.argmax((pred), tf.int32), y)
 
-				#	accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float64))
+			#accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float64))
 
-				#	print("Accuracy: ", accuracy.eval(feed_dict={x: test_x, y: test_y}))
+			#print("Accuracy: ", accuracy.eval(feed_dict={x: test_x, y: test_y}))
+
+			p_max = tf.argmax(pred)
+			print(p_max.eval({x: test_x}))
 
 train_model(x,y)
