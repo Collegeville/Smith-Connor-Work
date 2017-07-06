@@ -5,6 +5,7 @@ more efficient
 Parameter Estimation for Process Control (1991): A+
 	-Many important parameters that effect output of Process Control Algorithms
 	-Training examples
+		-LOOK INTO: algorithm models used in training??
 		-Input: sampled process input and output vectors
 		-Output: estimated associated process parameters
 	-Network implements function for estimating parameters from input/output
@@ -13,7 +14,6 @@ Parameter Estimation for Process Control (1991): A+
 	-Trained on 6 million examples
 	-When trained with 50% noise, test results significantly better (regularization)
 	-Trained for one particular parameter at a time
-	-GRAPHS
 
 Fast cosmological parameter estimation (2008): B-
 	-Power spectra parameter computationally difficult to calculate
