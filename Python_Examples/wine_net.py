@@ -4,9 +4,8 @@ import numpy as np
 
 DATA_FILE = 'wine.csv'
 
-neurons_layer1 = 100
-neurons_layer2 = 100
-neurons_layer3 = 45
+neurons_layer1 = 300
+neurons_layer2 = 300
 
 x = tf.placeholder(tf.float32, [None,13])
 y = tf.placeholder(tf.int64)
@@ -62,7 +61,7 @@ def model(input_data):
 	layer1 = tf.nn.relu(layer1)
 
 	layer2 = tf.add(tf.matmul(layer1, hidden2['weights']), hidden2['biases'])
-	layer2 = tf.nn.dropout(tf.nn.relu(layer2), .75)
+	layer2 = tf.nn.relu(layer2)
 
 	output = tf.add(tf.matmul(layer2, output['weights']), output['biases'])
 
@@ -77,7 +76,7 @@ def train_net(x,y):
 
 	optimizer = tf.train.AdamOptimizer(.001).minimize(cost)
 
-	epochs = 10000
+	epochs = 1000
 
 	with tf.Session() as sess:
 		sess.run(tf.global_variables_initializer())
