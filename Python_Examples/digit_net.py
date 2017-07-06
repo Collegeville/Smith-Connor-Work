@@ -1,22 +1,28 @@
 '''
-Best acc: ~.8
-2 layers; 20 neurons each
-5000 epochs
-.00099 learning rate
-Batch_size = 64
-No dropout
+Best acc: ~.93
+2 layers; 400 neurons each
+10000 epochs
+Default learning rate
+Batch_size = 256
+.5 dropout on first layer
+
+Observations:
+-More than two layers seems to reduce accuracy
+-Testing can only be done on small samples because my method of testing is inefficient
+-Dropout on one layer seems to work as long as there are enough neurons in each layer 
+-Increasing batch_size increases accuracy siginificantly
 '''
 import tensorflow as tf 
 import numpy as np 
 
 DATA_FILE = "digits.csv"
 
-neurons_layer1 = 15
-neurons_layer2 = 20
-neurons_layer3 = 10
+neurons_layer1 = 400
+neurons_layer2 = 400
+neurons_layer3 = 100
 
-x = tf.placeholder(tf.float32, [None, 16])
-y = tf.placeholder(tf.int32)
+x = tf.placeholder(tf.float32, [None, 16], name="input")
+y = tf.placeholder(tf.int32, name="lables")
 
 #Reusable method used to read data from .csv file (By Connor Smith)
 def get_data(filename):
@@ -63,34 +69,29 @@ def model(input_data):
 				'biases': tf.Variable(tf.zeros(neurons_layer2))}
 	hidden3 = {'weights': tf.Variable(tf.random_normal([neurons_layer2, neurons_layer3])),
 				'biases': tf.Variable(tf.zeros(neurons_layer3))}
-	output = {'weights': tf.Variable(tf.random_normal([neurons_layer1, 10])),
+	output = {'weights': tf.Variable(tf.random_normal([neurons_layer2, 10])),
 				'biases': tf.Variable(tf.zeros(10))}
 
 	layer1 = tf.add(tf.matmul(input_data, hidden1['weights']), hidden1['biases'])
-	layer1 = tf.nn.relu(layer1)
+	layer1 = tf.nn.dropout(tf.nn.relu(layer1), .5)
 
-	#layer2 = tf.add(tf.matmul(layer1, hidden2['weights']), hidden2['biases'])
-	#layer2 = tf.nn.relu(layer2)
+	layer2 = tf.add(tf.matmul(layer1, hidden2['weights']), hidden2['biases'])
+	layer2 = tf.nn.relu(layer2)
 
-	#layer3 = tf.add(tf.matmul(layer2, hidden3['weights']), hidden3['biases'])
-	#layer3 = tf.nn.relu(layer3)
-
-	output = tf.add(tf.matmul(layer1, output['weights']), output['biases'])
+	output = tf.add(tf.matmul(layer2, output['weights']), output['biases'])
 
 	return output
 
 def train_model(x,y):
-	batch_size = 10
+	batch_size = 256
 
 	pred = model(x)
 
-	#ERROR: labels must be 1-D, but got shape [batch_size,1]
 	cost = tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_with_logits(labels=y, logits=pred))
-	#tf.reduce_mean(tf.square(pred - y))
 
-	optimizer = tf.train.AdamOptimizer(.0001).minimize(cost)
+	optimizer = tf.train.AdamOptimizer(.001).minimize(cost)
 
-	epochs = 10
+	epochs = 10000
 
 	with tf.Session() as sess:
 			sess.run(tf.global_variables_initializer())
@@ -119,6 +120,27 @@ def train_model(x,y):
 				print("Epoch: ", epoch, " loss: ", epoch_loss)
 
 
+			t = 0
+			equal = 0
+
+			while t < 100:
+
+				start = t
+				end = t + 1
+
+				tbatch_x = np.array(test_x[start:end])
+				tbatch_y = np.array(test_y[start:end])
+
+				correct_prediction = tf.equal(tf.argmax(pred, 1), tf.cast(y, tf.int64))
+				correct = correct_prediction.eval({x: tbatch_x, y: tbatch_y})
+
+				if correct == True:
+					equal += 1
+
+				t += 1
+
+			print("Accuracy: ", equal / 100)
+
 				#if epoch % 5 == 0:
 
 			#correct_prediction = tf.equal(tf.argmax((pred), tf.int32), y)
@@ -126,8 +148,5 @@ def train_model(x,y):
 			#accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float64))
 
 			#print("Accuracy: ", accuracy.eval(feed_dict={x: test_x, y: test_y}))
-
-			p_max = tf.argmax(pred)
-			print(p_max.eval({x: test_x}))
 
 train_model(x,y)
