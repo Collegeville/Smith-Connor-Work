@@ -117,6 +117,7 @@ def train_model(x,y):
 
 
 			#Calculate accuracy on part of test set (whole test set inefficient with current method)
+			#Calculate accuracy every 10 training iterations 
 				if epoch % 10 == 0:
 					t = 0
 					equal = 0
