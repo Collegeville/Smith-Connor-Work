@@ -19,10 +19,9 @@ DATA_FILE = "digits.csv"
 
 neurons_layer1 = 400
 neurons_layer2 = 400
-neurons_layer3 = 100
 
 x = tf.placeholder(tf.float32, [None, 16], name="input")
-y = tf.placeholder(tf.int32, name="lables")
+y = tf.placeholder(tf.int32, name="targets")
 
 #Reusable method used to read data from .csv file (By Connor Smith)
 def get_data(filename):
@@ -62,16 +61,16 @@ def get_data(filename):
 
 	return feature_list, label_list, test_feature_list, test_label_list
 
+#Design model architecture for best possible accuracy
 def model(input_data):
 	hidden1 = {'weights': tf.Variable(tf.random_normal([16, neurons_layer1])),
 				'biases': tf.Variable(tf.zeros(neurons_layer1))}
 	hidden2 = {'weights': tf.Variable(tf.random_normal([neurons_layer1, neurons_layer2])),
 				'biases': tf.Variable(tf.zeros(neurons_layer2))}
-	hidden3 = {'weights': tf.Variable(tf.random_normal([neurons_layer2, neurons_layer3])),
-				'biases': tf.Variable(tf.zeros(neurons_layer3))}
 	output = {'weights': tf.Variable(tf.random_normal([neurons_layer2, 10])),
 				'biases': tf.Variable(tf.zeros(10))}
 
+	#First NN layer utilizes dropout to prevent overfitting of training data
 	layer1 = tf.add(tf.matmul(input_data, hidden1['weights']), hidden1['biases'])
 	layer1 = tf.nn.dropout(tf.nn.relu(layer1), .5)
 
@@ -87,12 +86,15 @@ def train_model(x,y):
 
 	pred = model(x)
 
+	#Sparse softmax cost function treats integer values as index with highest value within an array
 	cost = tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_with_logits(labels=y, logits=pred))
 
 	optimizer = tf.train.AdamOptimizer(.001).minimize(cost)
 
 	epochs = 10000
 
+	#Run the processes built into the computation graph
+	#Iterates through graph for number of specified epochs
 	with tf.Session() as sess:
 			sess.run(tf.global_variables_initializer())
 
@@ -120,6 +122,7 @@ def train_model(x,y):
 				print("Epoch: ", epoch, " loss: ", epoch_loss)
 
 
+			#Calculate accuracy on part of test set (whole test set inefficient with current method)
 			t = 0
 			equal = 0
 
@@ -140,13 +143,5 @@ def train_model(x,y):
 				t += 1
 
 			print("Accuracy: ", equal / 100)
-
-				#if epoch % 5 == 0:
-
-			#correct_prediction = tf.equal(tf.argmax((pred), tf.int32), y)
-
-			#accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float64))
-
-			#print("Accuracy: ", accuracy.eval(feed_dict={x: test_x, y: test_y}))
 
 train_model(x,y)

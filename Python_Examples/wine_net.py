@@ -11,6 +11,7 @@ neurons_layer3 = 45
 x = tf.placeholder(tf.float32, [None,13])
 y = tf.placeholder(tf.int64)
 
+#Reusable method used to read data from .csv file (By Connor Smith)
 def get_data(filename):
 	filename_queue = tf.train.string_input_producer([filename])
 
@@ -48,13 +49,12 @@ def get_data(filename):
 
 	return feature_list, label_list, test_feature_list, test_label_list
 
+#Create feed-forward model for training NN 
 def model(input_data):
 	hidden1 = {'weights': tf.Variable(tf.random_normal([13, neurons_layer1])),
 						'biases': tf.Variable(tf.zeros(neurons_layer1))}
 	hidden2 = {'weights': tf.Variable(tf.random_normal([neurons_layer1, neurons_layer2])),
 						'biases': tf.Variable(tf.zeros(neurons_layer2))}
-	hidden3 = {'weights': tf.Variable(tf.random_normal([neurons_layer2, neurons_layer3])),
-						'biases': tf.Variable(tf.zeros(neurons_layer3))}
 	output = {'weights': tf.Variable(tf.random_normal([neurons_layer2, 4])),
 						'biases': tf.Variable(tf.zeros(4))}
 
@@ -63,9 +63,6 @@ def model(input_data):
 
 	layer2 = tf.add(tf.matmul(layer1, hidden2['weights']), hidden2['biases'])
 	layer2 = tf.nn.dropout(tf.nn.relu(layer2), .75)
-
-	#layer3 = tf.add(tf.matmul(layer2, hidden3['weights']), hidden3['biases'])
-	#layer3 = tf.nn.relu(layer3)
 
 	output = tf.add(tf.matmul(layer2, output['weights']), output['biases'])
 
