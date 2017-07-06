@@ -1,0 +1,16 @@
+Observations:
+
+-By far most difficult aspect: generate data for testing
+	-Brainstorm most efficient way to model equations, generate inputs and desired outputs
+	-Preprocessing data also very difficult
+
+-Dropout on one layer seems to work as long as there are enough neurons in each layer 
+
+-Increasing batch_size increases accuracy siginificantly to an extent 
+	-Not larger than half size of training size
+
+-The quicker to converge the better (in terms of epochs)
+	-The more epochs the more chance for overfitting
+	-If possible, lower learning rate, simplify network to converge quickly
+	-Stop training as early as possible for testing 
+
