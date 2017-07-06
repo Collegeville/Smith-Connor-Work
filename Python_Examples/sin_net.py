@@ -6,6 +6,7 @@ approximate sin function. Training and testing data read
 from same .csv file.
 
 Best accuracy: 89%
+Learning rate should stay at .0001 in order to prevent vanishing gradient (because there is only one feature)
 '''
 
 
@@ -110,7 +111,7 @@ def model(input_data):
 #Train the neural network model
 def train_net(x,y):
 	#Size of each data sample to feed through network
-	batch_size = 64
+	batch_size = 128
 
 	pred = model(x)
 
@@ -119,9 +120,10 @@ def train_net(x,y):
 	tf.summary.scalar("cost", cost)
 
 	#Optimize weights and biases in order to minimize cost function
+	###Changed LR from .0001 to .001
 	optimizer = tf.train.AdamOptimizer(.0001).minimize(cost)
 
-	epochs = 700
+	epochs = 2000
 
 	merged_summary_op = tf.summary.merge_all()
 
@@ -144,7 +146,7 @@ def train_net(x,y):
 			epoch_loss = 0
 
 			i = 0
-			while i < (len(train_x)):
+			while i < len(train_x):
 				start = i 
 				end = i + batch_size
 
@@ -172,6 +174,7 @@ def train_net(x,y):
 		print("Accuracy: ", accuracy.eval(feed_dict={x: test_x, y: test_y}))
 
 		#Allow up to 100 user inputs to make predictions based on model
+		#Deprecated because of second program to approximate sin function (sin_model.py)
 		#test_inputs = 100
 		#for _ in range(test_inputs):
 		#	input_for_pred = input("Enter degree value to be approximated \n")
