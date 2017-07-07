@@ -73,4 +73,8 @@ Applications of Artificial Neural Networks (2017): C+
 	-Accuracy increases with number of training cases
 	-NNs represent one type of data mining
 
+Convolutional Neural Network with AdaBoost (2017) : A
+	-Basic idea: use AdaBoost with strong classifiers (CNN)
+	-Works very well by allowing CNNs to vote on output values
+
 

@@ -24,3 +24,6 @@ http://www.ijarcs.in/index.php/Ijarcs/article/viewFile/3462/3439
 
 Recurrent Models of Visual Attention:
 https://arxiv.org/pdf/1406.6247.pdf
+
+CNN with AdaBoost:
+http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7960026
