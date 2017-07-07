@@ -14,6 +14,10 @@ Observations:
 	-If possible, lower learning rate, simplify network to converge quickly
 	-Stop training as early as possible for testing 
 
+-Activation functions:
+	-ReLu is normally most efficient (returns any number above 0)
+	-TanH is good for desired output between -1 and 1
+
 Process:
 	1. Define desired output
 	2. Generate training and testing data using some sort of model
