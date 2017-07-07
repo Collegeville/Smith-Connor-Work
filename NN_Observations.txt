@@ -14,3 +14,36 @@ Observations:
 	-If possible, lower learning rate, simplify network to converge quickly
 	-Stop training as early as possible for testing 
 
+Process:
+	1. Define desired output
+	2. Generate training and testing data using some sort of model
+		-How computationally feasible is the model?
+		-How many data points to generate?
+	3. Sketch NN structure
+		-How many initial layers?
+		-How many nodes in each layer?
+		-Start w/o dropout, add if overfitting is evident (try other regularization?)
+	4. Determine method of reading data into TF
+		-If .csv, use pre-created method
+		-Input must be number value 
+	5. Write program to read data, split into 4 arrays (train_x, train_y, test_x, test_y)
+		-Read data into lists
+		-Identify possibility of normalizing data (usually between 0 and 1)
+	6. Write method for NN
+		-Remember previously created sketch is only temporary
+	7. Write computational graph 
+		-Calculate prediction based on model
+		-Calculate cost function
+		-Minimize cost function with optimizer
+	8. Run graph with Session
+		-Initialize variables 
+		-Get training and testing data from reading method
+		-Separate data into batches 
+		-Run batches through graph
+	9. Use test data to test accuracy
+		-Initially print accuracy at end (maybe print every 10, 50, 100, etc. epochs)
+	10. Manipulate NN to find best accuracy
+		-Make SMALL changes 
+		-Keep note settings responsible for best accuracy
+		-OK to change NN structure, keep track of most efficient structure
+
