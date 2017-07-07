@@ -27,3 +27,6 @@ https://arxiv.org/pdf/1406.6247.pdf
 
 CNN with AdaBoost:
 http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7960026
+
+Multi-level Attention Neural Networks:
+https://www.microsoft.com/en-us/research/wp-content/uploads/2017/06/Multi-level-Attention-Networks-for-Visual-Question-Answering.pdf
