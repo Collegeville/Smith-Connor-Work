@@ -1,7 +1,7 @@
 '''
-Best acc: ~.93
+Best acc: ~.94
 2 layers; 400 neurons each
-10000 epochs
+7500 epochs
 Default learning rate
 Batch_size = 256
 .5 dropout on first layer
@@ -11,8 +11,8 @@ import numpy as np
 
 DATA_FILE = "digits.csv"
 
-neurons_layer1 = 350
-neurons_layer2 = 350
+neurons_layer1 = 700
+neurons_layer2 = 700
 
 x = tf.placeholder(tf.float32, [None, 16], name="input")
 y = tf.placeholder(tf.int32, name="targets")
@@ -42,7 +42,7 @@ def get_data(filename):
 
 		for i in range(data_size):
 			example, label = sess.run([features, targets])
-			if i <= 7800:
+			if i <= 9000:
 				feature_list.append(example)
 				label_list.append(label)
 			else:
@@ -66,7 +66,8 @@ def model(input_data):
 
 	#First NN layer utilizes dropout to prevent overfitting of training data
 	layer1 = tf.add(tf.matmul(input_data, hidden1['weights']), hidden1['biases'])
-	layer1 = tf.nn.relu(layer1)
+	#Changed dropout from .75 to .5
+	layer1 = tf.nn.dropout(tf.nn.relu(layer1), .5)
 
 	layer2 = tf.add(tf.matmul(layer1, hidden2['weights']), hidden2['biases'])
 	layer2 = tf.nn.relu(layer2)
@@ -76,7 +77,7 @@ def model(input_data):
 	return output
 
 def train_model(x,y):
-	batch_size = 128
+	batch_size = 256
 
 	pred = model(x)
 
@@ -85,7 +86,7 @@ def train_model(x,y):
 
 	optimizer = tf.train.AdamOptimizer(.001).minimize(cost)
 
-	epochs = 500
+	epochs = 7500
 
 	#Run the processes built into the computation graph
 	#Iterates through graph for number of specified epochs
@@ -118,26 +119,24 @@ def train_model(x,y):
 
 			#Calculate accuracy on part of test set (whole test set inefficient with current method)
 			#Calculate accuracy every 10 training iterations 
-				if epoch % 10 == 0:
-					t = 0
-					equal = 0
+			t = 0
+			equal = 0
 
-					while t < 100:
+			while t < 1000:
 
-						start = t
-						end = t + 1
+				start = t
+				end = t + 1
 
-						tbatch_x = np.array(test_x[start:end])
-						tbatch_y = np.array(test_y[start:end])
+				tbatch_x = np.array(test_x[start:end])
+				tbatch_y = np.array(test_y[start:end])
 
-						correct_prediction = tf.equal(tf.argmax(pred, 1), tf.cast(y, tf.int64))
-						correct = correct_prediction.eval({x: tbatch_x, y: tbatch_y})
+				correct_prediction = tf.equal(tf.argmax(pred, 1), tf.cast(y, tf.int64))
+				correct = correct_prediction.eval({x: tbatch_x, y: tbatch_y})
 
-						if correct == True:
-							equal += 1
+				if correct == True:
+					equal += 1
 
-						t += 1
+				t += 1
 
-					print("Accuracy: ", equal / 100)
-
+			print("Accuracy: ", equal / 1000)
 train_model(x,y)

@@ -76,7 +76,7 @@ def train_net(x,y):
 
 	optimizer = tf.train.AdamOptimizer(.001).minimize(cost)
 
-	epochs = 1000
+	epochs = 1500
 
 	with tf.Session() as sess:
 		sess.run(tf.global_variables_initializer())
