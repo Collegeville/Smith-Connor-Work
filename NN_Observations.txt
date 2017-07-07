@@ -1,6 +1,6 @@
 Observations:
 
--By far most difficult aspect: generate data for testing
+-By far most difficult aspect: generate data for training and testing
 	-Brainstorm most efficient way to model equations, generate inputs and desired outputs
 	-Preprocessing data also very difficult
 
@@ -17,6 +17,11 @@ Observations:
 -Activation functions:
 	-ReLu is normally most efficient (returns any number above 0)
 	-TanH is good for desired output between -1 and 1
+
+-Training and testing data:
+	-More is definitely better:
+		-Higher chance of convergence during training
+		-More accurate results during testing
 
 Process:
 	1. Define desired output
