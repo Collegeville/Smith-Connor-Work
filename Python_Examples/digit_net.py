@@ -66,8 +66,7 @@ def model(input_data):
 
 	#First NN layer utilizes dropout to prevent overfitting of training data
 	layer1 = tf.add(tf.matmul(input_data, hidden1['weights']), hidden1['biases'])
-	#Changed dropout from .75 to .5
-	layer1 = tf.nn.dropout(tf.nn.relu(layer1), .5)
+	layer1 = tf.nn.dropout(tf.nn.relu(layer1), .75)
 
 	layer2 = tf.add(tf.matmul(layer1, hidden2['weights']), hidden2['biases'])
 	layer2 = tf.nn.relu(layer2)

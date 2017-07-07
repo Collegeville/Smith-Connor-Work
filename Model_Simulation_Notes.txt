@@ -5,12 +5,10 @@ CENTRAL IDEA: Neural Networks can be used to approximate highly nonlinear functi
 			-What kinds of input features do you have access to? (Not too many, as this may result in noise)
 	-Most useful when relationships between parameters in equation are unknown, but large amounts of data exist
 
-
 Probability Density Estimation Using Artificial Neural Networks (2000): B
 	-Probability Density Functions (pdf): important computational problem with applications all over physics
 	-Training data comes from non-parametric technique for pdf estimation (least amount of parameters as possible)
 		-Train data across many parameter values
-
 
 Modelling and Prediction of Hourly NOx and NO2 concentrations in London (1998): A-
 	-Nitrogen Oxides (NO) are emitted into urban atmosphere primarily from vehicle exhausts
@@ -24,7 +22,6 @@ Modelling and Prediction of Hourly NOx and NO2 concentrations in London (1998): 
 	-All data normalized between -1 and 1 (just like activation output)
 	-This model worked considerably better than previous models 
 
-
 Neural Network Modelling of Coastal Algal Blooms (2003): A+
 	-Major algal blooms around Hong-Kong and South China cause many problems for environment
 	-Early warning to such phenomena would allow fish farmers to help wildlife
@@ -35,7 +32,6 @@ Neural Network Modelling of Coastal Algal Blooms (2003): A+
 		-Data from 1982-1992 used to train; data from 1993-2000 used to test
 		-Based on simplest number of input variables known to affect algal dynamics (nine variables)
 	-Architecture: one hidden layer with 3 neurons
-
 
 Neural Network Modelling of Wave Overtopping at Coastal Structures (2007): B-
 	-For safety assessment of coastal structures, reliable predictions of wave overtopping are required
@@ -76,5 +72,11 @@ Applications of Artificial Neural Networks (2017): C+
 Convolutional Neural Network with AdaBoost (2017) : A
 	-Basic idea: use AdaBoost with strong classifiers (CNN)
 	-Works very well by allowing CNNs to vote on output values
+
+Multi-Level Attention Network (2017): A
+	-Combination of CNN and RNN to classify a picture
+	-Concept of AI Attention one of most exciting in current research
+		-Gets us closer to fully functional AI
+		-Allows AI to identify images (used to be impossible)
 
 
