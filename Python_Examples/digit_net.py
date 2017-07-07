@@ -1,10 +1,10 @@
 '''
 Best acc: ~.94
-2 layers; 400 neurons each
+2 layers; 700 neurons each
 7500 epochs
 Default learning rate
 Batch_size = 256
-.5 dropout on first layer
+.75 dropout on first layer
 '''
 import tensorflow as tf 
 import numpy as np 
