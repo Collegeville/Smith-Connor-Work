@@ -8,6 +8,8 @@ Observations:
 
 -Increasing batch_size increases accuracy siginificantly to an extent 
 	-Not larger than half size of training size
+	-Increasing batch size along with network size increases accuracy efficiently
+	-Increasing batch size must be important when using dropout (more data to find patterns with less neurons)
 
 -The quicker to converge the better (in terms of epochs)
 	-The more epochs the more chance for overfitting
