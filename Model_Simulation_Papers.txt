@@ -1,5 +1,3 @@
-Photometric redshifts with neural network:
-https://www.aanda.org/articles/aa/full/2004/32/aa3658/aa3658.right.html
 
 Probability Density Estimation Using Artificial Neural Networks:
 http://www.cs.uoi.gr/~arly/papers/CPC2001.pdf
