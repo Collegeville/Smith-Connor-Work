@@ -58,3 +58,7 @@ Aeroelastic Aircraft Parameter Estimation (2000): A-
 		-IMPORTANT: Three network inputs are used, but only one is slightly changed from sample to sample
 		-Motion and control variables used as network inputs
 		-Force and moment coefficients used as output variables (use different networks for each?)
+
+Neural Network Optimization of Dry Turning Parameters (2017): A+
+	-NN determined to successfully estimate dry turning parameters
+	-LOOK INTO: Model simulation
