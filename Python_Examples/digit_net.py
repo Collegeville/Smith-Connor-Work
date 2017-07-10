@@ -76,7 +76,7 @@ def model(input_data):
 	return output
 
 def train_model(x,y):
-	batch_size = 256
+	batch_size = 512
 
 	pred = model(x)
 
@@ -117,7 +117,6 @@ def train_model(x,y):
 
 
 			#Calculate accuracy on part of test set (whole test set inefficient with current method)
-			#Calculate accuracy every 10 training iterations 
 			t = 0
 			equal = 0
 
