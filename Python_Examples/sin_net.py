@@ -12,6 +12,7 @@ Learning rate should stay at .0001 in order to prevent vanishing gradient (becau
 
 import tensorflow as tf
 import numpy as np
+import matplotlib.pyplot as plt
 
 DATA_FILE = 'sin_data_random.csv'
 
@@ -111,7 +112,7 @@ def model(input_data):
 #Train the neural network model
 def train_net(x,y):
 	#Size of each data sample to feed through network
-	batch_size = 128
+	batch_size = 256
 
 	pred = model(x)
 
@@ -123,9 +124,13 @@ def train_net(x,y):
 	###Changed LR from .0001 to .001
 	optimizer = tf.train.AdamOptimizer(.0001).minimize(cost)
 
-	epochs = 2000
+	epochs = 1000
 
-	merged_summary_op = tf.summary.merge_all()
+
+	epoch_array = np.array([epochs])
+
+	cost_array = np.array([epochs])
+
 
 	#Initialize Saver object to save state of weights and biases for later use
 	saver = tf.train.Saver()
@@ -135,8 +140,6 @@ def train_net(x,y):
 	with tf.Session() as sess:
 		sess.run(tf.global_variables_initializer())
 
-		summary_writer = tf.summary.FileWriter('.\logs', graph = sess.graph)
-
 		#Get data from user-created function that extracts data from .csv file
 		train_x, train_y, test_x, test_y = get_data(DATA_FILE)
 
@@ -144,6 +147,8 @@ def train_net(x,y):
 		#network using TensorFlow "magic"
 		for epoch in range(epochs):
 			epoch_loss = 0
+
+			epoch_array = np.append(epoch_array, epoch)
 
 			i = 0
 			while i < len(train_x):
@@ -156,15 +161,17 @@ def train_net(x,y):
 				_, c = sess.run([optimizer, cost], feed_dict = {x: batch_x, y: batch_y})
 				epoch_loss += c
 
-				summary_str = sess.run(merged_summary_op, feed_dict={x: batch_x, y: batch_y})
-				
-				summary_writer.add_summary(summary_str, epoch*len(train_x) + i)
 
 				i += batch_size
 
+			cost_array = np.append(cost_array, epoch_loss)
 			print('Epoch: ', epoch, ' loss: ', epoch_loss)
 
 		saver.save(sess,'.\sin-model')
+
+		cost_plot = plt.scatter(epoch_array, cost_array, marker='o', color='r')
+		plt.legend((cost_plot), ('Cost'), loc='upper left')
+		plt.show()
 
 
 		correct_prediction = tf.equal(tf.round(tf.multiply(pred,100)), tf.round(tf.multiply(y,100)))
