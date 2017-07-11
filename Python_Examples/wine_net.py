@@ -1,6 +1,7 @@
 
 import tensorflow as tf 
 import numpy as np
+import matplotlib.pyplot as plt
 
 DATA_FILE = 'wine.csv'
 
@@ -78,6 +79,10 @@ def train_net(x,y):
 
 	epochs = 1500
 
+	epoch_array = np.array([epochs])
+
+	cost_array = np.array([epochs])
+
 	with tf.Session() as sess:
 		sess.run(tf.global_variables_initializer())
 
@@ -85,6 +90,8 @@ def train_net(x,y):
 
 		for epoch in range(epochs):
 			epoch_loss = 0
+
+			epoch_array = np.append(epoch_array, epoch)
 
 			i = 0
 			while i < (len(train_x) / batch_size):
@@ -102,7 +109,10 @@ def train_net(x,y):
 				i += batch_size
 
 			print('Epoch: ', epoch, ' loss: ', epoch_loss)
+			cost_array = np.append(cost_array, epoch_loss)
 
+		plt.scatter(epoch_array, cost_array, c='r')
+		plt.show()
 
 		t = 0
 		equal = 0
@@ -124,8 +134,5 @@ def train_net(x,y):
 			t += 1
 
 		print("Accuracy: ", equal / 50)
-
-
-
 
 train_net(x,y)
