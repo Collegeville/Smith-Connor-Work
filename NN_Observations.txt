@@ -25,6 +25,9 @@ Observations:
 		-Higher chance of convergence during training
 		-More accurate results during testing
 
+-Architecture:
+	-Network will always go faster the less output neurons
+
 Process:
 	1. Define desired output
 	2. Generate training and testing data using some sort of model

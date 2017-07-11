@@ -59,6 +59,21 @@ Aeroelastic Aircraft Parameter Estimation (2000): A-
 		-Motion and control variables used as network inputs
 		-Force and moment coefficients used as output variables (use different networks for each?)
 
-Neural Network Optimization of Dry Turning Parameters (2017): A+
+Neural Network Optimization of Dry Turning Parameters (2017): A-
 	-NN determined to successfully estimate dry turning parameters
 	-LOOK INTO: Model simulation
+
+Quality Parameters for Surfaces Processed by Superfinishing (2017): A+++
+	-32 experiments chosen to use in NN study
+	-Reasoning for using NN: dependence between inputs and outputs is nonlinear
+	-Great general explanation of neural networks
+	-LOOK INTO: VLSI neural chips
+	-Interesting observation: NN that is used for pattern recognition uses one hidden layer;
+	NN used for nonlinear function approx. uses two (such as this in particular)
+		-I've figured this out by experimentation
+	-Architecture: two hidden layers, 5 neurons each
+	-Paper never explicitly writes out algorithms
+	-IMPORTANT: better to train for one parameter at a time (learns patterns faster this way)
+	-Input and output scaled during training (look at SCALE and RE-SCALE equation)
+	-60,000 epochs to converge
+	

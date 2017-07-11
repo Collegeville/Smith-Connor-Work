@@ -17,5 +17,8 @@ http://math.bme.hu/~jtoth/pubtexts/kovacstoth.pdf
 Parameter Estimation of Aeroelastic Aircraft Using Neural Networks
 http://www.ias.ac.in/article/fulltext/sadh/025/02/0181-0191
 
-Neural Network Optimization of Dry Turning Parameters: *
+Neural Network Optimization of Dry Turning Parameters: 
 http://www.mdpi.com/2076-3417/7/6/642/htm
+
+Estimation of quality parameters for the surfaces processed by superfinishing:
+https://www.matec-conferences.org/articles/matecconf/pdf/2017/26/matecconf_imane2017_05001.pdf
