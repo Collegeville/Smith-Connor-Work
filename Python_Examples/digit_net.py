@@ -11,7 +11,6 @@ import numpy as np
 
 DATA_FILE = "digits.csv"
 
-#Try 1000; rest keep same
 neurons_layer1 = 700
 neurons_layer2 = 700
 
@@ -77,8 +76,7 @@ def model(input_data):
 	return output
 
 def train_model(x,y):
-	#Changed to 2048
-	batch_size = 2500
+	batch_size = 1024
 
 	pred = model(x)
 
@@ -87,7 +85,7 @@ def train_model(x,y):
 
 	optimizer = tf.train.AdamOptimizer(.001).minimize(cost)
 
-	epochs = 10000
+	epochs = 7500
 
 	#Run the processes built into the computation graph
 	#Iterates through graph for number of specified epochs
