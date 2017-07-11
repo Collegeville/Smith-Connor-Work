@@ -96,8 +96,6 @@ def model(input_data):
 	#resulting in fastest reduction of cost
 	layer1 = tf.tanh(layer1)
 
-	w_h = tf.summary.histogram("weights", hidden1['weights'])
-	b_h = tf.summary.histogram("biases", hidden1['biases'])
 	#Only one layer required for optimal output, as there is only one input feature
 	#and one output, but infinite possible output values
 	#layer2 = tf.add(tf.matmul(layer1, hidden2['weights']), hidden2['biases'])
@@ -125,12 +123,6 @@ def train_net(x,y):
 	optimizer = tf.train.AdamOptimizer(.0001).minimize(cost)
 
 	epochs = 1000
-
-
-	epoch_array = np.array([epochs])
-
-	cost_array = np.array([epochs])
-
 
 	#Initialize Saver object to save state of weights and biases for later use
 	saver = tf.train.Saver()
@@ -164,15 +156,9 @@ def train_net(x,y):
 
 				i += batch_size
 
-			cost_array = np.append(cost_array, epoch_loss)
 			print('Epoch: ', epoch, ' loss: ', epoch_loss)
 
 		saver.save(sess,'.\sin-model')
-
-		cost_plot = plt.scatter(epoch_array, cost_array, marker='o', color='r')
-		plt.legend((cost_plot), ('Cost'), loc='upper left')
-		plt.show()
-
 
 		correct_prediction = tf.equal(tf.round(tf.multiply(pred,100)), tf.round(tf.multiply(y,100)))
 
