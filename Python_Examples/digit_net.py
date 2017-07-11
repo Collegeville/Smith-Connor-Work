@@ -11,8 +11,8 @@ import numpy as np
 
 DATA_FILE = "digits.csv"
 
-neurons_layer1 = 700
-neurons_layer2 = 700
+neurons_layer1 = 1000
+neurons_layer2 = 1000
 
 x = tf.placeholder(tf.float32, [None, 16], name="input")
 y = tf.placeholder(tf.int32, name="targets")
@@ -76,7 +76,7 @@ def model(input_data):
 	return output
 
 def train_model(x,y):
-	batch_size = 1024
+	batch_size = 2048
 
 	pred = model(x)
 
