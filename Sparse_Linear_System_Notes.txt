@@ -11,8 +11,11 @@ Singular Matrix: Matrix in which determinant is 0 (usually only one value)
 Gaussian Elimination: Method to eliminate coefficients in linear systems using matrices in order to solve
 the linear systems
 
-Basic Iterative Methods: Beginning with given approximate solution, methods modify components of the 
-approximation, one or few at a time and in certain order, until convergence is reached
+Eigenvalues: Scalar values that result in transformation of matrices
+
+Basic Iterative Methods: Methods that use sparse matrices to solve large linear systems of equations
+	-Beginning with given approximate solution, methods modify components of the 
+	approximation, one or few at a time and in certain order, until convergence is reached
 	-Each modification called relaxation step, aims to remove one or more component of residual vector
 
 Jacobi Method: Iterative method to solve linear equations
@@ -25,5 +28,9 @@ Gauss-Seidel Method: Quicker version of Jacobi method
 
 IMPORTANT: The better the initial guess for the iterative methods, the faster the convergence
 
-Preconditioning: p.110
+Preconditioners: Matrix that is applied to iteration method prior to iterations to speed up convergence
+	-Preconditioning is the most critical ingredient in development of efficient solvers; will only increase in importance
 
+TO DO:
+-p. 261
+-Conjugate Gradient (Especially Preconditioners)

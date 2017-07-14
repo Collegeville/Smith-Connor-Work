@@ -27,3 +27,6 @@ http://colah.github.io/posts/2015-08-Understanding-LSTMs/
 
 Effectiveness of RNNs: (incredible)
 http://karpathy.github.io/2015/05/21/rnn-effectiveness/
+
+Description of Preconditioners:
+http://www.mathcs.emory.edu/~benzi/Web_papers/survey.pdf
