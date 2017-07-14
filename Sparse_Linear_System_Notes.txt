@@ -1,0 +1,29 @@
+Sparse Matrix: Matrix in which few values are nonzero
+	-Special techniques used to take advantage of this property
+	-Two types: structured and unstructured
+		-Difference between two types makes large difference for iterative solution methods
+		-Structured: Nonzero entries form regular pattern (often diagonally)
+
+Square Matrix: Matrix in which all dimensions are equal
+
+Singular Matrix: Matrix in which determinant is 0 (usually only one value)
+
+Gaussian Elimination: Method to eliminate coefficients in linear systems using matrices in order to solve
+the linear systems
+
+Basic Iterative Methods: Beginning with given approximate solution, methods modify components of the 
+approximation, one or few at a time and in certain order, until convergence is reached
+	-Each modification called relaxation step, aims to remove one or more component of residual vector
+
+Jacobi Method: Iterative method to solve linear equations
+	-Begin with initial values for the unknowns
+	-Each relaxation step results in the unknowns moving closer to convergence value
+
+Gauss-Seidel Method: Quicker version of Jacobi method
+	-As unknowns move closer to convergence, they are plugged into equation for next unknown,
+	resulting in quicker convergence across the system
+
+IMPORTANT: The better the initial guess for the iterative methods, the faster the convergence
+
+Preconditioning: p.110
+
