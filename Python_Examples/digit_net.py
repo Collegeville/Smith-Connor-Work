@@ -1,18 +1,11 @@
-'''
-Best acc: ~.94
-2 layers; 700 neurons each
-7500 epochs
-Default learning rate
-Batch_size = 256
-.75 dropout on first layer
-'''
+
 import tensorflow as tf 
 import numpy as np 
 
 DATA_FILE = "digits.csv"
 
-neurons_layer1 = 1000
-neurons_layer2 = 1000
+neurons_layer1 = 700
+neurons_layer2 = 700
 
 x = tf.placeholder(tf.float32, [None, 16], name="input")
 y = tf.placeholder(tf.int32, name="targets")
@@ -76,7 +69,7 @@ def model(input_data):
 	return output
 
 def train_model(x,y):
-	batch_size = 2048
+	batch_size = 2000
 
 	pred = model(x)
 
@@ -114,7 +107,6 @@ def train_model(x,y):
 					i += batch_size
 
 				print("Epoch: ", epoch, " loss: ", epoch_loss)
-
 
 			#Calculate accuracy on part of test set (whole test set inefficient with current method)
 			t = 0
