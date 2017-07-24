@@ -30,3 +30,6 @@ http://karpathy.github.io/2015/05/21/rnn-effectiveness/
 
 Description of Preconditioners:
 http://www.mathcs.emory.edu/~benzi/Web_papers/survey.pdf
+
+Preconditioned Conjugate Gradient in MATLAB:
+https://www.mathworks.com/help/matlab/ref/pcg.html
