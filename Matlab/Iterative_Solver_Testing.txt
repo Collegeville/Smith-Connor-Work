@@ -1,0 +1,6 @@
+Matrix 1:
+*********
+tol = 1e-08
+preconditioner = ichol(A)
+fastest convergence: 151
+*********
