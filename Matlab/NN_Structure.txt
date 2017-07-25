@@ -1,3 +1,4 @@
+Preconditioners: Matrix must be Positive Definite
 Preconditioned Conjugate Gradient (PCG): 
 -Only for symmetric, positive definite matrices
 -Parameters: tolerance, max_iterations, preconditioners
@@ -10,4 +11,10 @@ Minimum Residual Method (minres):
 -Must be symmetrical, not positive definite
 
 Generalized Minimum Residual Method (gmres):
--Must only be square
+-Must be square
+
+Biconjugate Gradients Stabalized (bicgstab):
+-Must be square
+
+LSQR:
+-No requirements, may take preconditioner
