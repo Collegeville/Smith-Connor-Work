@@ -1,6 +1,32 @@
-Matrix 1:
-*********
+General:
+-Must be square to use any iterative solver
+-If symmetrical, can use ichol or ilu
+-If not symmetrical, very difficult (impossible?) to converge
+-If possible, always use ichol
+  -The cases when it cannot be used are reason to use NN
+
+
+Matrix 2:
+********
+size = 494x494
+posdef 
+nonzero = .6%
+~~~~~~~~~~~~~~~~~~~~~~~
 tol = 1e-08
-preconditioner = ichol(A)
-fastest convergence: 151
+preconditioner = ichol
+iterative solver = bicgstab
+fastest convergence: 67.5
+*********
+
+
+Matrix 67:
+********
+size = 1473x1473
+posdef
+nonzero = .9%
+~~~~~~~~~~~~~~~~~~~~~~~
+tol = 1e-08
+preconditioner = ichol
+iterative solver = bicgstab
+fastest convergence: 8.5
 *********
