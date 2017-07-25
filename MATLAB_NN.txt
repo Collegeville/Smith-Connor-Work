@@ -1,0 +1,13 @@
+Preconditioned Conjugate Gradient (PCG): 
+-Only for symmetric, positive definite matrices
+-Parameters: tolerance, max_iterations, preconditioners
+-Calculate preconditioners with Neural Network?
+	-No set number of inputs/outputs; changes based on size of Matrix
+	-Could be potentially more efficient than standard Cholesky factorization
+	-Training/Testing data: Generate ideal preconditioners (some already generated??)
+
+Minimum Residual Method (minres):
+-Must be symmetrical, not positive definite
+
+Generalized Minimum Residual Method (gmres):
+-Must only be square
