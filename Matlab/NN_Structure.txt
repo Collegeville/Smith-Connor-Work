@@ -19,5 +19,7 @@ Generalized Minimum Residual Method (gmres):
 Biconjugate Gradients Stabalized (bicgstab):
 -Must be square
 
-LSQR:
--No requirements, may take preconditioner
+Training/Testing Data:
+-236 Positive Definite Matrices (190 training, 46 testing)
+-Input: All values of matrices
+-Output: Pre-calculated preconditioners
