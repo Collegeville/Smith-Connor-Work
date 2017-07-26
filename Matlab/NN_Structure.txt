@@ -23,3 +23,38 @@ Training/Testing Data:
 -236 Positive Definite Matrices (190 training, 46 testing)
 -Input: All values of matrices
 -Output: Pre-calculated preconditioners
+
+Matrices to Use (Only Positive Definite):
+start:1330
+
+chol(A,'lower')
+***************
+HB
+Bai
+Boeing
+FIDAP
+Mulvey
+Nasa
+Okunbor
+Rothberg
+Simon
+Cunningham
+Pothen
+Norris
+ACUSIM
+Oberwolfach
+Cannizzo
+DNVS
+GHS_psdef (pt.2,3)  -Inconsistent as a whole (ignore 4?)
+
+
+ichol(A, struct('type','ict','droptol',1e-3))
+*********************************************
+Andrews
+ND
+Schenk_AFE
+
+
+ichol(A, struct('type','ict','droptol',1e-3,'diagcomp',alpha))
+**************************************************************
+GHS_psdef (pt.1)
