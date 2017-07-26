@@ -1,4 +1,7 @@
 Preconditioners: Matrix must be Positive Definite
+
+KEY: Not going to have to actually solve problems, only generate Preconditioners 
+
 Preconditioned Conjugate Gradient (PCG): 
 -Only for symmetric, positive definite matrices
 -Parameters: tolerance, max_iterations, preconditioners

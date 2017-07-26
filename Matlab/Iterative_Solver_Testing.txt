@@ -2,8 +2,9 @@ General:
 -Must be square to use any iterative solver
 -If symmetrical, can use ichol or ilu
 -If not symmetrical, very difficult (impossible?) to converge
--If possible, always use ichol
-  -The cases when it cannot be used are reason to use NN
+-Important observation: When ichol is possible, convergence MUCH faster (importance of preconditioners)
+-If ichol doesn't work initially, try diagcomp
+-chol with 'lower' specification works best when possible
 
 
 Matrix 2:
@@ -11,11 +12,12 @@ Matrix 2:
 size = 494x494
 posdef 
 nonzero = .6%
+type = power network problem
 ~~~~~~~~~~~~~~~~~~~~~~~
 tol = 1e-08
-preconditioner = ichol
-iterative solver = bicgstab
-fastest convergence: 67.5
+preconditioner = chol, 'lower'
+iterative solver = bicgstabl
+fastest convergence: .2
 *********
 
 
@@ -24,9 +26,25 @@ Matrix 67:
 size = 1473x1473
 posdef
 nonzero = .9%
+type = structural problem
 ~~~~~~~~~~~~~~~~~~~~~~~
 tol = 1e-08
-preconditioner = ichol
-iterative solver = bicgstab
-fastest convergence: 8.5
+preconditioner = chol, 'lower'
+iterative solver = bicgstabl
+fastest convergence: .2
+*********
+
+
+
+Matrix 942:
+********
+size = 504855x504855
+posdef
+nonzero = .006%
+type = structural problem
+~~~~~~~~~~~~~~~~~~~~~~~
+tol = 1e-08
+preconditioner = ichol, drop tolerance 1e-3
+iterative solver = bicgstabl
+fastest convergence: 88.5
 *********
