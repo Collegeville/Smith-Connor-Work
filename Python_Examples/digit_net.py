@@ -4,8 +4,8 @@ import numpy as np
 
 DATA_FILE = "digits.csv"
 
-neurons_layer1 = 700
-neurons_layer2 = 700
+neurons_layer1 = 500
+neurons_layer2 = 500
 
 x = tf.placeholder(tf.float32, [None, 16], name="input")
 y = tf.placeholder(tf.int32, name="targets")
@@ -78,7 +78,7 @@ def train_model(x,y):
 
 	optimizer = tf.train.AdamOptimizer(.001).minimize(cost)
 
-	epochs = 7500
+	epochs = 10000
 
 	#Run the processes built into the computation graph
 	#Iterates through graph for number of specified epochs
