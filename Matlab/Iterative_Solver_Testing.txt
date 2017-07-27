@@ -6,7 +6,7 @@ General:
 -If ichol doesn't work initially, try diagcomp
 -chol with 'lower' specification works best when possible
 -Non-definite matrices can be preconditioned using ILU with udiag option (must also specify drop tolerance)
-	-Must be square
+	-However, these preconditioners have yet to increase efficiency
 
 Matrix 2:
 ********
