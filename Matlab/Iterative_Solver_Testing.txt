@@ -5,7 +5,8 @@ General:
 -Important observation: When ichol is possible, convergence MUCH faster (importance of preconditioners)
 -If ichol doesn't work initially, try diagcomp
 -chol with 'lower' specification works best when possible
-
+-Non-definite matrices can be preconditioned using ILU with udiag option (must also specify drop tolerance)
+	-Must be square
 
 Matrix 2:
 ********

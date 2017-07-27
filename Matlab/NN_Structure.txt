@@ -2,6 +2,9 @@ Preconditioners: Matrix must be Positive Definite
 
 KEY: Not going to have to actually solve problems, only generate Preconditioners 
 
+First make network for Pos.Def. matrices, then add all
+	-Question to ask: is it worth preconditioning non-definite matrices??
+
 Preconditioned Conjugate Gradient (PCG): 
 -Only for symmetric, positive definite matrices
 -Parameters: tolerance, max_iterations, preconditioners
@@ -24,8 +27,7 @@ Training/Testing Data:
 -Input: All values of matrices
 -Output: Pre-calculated preconditioners
 
-Matrices to Use (Only Positive Definite):
-start:1330
+Positive Definite Matrices:
 
 chol(A,'lower')
 ***************
@@ -46,15 +48,48 @@ Oberwolfach
 Cannizzo
 DNVS
 GHS_psdef (pt.2,3)  -Inconsistent as a whole (ignore 4?)
+Mathworks
+Lourakis
+Bates
+Schmid (1402)
+Bindel
+Pajek
+Cylshell
+Castrillion
+TKK
+JGD
+MaxPlanck
 
 
 ichol(A, struct('type','ict','droptol',1e-3))
 *********************************************
 Andrews
 ND
-Schenk_AFE
+Schenk_AFE (pt.1)
+AMD
+GHS_psdef (1422-23)
+INPRO
+UTEP
+BenElechi
+Wissgott
+McRae
+CEMW
+UM
+Botonakis
+Williams
 
 
 ichol(A, struct('type','ict','droptol',1e-3,'diagcomp',alpha))
 **************************************************************
 GHS_psdef (pt.1)
+Schenk_AFE (pt.2)
+
+
+==============================================================
+
+
+Non-definite matrices:
+
+ilu(A, setup) setup.type = ilutp, setup.droptol = 1e-6, setup.udiag = 1
+************************************************************************
+HB
