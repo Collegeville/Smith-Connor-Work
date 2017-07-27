@@ -3,24 +3,15 @@ Preconditioners: Matrix must be Positive Definite
 KEY: Not going to have to actually solve problems, only generate Preconditioners 
 
 First make network for Pos.Def. matrices, then add all
-	-Question to ask: is it worth preconditioning non-definite matrices??
+	***-Question to ask: is it worth preconditioning non-definite matrices??
+	-Possible to slightly adjust matrices to create more data?
 
-Preconditioned Conjugate Gradient (PCG): 
--Only for symmetric, positive definite matrices
--Parameters: tolerance, max_iterations, preconditioners
--Calculate preconditioners with Neural Network?
-	-No set number of inputs/outputs; changes based on size of Matrix
-	-Could be potentially more efficient than standard Cholesky factorization
-	-Training/Testing data: Generate ideal preconditioners (some already generated??)
+Initial Issue: How to export data from Matlab
+	-Immense size of some matrices (Lots of data to run through NN multiple times)
+		-Parallel Computing?
+	-.csv?
+	***-Possible to export only the nonzeros??
 
-Minimum Residual Method (minres):
--Must be symmetrical, not positive definite
-
-Generalized Minimum Residual Method (gmres):
--Must be square
-
-Biconjugate Gradients Stabalized (bicgstab):
--Must be square
 
 Training/Testing Data:
 -236 Positive Definite Matrices (190 training, 46 testing)
