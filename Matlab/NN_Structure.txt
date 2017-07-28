@@ -15,14 +15,16 @@ Initial Issue: How to export data from Matlab
 
 ***GO OVER BOTH PLANS WITH DR.HEROUX:
 	-Also ask for permission to install TensorFlow in Horizon
+	-Is 'lower' cholesky factorization a good preconditioner for small enough matrices?
 
 GENERATING DATA PLAN:
 	-Download all Positive Definite matrices to folder
 	-Create loop that runs through all matrices in folder
-	-For each matrix, try all three different types of preconditioners 
-		-If over certain size, don't even try option#1
+	-For each matrix, try all three different types of precondtioners 
+		-If over certain size, don't even try option#1 (>50000?)
 		-Use try/catch blocks to attempt all three preconditioners
 		-Method to check if one matrix is taking too long to generate Preconditioner??
+		-If third preconditioner doesn't work, increment alpha value
 	-Let loop run overnight
 
 
