@@ -1,16 +1,38 @@
 Preconditioners: Matrix must be Positive Definite
 
 KEY: Not going to have to actually solve problems, only generate Preconditioners 
+	-NO MATTER WHAT, TRAINING WILL TAKE A VERY LONG TIME
 
 First make network for Pos.Def. matrices, then add all
 	***-Question to ask: is it worth preconditioning non-definite matrices??
 	-Possible to slightly adjust matrices to create more data?
 
-Initial Issue: How to export data from Matlab
-	-Immense size of some matrices (Lots of data to run through NN multiple times)
-		-Parallel Computing?
-	-.csv?
-	***-Possible to export only the nonzeros??
+Initial Issue: How to export data from Matlab 
+	***-One massive .csv, or one for each matrix??
+	-Use another method to read data into TensorFlow
+		-***Problem: Preconditioners are generally larger than original nonzero matrices
+
+
+***GO OVER BOTH PLANS WITH DR.HEROUX:
+	-Also ask for permission to install TensorFlow in Horizon
+
+GENERATING DATA PLAN:
+	-Download all Positive Definite matrices to folder
+	-Create loop that runs through all matrices in folder
+	-For each matrix, try all three different types of preconditioners 
+		-If over certain size, don't even try option#1
+		-Use try/catch blocks to attempt all three preconditioners
+		-Method to check if one matrix is taking too long to generate Preconditioner??
+	-Let loop run overnight
+
+
+EXPORT PLAN:
+	-Create one file for each input matrix
+		-Generate name for each file: i = id, ("matrix%d" % i)
+	-Create a corresponding file for each preconditioner
+		-Generate name for each file: i = id, ("preconditioner%d" % i)
+	-Stuff data into Example protocol buffer, write to TFRecords file using TFRecordWriter
+	-Use TFRecordReader with decoder to read file into NN	
 
 
 Training/Testing Data:
