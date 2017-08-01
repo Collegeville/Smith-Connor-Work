@@ -1,32 +1,19 @@
-Preconditioners: Matrix must be Positive Definite
+Input: 
+	-Size of Matrix
+	-Number of nonzeros
+	-Symmetric
+	-2D/3D discretization
+	-Pos/Def
+	-Kind of problem
 
-KEY: Not going to have to actually solve problems, only generate Preconditioners 
-	-NO MATTER WHAT, TRAINING WILL TAKE A VERY LONG TIME
-
-First make network for Pos.Def. matrices, then add all
-	***-Question to ask: is it worth preconditioning non-definite matrices??
-	-Possible to slightly adjust matrices to create more data?
-
-Initial Issue: How to export data from Matlab 
-	***-One massive .csv, or one for each matrix??
-	-Use another method to read data into TensorFlow
-		-***Problem: Preconditioners are generally larger than original nonzero matrices
+Output:
+	-Tolerance
+	-Maximum number of iterations
+	-Type of preconditioner
+	-droptol
+	-diagcomp
 
 
-***GO OVER BOTH PLANS WITH DR.HEROUX:
-	-Also ask for permission to install TensorFlow in Horizon
-	-Initially only computing Positive Definite matrices
-	-Is 'lower' cholesky factorization a good preconditioner for small enough matrices?
-
-GENERATING DATA PLAN:
-	-Download all Positive Definite matrices to folder
-	-Create loop that runs through all matrices in folder
-	-For each matrix, try all three different types of precondtioners 
-		-If over certain size, don't even try option#1 (>50000?)
-		-Use try/catch blocks to attempt all three preconditioners
-		-Method to check if one matrix is taking too long to generate Preconditioner??
-		-If third preconditioner doesn't work, increment alpha value
-	-Let loop run overnight
 
 
 EXPORT PLAN:
@@ -45,7 +32,8 @@ Training/Testing Data:
 
 Positive Definite Matrices:
 
-chol(A,'lower')
+
+ichol(A, struct('type','ict','droptol',1e-3))
 ***************
 HB
 Bai
@@ -75,10 +63,6 @@ Castrillion
 TKK
 JGD
 MaxPlanck
-
-
-ichol(A, struct('type','ict','droptol',1e-3))
-*********************************************
 Andrews
 ND
 Schenk_AFE (pt.1)
@@ -101,11 +85,3 @@ GHS_psdef (pt.1)
 Schenk_AFE (pt.2)
 
 
-==============================================================
-
-
-Non-definite matrices:
-
-ilu(A, setup) setup.type = ilutp, setup.droptol = 1e-6, setup.udiag = 1
-************************************************************************
-HB
