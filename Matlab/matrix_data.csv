@@ -97,3 +97,13 @@ Size,Nonzeros,Symmetry,2D/3D,Pos/Def,Kind,Solver,Tol,Maxit,Precond,droptol,diagc
     17546,   121550,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
     18589,   128853,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
     19366,   134208,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+       48,      306,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+       48,      306,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+       48,      306,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+      306,     2018,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+      306,     2018,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+      289,     1377,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+      289,     1377,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+     9604,    85264,        1,         1,         1, 2D/3D problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+     9801,    87025,        1,         1,         1, 2D/3D problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+     9801,    87025,        1,         1,         1, 2D/3D problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
