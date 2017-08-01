@@ -3,3 +3,31 @@ Size,Nonzeros,Symmetry,2D/3D,Pos/Def,Kind,Solver,Tol,Maxit,Precond,droptol,diagc
       494,     1666,        1,         0,         1, power network problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
       662,     2474,        1,         0,         1, power network problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
       685,     3249,        1,         0,         1, power network problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+       48,      400,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+       66,     4356,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+      112,      640,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+      132,     3648,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+      153,     2423,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+      420,     7860,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+      420,     7860,        1,         1,         1, duplicate structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+     1074,    12960,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+     1083,    18437,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+     1086,    22070,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+     1473,    34241,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+     1473,    34241,        1,         1,         1, duplicate structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+     2003,    83883,        1,         1,         1, computational fluid dynamics problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+     1806,    63454,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+     3948,   117816,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+     4884,   290378,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+    10974,   428650,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+    11948,   149090,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+      817,     6853,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+      485,     3135,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+     3600,    26600,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+      138,      696,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+     3134,    45178,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+     3562,   159910,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+    15439,   252241,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+     1922,    30336,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+     1224,    56126,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+     4410,   219024,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
