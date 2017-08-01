@@ -47,3 +47,32 @@ Size,Nonzeros,Symmetry,2D/3D,Pos/Def,Kind,Solver,Tol,Maxit,Precond,droptol,diagc
      3562,     3562,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
     15439,    15439,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
      1922,     1922,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+      900,     7744,        1,         1,         1, 2D/3D problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+      147,     2449,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+      147,     2441,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+      237,     1017,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+      957,     4137,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+      960,    15844,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+      100,      594,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+      468,     5172,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+      675,     3255,        1,         1,         1, 2D/3D problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+      729,     4617,        1,         1,         1, 2D/3D problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+      362,     5786,        1,         1,         1, 2D/3D problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+      416,     2312,        1,         1,         1, electromagnetics problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+      588,    21418,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+    23052,  1143140,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+     8032,   355460,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+    46772,    46772,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+     4875,   105339,        1,         1,         1, materials problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+    13965,   322905,        1,         1,         1, materials problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+    24696,   583770,        1,         1,         1, materials problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+    52329,  2600295,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+      726,    34518,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+     1050,    26198,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+     1440,    44998,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+     4515,    97707,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+    10848,  1229776,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+    23052,  1142686,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+   217918, 11524432,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+     2410,    54840,        1,         1,         1, computational fluid dynamics problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+     2548,    57308,        1,         1,         1, computational fluid dynamics problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
