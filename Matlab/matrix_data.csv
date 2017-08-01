@@ -76,3 +76,24 @@ Size,Nonzeros,Symmetry,2D/3D,Pos/Def,Kind,Solver,Tol,Maxit,Precond,droptol,diagc
    217918, 11524432,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
      2410,    54840,        1,         1,         1, computational fluid dynamics problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
      2548,    57308,        1,         1,         1, computational fluid dynamics problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+     2568,    75628,        1,         1,         1, computational fluid dynamics problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+     6867,    98671,        1,         1,         1, computational fluid dynamics problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+     1821,    52685,        1,         1,         1, computational fluid dynamics problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+     1733,    22189,        1,         1,         1, computational fluid dynamics problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+       27,      279,        1,         1,         1, computational fluid dynamics problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+     3363,    99471,        1,         1,         1, computational fluid dynamics problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+    74752,   596992,        1,         0,         1, economic problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+     1824,    39208,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+     2146,    72250,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+     2910,   174296,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+     4704,   104756,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+    54870,  2677324,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+     8205,   125567,        1,         1,         1, acoustics problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+    70656,  1825580,        1,         1,         1, computational fluid dynamics problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+   123440,  3085406,        1,         1,         1, computational fluid dynamics problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+    16146,  1015156,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+    19779,  1316789,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+    66127,  1660579,        1,         1,         1, acoustics problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+    17546,   121550,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+    18589,   128853,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+    19366,   134208,        1,         1,         1, structural problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
