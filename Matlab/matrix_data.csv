@@ -108,10 +108,24 @@ Size,Nonzeros,Symmetry,2D/3D,Pos/Def,Kind,Solver,Tol,Maxit,Precond,droptol,diagc
 9801,87025,1,1,1, 2D/3D problem, cg,0.000001,100, ichol,0,0
 9801,87025,1,1,1, 2D/3D problem, cg,0.000001,100, ichol,0,0
 9000,3279690,1,1,1, 2D/3D problem, cg,0.000001,100, ichol,0.00000001,0
-    18000,  6897316,        1,         1,         1, 2D/3D problem, cg, 1.000000e-06,       150, ichol, 1.000000e-06, 1.000000e-03
-    36000, 14220946,        1,         1,         1, 2D/3D problem, cg, 1.000000e-06,       150, ichol, 1.000000e-06, 1.000000e-03
-    72000, 28715634,        1,         1,         1, 2D/3D problem, cg, 1.000000e-06,       170, ichol, 1.000000e-06, 1.000000e-03
-   504855, 17562051,        1,         1,         1, subsequent structural problem, cg, 1.000000e-06,        50, ichol, 1.000000e-05,         0
-   504855, 17562051,        1,         1,         1, subsequent structural problem, cg, 1.000000e-06,        50, ichol, 1.000000e-05,         0
-   504855, 17579155,        1,         1,         1, subsequent structural problem, cg, 1.000000e-06,        50, ichol, 1.000000e-05,         0
-   504855, 17579155,        1,         1,         1, subsequent structural problem, cg, 1.000000e-06,        50, ichol, 1.000000e-05,         0
+18000,6897316,1,1,1, 2D/3D problem, cg,0.000001,150, ichol,0.000001,0.001
+36000,14220946,1,1,1, 2D/3D problem, cg,0.000001,150, ichol,0.000001,0.001
+72000,28715634,1,1,1, 2D/3D problem, cg,0.000001,170, ichol,0.000001,0.001
+504855,17562051,1,1,1, subsequent structural problem, cg,0.000001,50, ichol,0.00001,0
+504855,17562051,1,1,1, subsequent structural problem, cg,0.000001,50, ichol,0.00001,0
+504855,17579155,1,1,1, subsequent structural problem, cg,0.000001,50, ichol,0.00001,0
+504855,17579155,1,1,1, subsequent structural problem, cg,0.000001,50, ichol,0.00001,0
+14822,715804,1,1,1, computational fluid dynamics problem, cg,0.000001,10, ichol,0,0
+17361,1021159,1,1,1, duplicate model reduction problem, cg,0.000001,10, ichol,0,0
+17361,340431,1,1,1, duplicate model reduction problem, cg,0.000001,10, ichol,0,0
+11445,176117,1,1,1, duplicate model reduction problem, cg,0.000001,10, ichol,0,0
+4257,4257,1,1,1, duplicate model reduction problem, cg,0.000001,10, ichol,0,0
+20360,20360,1,1,1, duplicate model reduction problem, cg,0.000001,10, ichol,0,0
+4098,72356,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+73752,2148558,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+90449,4427725,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+90449,3686223,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+179860,4598604,1,1,1, structural problem, cg,0.000001,1000, ichol,0.00001,0.1
+   121728,  3777036,        1,         1,         1, structural problem, cg, 1.000000e-06,      1000, ichol, 1.000000e-05, 1.000000e-01
+   140874,  3568176,        1,         1,         1, structural problem, cg, 1.000000e-06,      1000, ichol, 1.000000e-05, 1.000000e-01
+   114919,  3303553,        1,         1,         1, structural problem, cg, 1.000000e-06,      1500, ichol, 1.000000e-06, 1.000000e-01
