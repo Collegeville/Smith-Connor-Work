@@ -1,0 +1,5 @@
+Size,Nonzeros,Symmetry,2D/3D,Pos/Def,Kind,Solver,Tol,Maxit,Precond,droptol,diagcomp
+     1138,     4054,        1,         0,         1, power network problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+      494,     1666,        1,         0,         1, power network problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+      662,     2474,        1,         0,         1, power network problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
+      685,     3249,        1,         0,         1, power network problem, cg, 1.000000e-06,       100, ichol, 0.000000e+00,         0
