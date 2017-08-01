@@ -6,7 +6,7 @@ Input:
 	-Pos/Def
 	-Kind of problem
 
-Output:
+Output: (More than one network for outputs?)
 	-Tolerance
 	-Maximum number of iterations
 	-Type of preconditioner
