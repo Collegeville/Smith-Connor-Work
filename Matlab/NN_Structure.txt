@@ -27,7 +27,10 @@ EXPORT PLAN:
 
 Training/Testing Data:
 -236 Positive Definite Matrices (190 training, 46 testing)
+-***Look through drop tolerances; save memory?
+-Redo many matrices with different input tolerances (First use only 1e-6)
 -Input: All values of matrices
+-Layers: Look into RNN/CNN??
 -Output: Pre-calculated preconditioners
 
 Positive Definite Matrices:
