@@ -126,6 +126,32 @@ Size,Nonzeros,Symmetry,2D/3D,Pos/Def,Kind,Solver,Tol,Maxit,Precond,droptol,diagc
 90449,4427725,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
 90449,3686223,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
 179860,4598604,1,1,1, structural problem, cg,0.000001,1000, ichol,0.00001,0.1
-   121728,  3777036,        1,         1,         1, structural problem, cg, 1.000000e-06,      1000, ichol, 1.000000e-05, 1.000000e-01
-   140874,  3568176,        1,         1,         1, structural problem, cg, 1.000000e-06,      1000, ichol, 1.000000e-05, 1.000000e-01
-   114919,  3303553,        1,         1,         1, structural problem, cg, 1.000000e-06,      1500, ichol, 1.000000e-06, 1.000000e-01
+121728,3777036,1,1,1, structural problem, cg,0.000001,1000, ichol,0.00001,0.1
+140874,3568176,1,1,1, structural problem, cg,0.000001,1000, ichol,0.00001,0.1
+114919,3303553,1,1,1, structural problem, cg,0.000001,1500, ichol,0.000001,0.1
+30401,471601,1,1,1, random 2D/3D problem, cg,0.000001,10, ichol,0,0
+36441,565761,1,1,1, random 2D/3D problem, cg,0.000001,10, ichol,0,0
+47072,2329056,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+50000,349968,1,0,1, optimization problem, cg,0.000001,1000, ichol,0.0000001,0.1
+48962,512084,1,0,1, optimization problem, cg,0.000001,10, ichol,0,0
+40000,199200,1,0,1, optimization problem, cg,0.000001,10, ichol,0,0
+40806,203622,1,0,1, optimization problem, cg,0.000001,10, ichol,0,0
+40000,197608,1,0,1, optimization problem, cg,0.000001,10, ichol,0,0
+40000,197608,1,0,1, duplicate optimization problem, cg,0.000001,10, ichol,0,0
+7102,340200,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+7102,170134,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+10581,770811,1,1,1, computer graphics/vision problem, cg,0.000001,20, ichol,0.0000001,0.1
+2541,7361,1,0,1, statistical/mathematical problem, cg,0.000001,10, ichol,0,0
+82654,574458,1,1,1, thermal problem, cg,0.000001,300, ichol,0.0000001,0.1
+1228045,8580313,1,1,1, thermal problem, cg,0.000001,1200, ichol,0.00001,0.1
+10605,144579,1,1,1, thermal problem, cg,0.000001,10, ichol,0,0
+10605,144579,1,1,1, thermal problem, cg,0.000001,10, ichol,0,0
+150102,726674,1,0,1, circuit simulation problem, cg,0.000001,500, ichol,0.00001,0.1
+1585478,7660826,1,0,1, circuit simulation problem, cg,0.000001,1000, ichol,0.00001,0.1
+80800,542184,1,1,1, structural problem, cg,0.000001,500, ichol,0.00000001,0.1
+715176,4817870,1,1,1, structural problem, cg,0.000001,750, ichol,0.00001,0.1
+17361,1021159,1,1,1, model reduction problem, cg,0.000001,10, ichol,0,0
+19998,99982,1,1,1, model reduction problem, cg,0.000001,10, ichol,0,0
+       18,       82,        1,         1,         1, model reduction problem, cg, 1.000000e-06,        10, ichol, 0.000000e+00,         0
+    19994,    79966,        1,         1,         1, model reduction problem, cg, 1.000000e-06,        10, ichol, 0.000000e+00,         0
+       14,       46,        1,         1,         1, model reduction problem, cg, 1.000000e-06,        10, ichol, 0.000000e+00,         0
