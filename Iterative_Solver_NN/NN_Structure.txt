@@ -1,0 +1,85 @@
+Input: 
+	-Size of Matrix
+	-Number of nonzeros
+	-Symmetric
+	-2D/3D discretization
+	-Pos/Def
+	-Kind of problem
+
+Output: (More than one network for outputs?)
+	-Tolerance
+	-Maximum number of iterations
+	-Type of preconditioner
+	-droptol
+	-diagcomp
+
+
+
+
+EXPORT PLAN:
+	-.csv decoder in TF
+	-Within reader function, translate strings into ints, then back into strings @ output
+	-Scale ints before and after NN
+
+
+Training/Testing Data:
+-236 Positive Definite Matrices 
+-Input: All values of matrices
+-Layers: Look into RNN/CNN??
+-Output: Pre-calculated preconditioners
+
+Positive Definite Matrices:
+
+
+ichol(A, struct('type','ict','droptol',1e-3))
+***************
+HB
+Bai
+Boeing
+FIDAP
+Mulvey
+Nasa
+Okunbor
+Rothberg
+Simon
+Cunningham
+Pothen
+Norris
+ACUSIM
+Oberwolfach
+Cannizzo
+DNVS
+GHS_psdef (pt.2,3)  -Inconsistent as a whole (ignore 4?)
+Mathworks
+Lourakis
+Bates
+Schmid (1402)
+Bindel
+Pajek
+Cylshell
+Castrillion
+TKK
+JGD
+MaxPlanck
+Andrews
+ND
+Schenk_AFE (pt.1)
+AMD
+GHS_psdef (1422-23)
+INPRO
+UTEP
+BenElechi
+Wissgott
+McRae
+CEMW
+UM
+Botonakis
+Williams
+
+
+ichol(A, struct('type','ict','droptol',1e-3,'diagcomp',alpha))
+**************************************************************
+GHS_psdef (pt.1)
+Schenk_AFE (pt.2)
+
+
