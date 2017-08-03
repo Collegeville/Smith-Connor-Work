@@ -1,0 +1,476 @@
+10848,1229776,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+72000,28715634,1,1,1, 2D/3D problem, cg,0.00000001,170, ichol,0.000001,0.001
+503625,17550675,1,1,1, structural problem, cg,0.01,9000, ichol,0.00001,0.1
+1922,30336,1,1,1, structural problem, cg,0.00001,10, ichol,0,0
+1138,4054,1,1,1, power network problem, cg,0.001,10, ichol,0.001,0
+923136,40373538,1,1,1, structural problem, cg,0.0001,1200, ichol,0.001,0.1
+1440,44998,1,1,1, structural problem, cg,0.01,10, ichol,0,0
+153,2423,1,1,1, structural problem, cg,0.00001,10, ichol,0,0
+259789,4242673,1,1,1, electromagnetics problem, cg,0.000001,300, ichol,0.001,0.1
+72000,28715634,1,1,1, 2D/3D problem, cg,0.000001,170, ichol,0.000001,0.001
+20,158,1,0,1, combinatorial problem, cg,0.000001,10, ichol,0.00001,0
+3363,99471,1,1,1, computational fluid dynamics problem, cg,0.000001,10, ichol,0,0
+16129,253009,1,1,1, 2D/3D problem, cg,0.000001,10, ichol,0.001,0.1
+81920,327680,1,1,1, computational fluid dynamics problem, cg,0.00000001,10, ichol,0.00001,0
+289,1377,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+1922,30336,1,1,1, structural problem, cg,0.01,10, ichol,0,0
+503625,17550675,1,1,1, structural problem, cg,0.000001,9000, ichol,0.00001,0.1
+15439,252241,1,1,1, structural problem, cg,0.1,10, ichol,0,0
+700,12654,1,0,1, combinatorial problem, cg,0.000001,10, ichol,0.00001,0
+19994,79966,1,1,1, model reduction problem, cg,0.000001,10, ichol,0,0
+138,138,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+1922,30336,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+504855,17562051,1,1,1, subsequent structural problem, cg,0.01,50, ichol,0.00001,0
+504855,17562051,1,1,1, subsequent structural problem, cg,0.00000001,50, ichol,0.00001,0
+420,7860,1,1,1, structural problem, cg,0.001,10, ichol,0,0
+1585478,7660826,1,0,1, circuit simulation problem, cg,0.00000001,1000, ichol,0.00001,0.1
+19999,554435,1,0,1, combinatorial problem, cg,0.00000001,10, ichol,0.00001,0
+36441,565761,1,1,1, random 2D/3D problem, cg,0.000001,10, ichol,0,0
+150102,726674,1,0,1, circuit simulation problem, cg,0.01,1000, ichol,0.00001,0.1
+27,279,1,1,1, computational fluid dynamics problem, cg,0.000001,10, ichol,0,0
+1228045,8580313,1,1,1, thermal problem, cg,0.00000001,1200, ichol,0.00001,0.1
+306,2018,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+1473,34241,1,1,1, structural problem, cg,0.00000001,10, ichol,0,0
+420,7860,1,1,1, duplicate structural problem, cg,0.00000001,10, ichol,0,0
+1473,34241,1,1,1, structural problem, cg,0.001,10, ichol,0,0
+999999,4995991,1,1,1, 2D/3D problem, cg,0.000001,1300, ichol,0.001,0.1
+150102,726674,1,0,1, circuit simulation problem, cg,0.0001,1000, ichol,0.00001,0.1
+112,640,1,1,1, structural problem, cg,0.00000001,10, ichol,0,0
+957,4137,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+923136,40373538,1,1,1, structural problem, cg,0.001,1200, ichol,0.001,0.1
+1473,1473,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+62451,4007383,1,1,1, 2D/3D problem, cg,0.00000001,200, ichol,0.001,0.1
+150102,726674,1,0,1, circuit simulation problem, cg,0.00000001,500, ichol,0.00001,0.1
+153,2423,1,1,1, structural problem, cg,0.1,10, ichol,0,0
+4875,105339,1,1,1, materials problem, cg,0.000001,10, ichol,0,0
+3600,26600,1,1,1, structural problem, cg,0.00000001,10, ichol,0,0
+112,640,1,1,1, structural problem, cg,0.1,10, ichol,0,0
+1806,63454,1,1,1, structural problem, cg,0.00001,10, ichol,0,0
+2003,83883,1,1,1, computational fluid dynamics problem, cg,0.01,10, ichol,0,0
+503625,17550675,1,1,1, structural problem, cg,0.0001,9000, ichol,0.00001,0.1
+15439,252241,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+36417,4344765,1,0,1, weighted undirected graph, cg,0.000001,1500, ichol,0.001,0.1
+90449,4427725,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+13681,676515,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+50000,349968,1,0,1, optimization problem, cg,0.000001,1000, ichol,0.0000001,0.1
+1440,44998,1,1,1, structural problem, cg,0.001,10, ichol,0,0
+729,4617,1,1,1, 2D/3D problem, cg,0.000001,10, ichol,0,0
+36000,14220946,1,1,1, 2D/3D problem, cg,0.000001,150, ichol,0.000001,0.001
+17361,1021159,1,1,1, duplicate model reduction problem, cg,0.00000001,10, ichol,0,0
+10581,770811,1,1,1, computer graphics/vision problem, cg,0.00000001,20, ichol,0.0000001,0.1
+4410,219024,1,1,1, structural problem, cg,0.00000001,10, ichol,0,0
+25710,3749582,1,1,1, structural problem, cg,0.000001,500, ichol,0.001,0.1
+147,2449,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+11948,149090,1,1,1, structural problem, cg,0.1,10, ichol,0,0
+17361,1021159,1,1,1, model reduction problem, cg,0.000001,10, ichol,0,0
+112,640,1,1,1, structural problem, cg,0.001,10, ichol,0,0
+132,3648,1,1,1, structural problem, cg,0.00001,10, ichol,0,0
+3562,159910,1,1,1, structural problem, cg,0.01,10, ichol,0,0
+150102,726674,1,0,1, circuit simulation problem, cg,0.000001,500, ichol,0.00001,0.1
+306,2018,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+9604,85264,1,1,1, 2D/3D problem, cg,0.000001,10, ichol,0,0
+11445,176117,1,1,1, duplicate model reduction problem, cg,0.00000001,10, ichol,0,0
+123440,3085406,1,1,1, computational fluid dynamics problem, cg,0.000001,10, ichol,0,0
+65025,1030225,1,1,1, 2D/3D problem, cg,0.000001,10, ichol,0.001,0.1
+70656,1825580,1,1,1, computational fluid dynamics problem, cg,0.000001,10, ichol,0,0
+73752,2148558,1,1,1, structural problem, cg,0.00000001,10, ichol,0,0
+416,2312,1,1,1, electromagnetics problem, cg,0.000001,10, ichol,0,0
+90449,3686223,1,1,1, structural problem, cg,0.00000001,10, ichol,0,0
+80800,542184,1,1,1, structural problem, cg,0.000001,500, ichol,0.00000001,0.1
+503625,17550675,1,1,1, structural problem, cg,0.000001,9000, ichol,0.00001,0.1
+10605,144579,1,1,1, thermal problem, cg,0.00000001,10, ichol,0,0
+90449,4427725,1,1,1, structural problem, cg,0.00000001,10, ichol,0,0
+217918,11524432,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+3948,117816,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+52329,2600295,1,1,1, structural problem, cg,0.001,10, ichol,0,0
+3562,159910,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+200,2890,1,0,1, combinatorial problem, cg,0.000001,10, ichol,0.00001,0
+3200,18316,1,1,1, electromagnetics problem, cg,0.000001,10, ichol,0,0
+817,6853,1,1,1, structural problem, cg,0.00000001,10, ichol,0,0
+179860,4598604,1,1,1, structural problem, cg,0.000001,1000, ichol,0.00001,0.1
+14822,715804,1,1,1, computational fluid dynamics problem, cg,0.000001,10, ichol,0,0
+54870,2677324,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+500,8478,1,0,1, combinatorial problem, cg,0.00000001,10, ichol,0.00001,0
+4098,72356,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+52329,2600295,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+5489,217651,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+48,400,1,1,1, structural problem, cg,0.00001,10, ichol,0,0
+19779,1316789,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+1086,22070,1,1,1, structural problem, cg,0.00001,10, ichol,0,0
+15439,252241,1,1,1, structural problem, cg,0.00001,10, ichol,0,0
+503625,17550675,1,1,1, structural problem, cg,0.01,9000, ichol,0.00001,0.1
+525825,3674625,1,1,1, computational fluid dynamics problem, cg,0.00000001,400, ichol,0.001,0.1
+1437960,60236322,1,1,1, structural problem, cg,0.0001,1200, ichol,0.001,0.1
+13965,322905,1,1,1, materials problem, cg,0.001,10, ichol,0,0
+17361,340431,1,1,1, duplicate model reduction problem, cg,0.000001,10, ichol,0,0
+4884,290378,1,1,1, structural problem, cg,0.01,10, ichol,0,0
+16129,253009,1,1,1, 2D/3D problem, cg,0.00000001,10, ichol,0.001,0.1
+11948,149090,1,1,1, structural problem, cg,0.00001,10, ichol,0,0
+817,6853,1,1,1, structural problem, cg,0.1,10, ichol,0,0
+20000,554466,1,0,1, combinatorial problem, cg,0.00000001,10, ichol,0.00001,0
+1465137,21005389,1,1,1, computational fluid dynamics problem, cg,0.0001,1200, ichol,0.001,0.1
+1050,26198,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+204316,1423116,1,1,1, thermal problem, cg,0.000001,10, ichol,0.00001,0
+5357,207123,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+18000,6897316,1,1,1, 2D/3D problem, cg,0.00000001,150, ichol,0.000001,0.001
+112,640,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+5489,262411,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+23052,1142686,1,1,1, structural problem, cg,0.01,10, ichol,0,0
+10605,144579,1,1,1, thermal problem, cg,0.00000001,10, ichol,0,0
+2146,72250,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+5489,262943,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+200,2890,1,0,1, combinatorial problem, cg,0.00000001,10, ichol,0.00001,0
+9000,3279690,1,1,1, 2D/3D problem, cg,0.00000001,100, ichol,0.00000001,0
+685,3249,1,1,1, power network problem, cg,0.001,10, ichol,0.001,0
+138,696,1,1,1, structural problem, cg,0.00000001,10, ichol,0,0
+588,21418,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+1465137,21005389,1,1,1, computational fluid dynamics problem, cg,0.001,1200, ichol,0.001,0.1
+500,8478,1,0,1, combinatorial problem, cg,0.000001,10, ichol,0.00001,0
+485,3135,1,1,1, structural problem, cg,0.001,10, ichol,0,0
+66127,1660579,1,1,1, acoustics problem, cg,0.000001,10, ichol,0,0
+48,400,1,1,1, structural problem, cg,0.001,10, ichol,0,0
+10581,770811,1,1,1, computer graphics/vision problem, cg,0.000001,20, ichol,0.0000001,0.1
+726,34518,1,1,1, structural problem, cg,0.001,10, ichol,0,0
+8032,355460,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+504855,17562051,1,1,1, subsequent structural problem, cg,0.00000001,50, ichol,0.00001,0
+2003,83883,1,1,1, computational fluid dynamics problem, cg,0.001,10, ichol,0,0
+4410,219024,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+4884,290378,1,1,1, structural problem, cg,0.00000001,10, ichol,0,0
+999999,4995991,1,1,1, 2D/3D problem, cg,0.00000001,1300, ichol,0.001,0.1
+Size,Nonzeros,Symmetry,2D/3D,Pos/Def,Kind,Solver,Tol,Maxit,Precond,droptol,diagcomp
+8205,125567,1,1,1, acoustics problem, cg,0.000001,10, ichol,0,0
+9801,87025,1,1,1, 2D/3D problem, cg,0.000001,10, ichol,0,0
+525825,3674625,1,1,1, computational fluid dynamics problem, cg,0.000001,400, ichol,0.001,0.1
+1806,63454,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+1473,34241,1,1,1, duplicate structural problem, cg,0.01,10, ichol,0,0
+14822,715804,1,1,1, computational fluid dynamics problem, cg,0.00000001,10, ichol,0,0
+504855,17579155,1,1,1, subsequent structural problem, cg,0.00000001,60, ichol,0.00001,0
+10974,428650,1,1,1, structural problem, cg,0.001,10, ichol,0,0
+146689,3636643,1,1,1, 2D/3D problem, cg,0.00000001,10, ichol,0.001,0.1
+504855,17562051,1,1,1, subsequent structural problem, cg,0.0001,50, ichol,0.00001,0
+48,400,1,1,1, structural problem, cg,0.01,10, ichol,0,0
+4515,97707,1,1,1, structural problem, cg,0.01,10, ichol,0,0
+1086,22070,1,1,1, structural problem, cg,0.001,10, ichol,0,0
+66,4356,1,1,1, structural problem, cg,0.01,10, ichol,0,0
+1473,34241,1,1,1, duplicate structural problem, cg,0.1,10, ichol,0,0
+13965,322905,1,1,1, materials problem, cg,0.01,10, ichol,0,0
+504855,17562051,1,1,1, subsequent structural problem, cg,0.00000001,50, ichol,0.00001,0
+100,594,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+3600,26600,1,1,1, structural problem, cg,0.1,10, ichol,0,0
+420,7860,1,1,1, duplicate structural problem, cg,0.000001,10, ichol,0,0
+20,158,1,0,1, combinatorial problem, cg,0.00000001,10, ichol,0.00001,0
+40000,199200,1,0,1, optimization problem, cg,0.000001,10, ichol,0,0
+81920,327680,1,1,1, computational fluid dynamics problem, cg,0.000001,10, ichol,0.00001,0
+19366,134208,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+1086,22070,1,1,1, structural problem, cg,0.01,10, ichol,0,0
+153,2423,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+23052,1142686,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+5489,217681,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+503625,17550675,1,1,1, structural problem, cg,0.0001,9000, ichol,0.00001,0.1
+1585478,7660826,1,0,1, circuit simulation problem, cg,0.01,1000, ichol,0.00001,0.1
+30401,471601,1,1,1, random 2D/3D problem, cg,0.000001,10, ichol,0,0
+504855,17579155,1,1,1, subsequent structural problem, cg,0.01,50, ichol,0.00001,0
+1922,30336,1,1,1, structural problem, cg,0.00000001,10, ichol,0,0
+4800,27520,1,1,1, electromagnetics problem, cg,0.000001,10, ichol,0,0
+923136,40373538,1,1,1, structural problem, cg,0.001,1200, ichol,0.001,0.1
+503625,17550675,1,1,1, structural problem, cg,0.01,9000, ichol,0.00001,0.1
+900,7744,1,1,1, 2D/3D problem, cg,0.000001,10, ichol,0,0
+102158,711558,1,1,1, thermal problem, cg,0.000001,10, ichol,0.00001,0
+66,4356,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+504855,17579155,1,1,1, subsequent structural problem, cg,0.00000001,50, ichol,0.00001,0
+420,7860,1,1,1, duplicate structural problem, cg,0.1,10, ichol,0,0
+3562,159910,1,1,1, structural problem, cg,0.001,10, ichol,0,0
+10605,144579,1,1,1, thermal problem, cg,0.000001,10, ichol,0,0
+138,696,1,1,1, structural problem, cg,0.00001,10, ichol,0,0
+504855,17562051,1,1,1, subsequent structural problem, cg,0.00000001,60, ichol,0.00001,0
+138,696,1,1,1, structural problem, cg,0.001,10, ichol,0,0
+3134,45178,1,1,1, structural problem, cg,0.00001,10, ichol,0,0
+503625,17550675,1,1,1, structural problem, cg,0.01,9000, ichol,0.00001,0.1
+3562,159910,1,1,1, structural problem, cg,0.1,10, ichol,0,0
+817,6853,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+1585478,7660826,1,0,1, circuit simulation problem, cg,0.0001,1000, ichol,0.00001,0.1
+11948,149090,1,1,1, structural problem, cg,0.001,10, ichol,0,0
+3948,117816,1,1,1, structural problem, cg,0.00000001,10, ichol,0,0
+9000,3279690,1,1,1, 2D/3D problem, cg,0.000001,100, ichol,0.00000001,0
+48,400,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+102158,711558,1,1,1, thermal problem, cg,0.00000001,10, ichol,0.00001,0
+1074,12960,1,1,1, structural problem, cg,0.01,10, ichol,0,0
+36000,14220946,1,1,1, 2D/3D problem, cg,0.00000001,150, ichol,0.000001,0.001
+11948,149090,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+90449,3686223,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+1086,22070,1,1,1, structural problem, cg,0.1,10, ichol,0,0
+11948,149090,1,1,1, structural problem, cg,0.01,10, ichol,0,0
+3134,3134,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+289,1377,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+7102,340200,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+485,3135,1,1,1, structural problem, cg,0.1,10, ichol,0,0
+504855,17579155,1,1,1, subsequent structural problem, cg,0.00000001,50, ichol,0.00001,0
+1224,56126,1,1,1, structural problem, cg,0.001,10, ichol,0,0
+153,2423,1,1,1, structural problem, cg,0.00000001,10, ichol,0,0
+817,6853,1,1,1, structural problem, cg,0.01,10, ichol,0,0
+1821,52685,1,1,1, computational fluid dynamics problem, cg,0.000001,10, ichol,0,0
+1473,34241,1,1,1, structural problem, cg,0.1,10, ichol,0,0
+83334,6010480,1,1,1, 2D/3D problem, cg,0.00000001,200, ichol,0.001,0.1
+2910,174296,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+3134,45178,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+1074,12960,1,1,1, structural problem, cg,0.00000001,10, ichol,0,0
+485,3135,1,1,1, structural problem, cg,0.00001,10, ichol,0,0
+10974,428650,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+4884,290378,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+1922,1922,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+23052,1143140,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+1074,12960,1,1,1, structural problem, cg,0.00001,10, ichol,0,0
+48,306,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+468,5172,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+503625,17550675,1,1,1, structural problem, cg,0.01,9000, ichol,0.00001,0.1
+138,696,1,1,1, structural problem, cg,0.01,10, ichol,0,0
+4410,219024,1,1,1, structural problem, cg,0.00001,10, ichol,0,0
+503625,17550675,1,1,1, structural problem, cg,0.0001,9000, ichol,0.00001,0.1
+147,2441,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+1473,19659,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+3562,159910,1,1,1, structural problem, cg,0.00000001,10, ichol,0,0
+1280,22778,0,1,1, electromagnetics problem, cg,0.000001,10, ichol,0,0
+504855,17562051,1,1,1, subsequent structural problem, cg,0.00000001,60, ichol,0.00001,0
+3600,26600,1,1,1, structural problem, cg,0.01,10, ichol,0,0
+3948,117816,1,1,1, structural problem, cg,0.00001,10, ichol,0,0
+52329,2600295,1,1,1, structural problem, cg,0.01,10, ichol,0,0
+420,7860,1,1,1, duplicate structural problem, cg,0.001,10, ichol,0,0
+199,2873,1,0,1, combinatorial problem, cg,0.00000001,10, ichol,0.00001,0
+20000,554466,1,0,1, combinatorial problem, cg,0.000001,10, ichol,0.00001,0
+82654,574458,1,1,1, thermal problem, cg,0.00000001,300, ichol,0.0000001,0.1
+1074,12960,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+4704,104756,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+960,15844,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+685,3249,1,0,1, power network problem, cg,0.000001,10, ichol,0,0
+420,7860,1,1,1, structural problem, cg,0.00001,10, ichol,0,0
+48962,512084,1,0,1, optimization problem, cg,0.000001,10, ichol,0,0
+504855,17579155,1,1,1, subsequent structural problem, cg,0.0001,50, ichol,0.00001,0
+1086,22070,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+150,2040,1,0,1, combinatorial problem, cg,0.000001,10, ichol,0.00001,0
+1074,1074,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+2548,57308,1,1,1, computational fluid dynamics problem, cg,0.000001,10, ichol,0,0
+4410,219024,1,1,1, structural problem, cg,0.1,10, ichol,0,0
+1473,34241,1,1,1, duplicate structural problem, cg,0.00000001,10, ichol,0,0
+1083,18437,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+1733,22189,1,1,1, computational fluid dynamics problem, cg,0.000001,10, ichol,0,0
+19,147,1,0,1, combinatorial problem, cg,0.00000001,10, ichol,0.00001,0
+4098,72356,1,1,1, structural problem, cg,0.00000001,10, ichol,0,0
+726713,5080961,1,1,1, electromagnetics problem, cg,0.000001,900, ichol,0.001,0.1
+504855,17562051,1,1,1, subsequent structural problem, cg,0.000001,50, ichol,0.00001,0
+362,5786,1,1,1, 2D/3D problem, cg,0.000001,10, ichol,0,0
+112,640,1,1,1, structural problem, cg,0.01,10, ichol,0,0
+19999,554435,1,0,1, combinatorial problem, cg,0.000001,10, ichol,0.00001,0
+24696,583770,1,1,1, materials problem, cg,0.000001,10, ichol,0,0
+503625,17550675,1,1,1, structural problem, cg,0.000001,9000, ichol,0.00001,0.1
+17361,1021159,1,1,1, duplicate model reduction problem, cg,0.000001,10, ichol,0,0
+9801,87025,1,1,1, 2D/3D problem, cg,0.000001,10, ichol,0,0
+3948,117816,1,1,1, structural problem, cg,0.01,10, ichol,0,0
+4875,105339,1,1,1, materials problem, cg,0.001,10, ichol,0,0
+700,12654,1,0,1, combinatorial problem, cg,0.00000001,10, ichol,0.00001,0
+20360,20360,1,1,1, duplicate model reduction problem, cg,0.00000001,10, ichol,0,0
+48,400,1,1,1, structural problem, cg,0.00000001,10, ichol,0,0
+24696,583770,1,1,1, materials problem, cg,0.01,10, ichol,0,0
+124,12068,1,0,1, undirected weighted graph, cg,0.000001,10, ichol,0,0
+503625,17550675,1,1,1, structural problem, cg,0.000001,9000, ichol,0.00001,0.1
+1083,18437,1,1,1, structural problem, cg,0.00000001,10, ichol,0,0
+420,7860,1,1,1, duplicate structural problem, cg,0.01,10, ichol,0,0
+2000,41906,1,0,1, combinatorial problem, cg,0.000001,10, ichol,0.00001,0
+485,3135,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+3600,3600,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+127224,5516602,1,1,1, model reduction problem, cg,0.000001,400, ichol,0.001,0.1
+817,6853,1,1,1, structural problem, cg,0.00001,10, ichol,0,0
+4884,290378,1,1,1, structural problem, cg,0.001,10, ichol,0,0
+3600,26600,1,1,1, structural problem, cg,0.001,10, ichol,0,0
+150,2040,1,0,1, combinatorial problem, cg,0.00000001,10, ichol,0.00001,0
+1083,18437,1,1,1, structural problem, cg,0.01,10, ichol,0,0
+140874,3568176,1,1,1, structural problem, cg,0.000001,1000, ichol,0.00001,0.1
+66,4356,1,1,1, structural problem, cg,0.1,10, ichol,0,0
+504855,17579155,1,1,1, subsequent structural problem, cg,0.000001,50, ichol,0.00001,0
+1473,34241,1,1,1, structural problem, cg,0.00001,10, ichol,0,0
+66,66,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+204316,1423116,1,1,1, thermal problem, cg,0.00000001,10, ichol,0.00001,0
+1083,18437,1,1,1, structural problem, cg,0.001,10, ichol,0,0
+1498023,59374451,1,1,1, structural problem, cg,0.0001,1200, ichol,0.001,0.1
+503625,17550675,1,1,1, structural problem, cg,0.0001,9000, ichol,0.00001,0.1
+715176,4817870,1,1,1, structural problem, cg,0.00000001,750, ichol,0.00001,0.1
+72000,28715634,1,1,1, 2D/3D problem, cg,0.01,170, ichol,0.0000001,0.001
+485,3135,1,1,1, structural problem, cg,0.01,10, ichol,0,0
+715176,4817870,1,1,1, structural problem, cg,0.000001,750, ichol,0.00001,0.1
+504855,17562051,1,1,1, subsequent structural problem, cg,0.00000001,50, ichol,0.00001,0
+1228045,8580313,1,1,1, thermal problem, cg,0.000001,1200, ichol,0.00001,0.1
+81920,327680,1,1,1, computational fluid dynamics problem, cg,0.000001,10, ichol,0.00001,0
+4257,4257,1,1,1, duplicate model reduction problem, cg,0.00000001,10, ichol,0,0
+4410,219024,1,1,1, structural problem, cg,0.001,10, ichol,0,0
+5489,263351,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+504855,17579155,1,1,1, subsequent structural problem, cg,0.00000001,50, ichol,0.00001,0
+1440,44998,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+153,153,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+48,400,1,1,1, structural problem, cg,0.1,10, ichol,0,0
+420,7860,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+1922,30336,1,1,1, structural problem, cg,0.1,10, ichol,0,0
+4884,290378,1,1,1, structural problem, cg,0.00001,10, ichol,0,0
+6867,98671,1,1,1, computational fluid dynamics problem, cg,0.000001,10, ichol,0,0
+47072,2329056,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+46772,46772,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+62451,4007383,1,1,1, 2D/3D problem, cg,0.000001,200, ichol,0.001,0.1
+3134,45178,1,1,1, structural problem, cg,0.1,10, ichol,0,0
+132,3648,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+1473,34241,1,1,1, duplicate structural problem, cg,0.000001,10, ichol,0,0
+1138,4054,1,0,1, power network problem, cg,0.000001,10, ichol,0,0
+2003,83883,1,1,1, computational fluid dynamics problem, cg,0.1,10, ichol,0,0
+36000,14220946,1,1,1, 2D/3D problem, cg,0.01,170, ichol,0.0000001,0.001
+1083,18437,1,1,1, structural problem, cg,0.00001,10, ichol,0,0
+3240,3240,1,0,1, combinatorial problem, cg,0.000001,10, ichol,0,0
+153,2423,1,1,1, structural problem, cg,0.001,10, ichol,0,0
+48,306,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+1473,34241,1,1,1, duplicate structural problem, cg,0.001,10, ichol,0,0
+420,7860,1,1,1, duplicate structural problem, cg,0.00001,10, ichol,0,0
+81920,327680,1,1,1, computational fluid dynamics problem, cg,0.00000001,10, ichol,0.00001,0
+66,4356,1,1,1, structural problem, cg,0.00000001,10, ichol,0,0
+638802,27245944,1,1,1, structural problem, cg,0.0001,1200, ichol,0.001,0.1
+1473,34241,1,1,1, duplicate structural problem, cg,0.00001,10, ichol,0,0
+504855,17562051,1,1,1, subsequent structural problem, cg,0.0001,50, ichol,0.00001,0
+9000,3279690,1,1,1, 2D/3D problem, cg,0.00000001,100, ichol,0.00000001,0
+40806,203622,1,0,1, optimization problem, cg,0.000001,10, ichol,0,0
+638802,27245944,1,1,1, structural problem, cg,0.001,1200, ichol,0.001,0.1
+132,3648,1,1,1, structural problem, cg,0.001,10, ichol,0,0
+72000,28715634,1,1,1, 2D/3D problem, cg,0.00000001,170, ichol,0.000001,0.001
+2003,83883,1,1,1, computational fluid dynamics problem, cg,0.00000001,10, ichol,0,0
+237,1017,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+503625,17550675,1,1,1, structural problem, cg,0.01,9000, ichol,0.00001,0.1
+10974,428650,1,1,1, structural problem, cg,0.00001,10, ichol,0,0
+132,3648,1,1,1, structural problem, cg,0.1,10, ichol,0,0
+17361,340431,1,1,1, duplicate model reduction problem, cg,0.00000001,10, ichol,0,0
+4515,97707,1,1,1, structural problem, cg,0.001,10, ichol,0,0
+1498023,59374451,1,1,1, structural problem, cg,0.001,1200, ichol,0.001,0.1
+10974,428650,1,1,1, structural problem, cg,0.00000001,10, ichol,0,0
+24696,583770,1,1,1, materials problem, cg,0.001,10, ichol,0,0
+662,2474,1,1,1, power network problem, cg,0.001,10, ichol,0.001,0
+3562,3562,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+18000,6897316,1,1,1, 2D/3D problem, cg,0.000001,150, ichol,0.000001,0.001
+16146,1015156,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+420,7860,1,1,1, structural problem, cg,0.01,10, ichol,0,0
+726,34518,1,1,1, structural problem, cg,0.01,10, ichol,0,0
+10974,428650,1,1,1, structural problem, cg,0.1,10, ichol,0,0
+503625,17550675,1,1,1, structural problem, cg,0.000001,9000, ichol,0.00001,0.1
+18589,128853,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+40000,197608,1,0,1, duplicate optimization problem, cg,0.000001,10, ichol,0,0
+15439,15439,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+420,7860,1,1,1, structural problem, cg,0.1,10, ichol,0,0
+1473,34241,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+504855,17579155,1,1,1, subsequent structural problem, cg,0.0001,50, ichol,0.00001,0
+19,147,1,0,1, combinatorial problem, cg,0.000001,10, ichol,0.00001,0
+15439,252241,1,1,1, structural problem, cg,0.01,10, ichol,0,0
+300,4678,1,0,1, combinatorial problem, cg,0.00000001,10, ichol,0.00001,0
+817,817,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+1282,30644,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+14,46,1,1,1, model reduction problem, cg,0.000001,10, ichol,0,0
+1437960,60236322,1,1,1, structural problem, cg,0.001,1200, ichol,0.001,0.1
+40000,197608,1,0,1, optimization problem, cg,0.000001,10, ichol,0,0
+1050,26198,1,1,1, structural problem, cg,0.001,10, ichol,0,0
+3948,117816,1,1,1, structural problem, cg,0.1,10, ichol,0,0
+10848,1229776,1,1,1, structural problem, cg,0.001,10, ichol,0,0
+1224,56126,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+10974,428650,1,1,1, structural problem, cg,0.01,10, ichol,0,0
+102158,711558,1,1,1, thermal problem, cg,0.000001,10, ichol,0.00001,0
+2000,41906,1,0,1, combinatorial problem, cg,0.00000001,10, ichol,0.00001,0
+1922,30336,1,1,1, structural problem, cg,0.001,10, ichol,0,0
+101492,1647264,1,1,1, electromagnetics problem, cg,0.000001,10, ichol,0.001,0.1
+10848,1229776,1,1,1, structural problem, cg,0.01,10, ichol,0,0
+18000,6897316,1,1,1, 2D/3D problem, cg,0.0001,120, ichol,0.0000001,0.001
+138,696,1,1,1, structural problem, cg,0.1,10, ichol,0,0
+13965,322905,1,1,1, materials problem, cg,0.000001,10, ichol,0,0
+18,82,1,1,1, model reduction problem, cg,0.000001,10, ichol,0,0
+4884,290378,1,1,1, structural problem, cg,0.1,10, ichol,0,0
+1224,56126,1,1,1, structural problem, cg,0.00001,10, ichol,0,0
+1465137,21005389,1,1,1, computational fluid dynamics problem, cg,0.001,1200, ichol,0.001,0.1
+7102,170134,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+503625,17550675,1,1,1, structural problem, cg,0.000001,9000, ichol,0.00001,0.1
+4410,219024,1,1,1, structural problem, cg,0.01,10, ichol,0,0
+420,7860,1,1,1, structural problem, cg,0.00000001,10, ichol,0,0
+503625,17550675,1,1,1, structural problem, cg,0.0001,9000, ichol,0.00001,0.1
+504855,17579155,1,1,1, subsequent structural problem, cg,0.000001,50, ichol,0.00001,0
+3600,26600,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+199,2873,1,0,1, combinatorial problem, cg,0.000001,10, ichol,0.00001,0
+1806,63454,1,1,1, structural problem, cg,0.001,10, ichol,0,0
+3600,26600,1,1,1, structural problem, cg,0.00001,10, ichol,0,0
+817,6853,1,1,1, structural problem, cg,0.001,10, ichol,0,0
+138,696,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+1050,26198,1,1,1, structural problem, cg,0.01,10, ichol,0,0
+2568,75628,1,1,1, computational fluid dynamics problem, cg,0.000001,10, ichol,0,0
+4515,97707,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+3948,117816,1,1,1, structural problem, cg,0.001,10, ichol,0,0
+726,34518,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+11948,149090,1,1,1, structural problem, cg,0.00000001,10, ichol,0,0
+1806,63454,1,1,1, structural problem, cg,0.01,10, ichol,0,0
+1224,56126,1,1,1, structural problem, cg,0.01,10, ichol,0,0
+2003,83883,1,1,1, computational fluid dynamics problem, cg,0.00001,10, ichol,0,0
+504855,17579155,1,1,1, subsequent structural problem, cg,0.00000001,50, ichol,0.00001,0
+2541,7361,1,0,1, statistical/mathematical problem, cg,0.00000001,10, ichol,0,0
+36000,14220946,1,1,1, 2D/3D problem, cg,0.00000001,150, ichol,0.000001,0.001
+504855,17562051,1,1,1, subsequent structural problem, cg,0.000001,50, ichol,0.00001,0
+485,485,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+82654,574458,1,1,1, thermal problem, cg,0.000001,300, ichol,0.0000001,0.1
+504855,17579155,1,1,1, subsequent structural problem, cg,0.00000001,60, ichol,0.00001,0
+1473,34241,1,1,1, structural problem, cg,0.01,10, ichol,0,0
+1086,22070,1,1,1, structural problem, cg,0.00000001,10, ichol,0,0
+74752,596992,1,0,1, economic problem, cg,0.000001,10, ichol,0,0
+494,1666,1,0,1, power network problem, cg,0.000001,10, ichol,0,0
+114919,3303553,1,1,1, structural problem, cg,0.000001,1500, ichol,0.000001,0.1
+1074,12960,1,1,1, structural problem, cg,0.1,10, ichol,0,0
+662,2474,1,0,1, power network problem, cg,0.000001,10, ichol,0,0
+132,3648,1,1,1, structural problem, cg,0.00000001,10, ichol,0,0
+638802,27245944,1,1,1, structural problem, cg,0.001,1200, ichol,0.001,0.1
+15439,252241,1,1,1, structural problem, cg,0.001,10, ichol,0,0
+18000,6897316,1,1,1, 2D/3D problem, cg,0.00000001,150, ichol,0.000001,0.001
+153,2423,1,1,1, structural problem, cg,0.01,10, ichol,0,0
+1224,56126,1,1,1, structural problem, cg,0.00000001,10, ichol,0,0
+17546,121550,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+3134,45178,1,1,1, structural problem, cg,0.01,10, ichol,0,0
+1224,56126,1,1,1, structural problem, cg,0.1,10, ichol,0,0
+102158,711558,1,1,1, thermal problem, cg,0.00000001,10, ichol,0.00001,0
+494,1666,1,1,1, power network problem, cg,0.001,10, ichol,0.001,0
+65025,1030225,1,1,1, 2D/3D problem, cg,0.00000001,10, ichol,0.001,0.1
+1585478,7660826,1,0,1, circuit simulation problem, cg,0.000001,1000, ichol,0.00001,0.1
+3134,45178,1,1,1, structural problem, cg,0.00000001,10, ichol,0,0
+2003,83883,1,1,1, computational fluid dynamics problem, cg,0.000001,10, ichol,0,0
+112,640,1,1,1, structural problem, cg,0.00001,10, ichol,0,0
+1806,63454,1,1,1, structural problem, cg,0.00000001,10, ichol,0,0
+3562,159910,1,1,1, structural problem, cg,0.00001,10, ichol,0,0
+504855,17562051,1,1,1, subsequent structural problem, cg,0.01,50, ichol,0.00001,0
+1806,63454,1,1,1, structural problem, cg,0.1,10, ichol,0,0
+23052,1142686,1,1,1, structural problem, cg,0.001,10, ichol,0,0
+48,306,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+1498023,59374451,1,1,1, structural problem, cg,0.001,1200, ichol,0.001,0.1
+1437960,60236322,1,1,1, structural problem, cg,0.001,1200, ichol,0.001,0.1
+675,3255,1,1,1, 2D/3D problem, cg,0.000001,10, ichol,0,0
+132,3648,1,1,1, structural problem, cg,0.01,10, ichol,0,0
+1824,39208,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+2541,7361,1,0,1, statistical/mathematical problem, cg,0.000001,10, ichol,0,0
+1083,1083,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+11445,176117,1,1,1, duplicate model reduction problem, cg,0.000001,10, ichol,0,0
+504855,17579155,1,1,1, subsequent structural problem, cg,0.01,50, ichol,0.00001,0
+300,4678,1,0,1, combinatorial problem, cg,0.000001,10, ichol,0.00001,0
+18000,6897316,1,1,1, 2D/3D problem, cg,0.01,170, ichol,0.0000001,0.001
+420,420,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+5489,217669,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+20360,20360,1,1,1, duplicate model reduction problem, cg,0.000001,10, ichol,0,0
+66,4356,1,1,1, structural problem, cg,0.001,10, ichol,0,0
+4257,4257,1,1,1, duplicate model reduction problem, cg,0.000001,10, ichol,0,0
+15439,252241,1,1,1, structural problem, cg,0.00000001,10, ichol,0,0
+420,7252,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+2410,54840,1,1,1, computational fluid dynamics problem, cg,0.000001,10, ichol,0,0
+10605,144579,1,1,1, thermal problem, cg,0.000001,10, ichol,0,0
+121728,3777036,1,1,1, structural problem, cg,0.000001,1000, ichol,0.00001,0.1
+146689,3636643,1,1,1, 2D/3D problem, cg,0.000001,10, ichol,0.001,0.1
+80800,542184,1,1,1, structural problem, cg,0.00000001,500, ichol,0.00000001,0.1
+503625,17550675,1,1,1, structural problem, cg,0.0001,9000, ichol,0.00001,0.1
+3134,45178,1,1,1, structural problem, cg,0.001,10, ichol,0,0
+485,3135,1,1,1, structural problem, cg,0.00000001,10, ichol,0,0
+83334,6010480,1,1,1, 2D/3D problem, cg,0.000001,200, ichol,0.001,0.1
+19998,99982,1,1,1, model reduction problem, cg,0.000001,10, ichol,0,0
+1083,18437,1,1,1, structural problem, cg,0.1,10, ichol,0,0
+4875,105339,1,1,1, materials problem, cg,0.01,10, ichol,0,0
+73752,2148558,1,1,1, structural problem, cg,0.000001,10, ichol,0,0
+66,4356,1,1,1, structural problem, cg,0.00001,10, ichol,0,0
+1074,12960,1,1,1, structural problem, cg,0.001,10, ichol,0,0
