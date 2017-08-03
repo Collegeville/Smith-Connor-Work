@@ -17,18 +17,13 @@ Output: (More than one network for outputs?)
 
 
 EXPORT PLAN:
-	-Create one file for each input matrix
-		-Generate name for each file: i = id, ("matrix%d" % i)
-	-Create a corresponding file for each preconditioner
-		-Generate name for each file: i = id, ("preconditioner%d" % i)
-	-Stuff data into Example protocol buffer, write to TFRecords file using TFRecordWriter
-	-Use TFRecordReader with decoder to read file into NN	
+	-.csv decoder in TF
+	-Within reader function, translate strings into ints, then back into strings @ output
+	-Scale ints before and after NN
 
 
 Training/Testing Data:
--236 Positive Definite Matrices (190 training, 46 testing)
--***Look through drop tolerances; save memory?
--Redo many matrices with different input tolerances (First use only 1e-6)
+-236 Positive Definite Matrices 
 -Input: All values of matrices
 -Layers: Look into RNN/CNN??
 -Output: Pre-calculated preconditioners
