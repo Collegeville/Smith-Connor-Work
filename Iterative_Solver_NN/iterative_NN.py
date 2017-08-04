@@ -14,8 +14,8 @@ x = tf.placeholder(tf.float32, [None, 7], name="input")
 y = tf.placeholder(tf.int32, name="targets")
 
 #Reusable method used to read data from .csv file (By Connor Smith)
-def get_data(DATA_FILE):
-	filename_queue = tf.train.string_input_producer([DATA_FILE])
+def get_data(filename):
+	filename_queue = tf.train.string_input_producer([filename])
 
 	reader = tf.TextLineReader()
 	key, value = reader.read(filename_queue)
@@ -34,13 +34,11 @@ def get_data(DATA_FILE):
 		test_feature_list = list()
 		test_label_list = list()
 
-		data_size = 5
+		data_size = 475
 
 		for i in range(data_size):
 			example, label = sess.run([features, targets])
-			print(example)
-			print(label)
-			if i <= 5:
+			if i <= 390:
 				feature_list.append(example)
 				label_list.append(label)
 			else:
@@ -53,4 +51,5 @@ def get_data(DATA_FILE):
 
 	return feature_list, label_list, test_feature_list, test_label_list
 
+get_data(DATA_FILE)
 
