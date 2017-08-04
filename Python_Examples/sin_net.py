@@ -64,10 +64,10 @@ def get_data(filename):
 				test_val_list.append(label)
 
 		#Normalize data between 0 and 1(temporary fix for debugging)
-		#deg = [(r-min(rad_list))/(max(rad_list)-min(rad_list)) for r in rad_list]
-		#sin = [(s-min(sin_list))/(max(sin_list)-min(sin_list)) for s in sin_list]
-		#test_deg = [(tr-min(test_rad_list))/(max(test_rad_list)-min(test_rad_list)) for tr in test_rad_list]
-		#test_sin = [(ts-min(test_val_list))/(max(test_val_list)-min(test_val_list)) for ts in test_val_list]
+		deg = [(r-min(deg_list))/(max(deg_list)-min(deg_list)) for r in deg_list]
+		sin = [(s-min(sin_list))/(max(sin_list)-min(sin_list)) for s in sin_list]
+		test_deg = [(tr-min(test_deg_list))/(max(test_deg_list)-min(test_deg_list)) for tr in test_deg_list]
+		test_sin = [(ts-min(test_val_list))/(max(test_val_list)-min(test_val_list)) for ts in test_val_list]
 
 
 	coord.request_stop()
