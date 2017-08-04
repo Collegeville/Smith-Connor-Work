@@ -14,6 +14,7 @@ x = tf.placeholder(tf.float32, [None, 7], name="input")
 y = tf.placeholder(tf.int32, name="targets")
 
 #Reusable method used to read data from .csv file (By Connor Smith)
+#Use in different file?
 def get_data(filename):
 	filename_queue = tf.train.string_input_producer([filename])
 
@@ -48,8 +49,27 @@ def get_data(filename):
 	coord.request_stop()
 	coord.join(threads)
 
+	features = list()
+	labels = list()
+	test_features = list()
+	test_labels = list()
 
-	return feature_list, label_list, test_feature_list, test_label_list
+	for f in feature_list:
+		f = (f*(.9-.1)+.1*max(f)-.1*min(f))/(max(f)-min(f))
+		features.append(f)
 
-get_data(DATA_FILE)
+	for l in labels:
+		l = (l*(.9-.1)+.1*max(l)-.1*min(l))/(max(l)-min(l))
+		labels.append(l)
+
+	for t in test_feature_list:
+		t = (t*(.9-.1)+.1*max(t)-.1*min(t))/(max(t)-min(t))
+		test_features.append(t)
+
+	for tl in test_label_list:
+		tl = (tl*(.9-.1)+.1*max(tl)-.1*min(tl))/(max(tl)-min(tl))
+		test_labels.append(tl)
+
+	return features, labels, test_features, test_labels
+
 
