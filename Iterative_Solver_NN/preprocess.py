@@ -70,7 +70,7 @@ def main():
 	#Change name of output file as needed
 	int_file = 'encoded.csv'
 	with open(int_file,'w') as intcsv:
-		csvwriter = csv.writer(intcsv)
+		csvwriter = csv.writer(intcsv, delimiter=',', lineterminator='\n')
 
 		for i in range(0,len(col0)):
 			csvwriter.writerow([col0[i], col1[i], col2[i], col3[i], col4[i], col5[i], col6[i], col7[i], col8[i], col9[i], col10[i], col11[i]])
