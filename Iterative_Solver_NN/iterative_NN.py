@@ -7,8 +7,8 @@ import numpy as np
 
 DATA_FILE = "shuffled_data.csv"
 
-neurons_layer1 = 100
-#Best: 20 Acc: 80
+neurons_layer1 = 6
+#Best: 5 Acc: 90
 
 x = tf.placeholder(tf.float32, name="input")
 y = tf.placeholder(tf.float32, name="targets")
@@ -39,7 +39,7 @@ def get_data(filename):
 
 		for i in range(data_size):
 			example, label = sess.run([features, targets])
-			if i <= 390:
+			if i <= 380:
 				feature_list.append(example)
 				label_list.append(label)
 			else:
@@ -58,7 +58,7 @@ def model(input_data):
 	output = {'weights': tf.Variable(tf.random_normal([neurons_layer1, 5])),
 				'biases': tf.Variable(tf.zeros(5))}
 
-	input_data = tf.nn.l2_normalize(x,1, epsilon=1e-12)
+	input_data = tf.nn.l2_normalize(x,0, epsilon=0)
 
 	layer1 = tf.add(tf.matmul(input_data, hidden1['weights']), hidden1['biases'])
 	layer1 = tf.nn.relu(layer1)
@@ -68,17 +68,15 @@ def model(input_data):
 	return output
 
 def train_model(x,y):
-	batch_size = 100
+	batch_size = 300
 
 	pred = model(x)
 
-	#Sparse softmax cost function treats integer values as index with highest value within an array
-	cost = tf.reduce_mean(tf.square(pred - y))
-	#tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels=y, logits=pred))
+	cost = tf.losses.mean_squared_error(y,pred)
 
 	optimizer = tf.train.AdamOptimizer(.0001).minimize(cost)
 
-	epochs = 20000
+	epochs = 75000
 
 	#Run the processes built into the computation graph
 	#Iterates through graph for number of specified epochs
@@ -107,11 +105,10 @@ def train_model(x,y):
 
 				print("Epoch: ", epoch, " loss: ", epoch_loss)
 
-				if epoch % 10 == 0:
-					correct_prediction = tf.equal(tf.round(pred), tf.round(y))
+			correct_prediction = tf.equal(tf.round(pred), tf.round(y))
 
-					accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
+			accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
-					print("Accuracy: ", accuracy.eval(feed_dict={x: test_x, y: test_y}))
+			print("Accuracy: ", accuracy.eval(feed_dict={x: test_x, y: test_y}))
 
 train_model(x,y)
