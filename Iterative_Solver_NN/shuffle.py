@@ -1,5 +1,5 @@
 import random
-fid = open("matrix_data.csv", "r")
+fid = open("encoded.csv", "r")
 first = fid.readline()
 li = fid.readlines()
 fid.close()
