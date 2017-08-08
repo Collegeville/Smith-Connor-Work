@@ -39,12 +39,34 @@ def predict():
 		tol = float(input("Enter desired convergence tolerance: \n"))
 		input_array[0,6] = tol
 
-		print(input_array)
-
 		feed_dict = {x:input_array}
 
 		output = graph.get_tensor_by_name("output:0")
 
 		nn_output = sess.run(output, feed_dict)
 
-		print(nn_output)
+		predictions = list()
+
+		for i in range(0,5):
+			p = nn_output[0,i]
+			if p < 1e-8:
+				p = 0.0
+			predictions.append(p)
+		
+		solver_int = round(predictions[0])
+		solver = preprocess.decode(6,solver_int)
+
+		precond_int = round(predictions[2])
+		precond = preprocess.decode(9, precond_int)
+
+		maxit = round(predictions[1])
+
+		droptol = predictions[3]
+
+		diagcomp = predictions[4]
+
+		print("Recommended solver: " + solver + "\n")
+		print("Recommended maximum number of iterations: " + str(maxit) + "\n")
+		print("Recommended preconditioner: " + precond + "\n")
+		print("Recommended drop tolerance (if applicable): " + str(droptol) + "\n")
+		print("Recommended diagcomp (if applicable): " + str(diagcomp) + "\n")
