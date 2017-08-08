@@ -1,5 +1,3 @@
-#Scale equation: y = (x*(.9-.1)+.1*max(x)-.1*min(x))/(max(x)-min(x))
-#Re-scale equation: yr=(y*(max(x)-min(x))-.1*max(x)+.9*min(x))/(.9-.1) 
 
 
 import tensorflow as tf 
@@ -10,11 +8,10 @@ DATA_FILE = "shuffled_data.csv"
 neurons_layer1 = 6
 #Best: 5 Acc: 90
 
-x = tf.placeholder(tf.float32, name="input")
+x = tf.placeholder(tf.float32, [None,7], name="input")
 y = tf.placeholder(tf.float32, name="targets")
 
 #Reusable method used to read data from .csv file (By Connor Smith)
-#Use in different file?
 def get_data(filename):
 	filename_queue = tf.train.string_input_producer([filename])
 
@@ -35,7 +32,7 @@ def get_data(filename):
 		test_feature_list = list()
 		test_label_list = list()
 
-		data_size = 475
+		data_size = 473
 
 		for i in range(data_size):
 			example, label = sess.run([features, targets])
@@ -53,17 +50,17 @@ def get_data(filename):
 
 #Design model architecture for best possible accuracy
 def model(input_data):
-	hidden1 = {'weights': tf.Variable(tf.random_normal([7, neurons_layer1])),
-				'biases': tf.Variable(tf.zeros(neurons_layer1))}
+	hidden1 = {'weights': tf.Variable(tf.random_normal([7, neurons_layer1], stddev=1e-8)),
+				'biases': tf.Variable(tf.zeros(neurons_layer1))}	
 	output = {'weights': tf.Variable(tf.random_normal([neurons_layer1, 5])),
 				'biases': tf.Variable(tf.zeros(5))}
 
-	input_data = tf.nn.l2_normalize(x,0, epsilon=0)
+	input_data = tf.nn.l2_normalize(input_data,[0,1], epsilon=0)
 
-	layer1 = tf.add(tf.matmul(input_data, hidden1['weights']), hidden1['biases'])
+	layer1 = tf.add(tf.matmul(input_data, hidden1['weights']), hidden1['biases'], name='layer1')
 	layer1 = tf.nn.relu(layer1)
 
-	output = tf.add(tf.matmul(layer1, output['weights']), output['biases'])
+	output = tf.add(tf.matmul(layer1, output['weights']), output['biases'], name='output')
 
 	return output
 
@@ -74,9 +71,11 @@ def train_model(x,y):
 
 	cost = tf.losses.mean_squared_error(y,pred)
 
-	optimizer = tf.train.AdamOptimizer(.0001).minimize(cost)
+	optimizer = tf.train.AdamOptimizer(.1).minimize(cost)
 
-	epochs = 75000
+	epochs = 10000
+
+	saver = tf.train.Saver()
 
 	#Run the processes built into the computation graph
 	#Iterates through graph for number of specified epochs
@@ -105,10 +104,15 @@ def train_model(x,y):
 
 				print("Epoch: ", epoch, " loss: ", epoch_loss)
 
+
+			saver.save(sess,'.\iterative-model')
+
 			correct_prediction = tf.equal(tf.round(pred), tf.round(y))
 
 			accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
 			print("Accuracy: ", accuracy.eval(feed_dict={x: test_x, y: test_y}))
+
+			print(pred.eval({x:test_x}))
 
 train_model(x,y)
