@@ -32,7 +32,12 @@ def predict():
 		posdef = float(input("Enter whether positive definite (1 = True, 0 = False): \n"))
 		input_array[0,4] = posdef
 
-		kind_string = input("Enter kind of matrix (area of research) : \n")
+		intvals, kind_options = preprocess.to_int(5)
+		options_list = ""
+		for i in range(0,len(kind_options)):
+			options_list = options_list + "\n" + kind_options[i]
+
+		kind_string = input("Choose kind: " + options_list + "\n")
 		kind = preprocess.encode(5," " + kind_string)
 		input_array[0,5] = kind
 
@@ -53,10 +58,10 @@ def predict():
 				p = 0.0
 			predictions.append(p)
 		
-		solver_int = round(predictions[0])
+		solver_int = int(round(predictions[0]))
 		solver = preprocess.decode(6,solver_int)
 
-		precond_int = round(predictions[2])
+		precond_int = int(round(predictions[2]))
 		precond = preprocess.decode(9, precond_int)
 
 		maxit = round(predictions[1])

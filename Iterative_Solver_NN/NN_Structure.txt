@@ -19,6 +19,10 @@ Structure:
 	-No dropout if possible
 	-Simplify cost function
 
+Model:
+	-If less than 1e-8, = zero
+	-Round other numbers
+
 
 EXPORT PLAN:
 	-.csv decoder in TF

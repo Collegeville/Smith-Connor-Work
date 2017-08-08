@@ -29,6 +29,9 @@ def to_int(col):
 
 	return intvals, string_list
 
+def encode(col, string_val):
+	intvals, string_list = to_int(col)
+	return string_list.index(string_val)
 
 def decode(col, index):
 	intvals, string_list = to_int(col)

@@ -50,12 +50,12 @@ def get_data(filename):
 
 #Design model architecture for best possible accuracy
 def model(input_data):
-	hidden1 = {'weights': tf.Variable(tf.random_normal([7, neurons_layer1], stddev=1e-8)),
+	hidden1 = {'weights': tf.Variable(tf.random_normal([7, neurons_layer1], stddev=1e-6)),
 				'biases': tf.Variable(tf.zeros(neurons_layer1))}	
 	output = {'weights': tf.Variable(tf.random_normal([neurons_layer1, 5])),
 				'biases': tf.Variable(tf.zeros(5))}
 
-	input_data = tf.nn.l2_normalize(input_data,[0,1], epsilon=0)
+	input_data = tf.nn.l2_normalize(input_data,0, epsilon=0)
 
 	layer1 = tf.add(tf.matmul(input_data, hidden1['weights']), hidden1['biases'], name='layer1')
 	layer1 = tf.nn.relu(layer1)
@@ -69,11 +69,11 @@ def train_model(x,y):
 
 	pred = model(x)
 
-	cost = tf.losses.mean_squared_error(y,pred)
+	cost = tf.reduce_mean(tf.losses.mean_squared_error(y, pred))
 
 	optimizer = tf.train.AdamOptimizer(.1).minimize(cost)
 
-	epochs = 10000
+	epochs = 1000
 
 	saver = tf.train.Saver()
 
@@ -89,7 +89,7 @@ def train_model(x,y):
 
 				i = 0
 
-				while i < len(train_x) / batch_size:
+				while i < len(train_x):
 					start = i
 					end = i + batch_size 
 
