@@ -1,11 +1,12 @@
 
+#(x-min(x))/(max(x)-min(x))
 
 import tensorflow as tf 
 import numpy as np 
 
 DATA_FILE = "shuffled_data.csv"
 
-neurons_layer1 = 6
+neurons_layer1 = 3
 #Best: 5 Acc: 90
 
 x = tf.placeholder(tf.float32, [None,7], name="input")
@@ -21,7 +22,7 @@ def get_data(filename):
 	record_defaults = [[1.], [1.], [1.], [1.], [1.], [1.], [1.], [1.], [1.], [1.], [1.], [1.]]
 	col1, col2, col3, col4, col5, col6, col7, col8, col9, col10, col11, col12 = tf.decode_csv(value, record_defaults=record_defaults)
 	features = tf.stack([col1, col2, col3, col4, col5, col6, col8])
-	targets = tf.stack([col7, col9, col10, col11, col12])
+	targets = tf.stack([col12])
 
 	with tf.Session() as sess:
 		sess.run(tf.global_variables_initializer())
@@ -50,30 +51,32 @@ def get_data(filename):
 
 #Design model architecture for best possible accuracy
 def model(input_data):
-	hidden1 = {'weights': tf.Variable(tf.random_normal([7, neurons_layer1], stddev=1e-6)),
+	hidden1 = {'weights': tf.Variable(tf.random_normal([7, neurons_layer1])),
 				'biases': tf.Variable(tf.zeros(neurons_layer1))}	
-	output = {'weights': tf.Variable(tf.random_normal([neurons_layer1, 5])),
-				'biases': tf.Variable(tf.zeros(5))}
+	output = {'weights': tf.Variable(tf.random_normal([neurons_layer1, 1])),
+				'biases': tf.Variable(tf.zeros(1))}
 
-	input_data = tf.nn.l2_normalize(input_data,0, epsilon=0)
+	input_data = tf.nn.l2_normalize(input_data,1)
 
 	layer1 = tf.add(tf.matmul(input_data, hidden1['weights']), hidden1['biases'], name='layer1')
 	layer1 = tf.nn.relu(layer1)
 
-	output = tf.add(tf.matmul(layer1, output['weights']), output['biases'], name='output')
+	output = tf.abs(tf.add(tf.matmul(layer1, output['weights']), output['biases'], name='output'))
 
 	return output
 
 def train_model(x,y):
-	batch_size = 300
+	batch_size = 256
 
 	pred = model(x)
 
-	cost = tf.reduce_mean(tf.losses.mean_squared_error(y, pred))
+	cost = tf.losses.mean_squared_error(y, pred)
 
-	optimizer = tf.train.AdamOptimizer(.1).minimize(cost)
+	#.1
+	optimizer = tf.train.AdamOptimizer(.001).minimize(cost)
 
-	epochs = 1000
+	#1000
+	epochs = 50000
 
 	saver = tf.train.Saver()
 
@@ -105,14 +108,13 @@ def train_model(x,y):
 				print("Epoch: ", epoch, " loss: ", epoch_loss)
 
 
-			saver.save(sess,'.\iterative-model')
-
-			correct_prediction = tf.equal(tf.round(pred), tf.round(y))
+			correct_prediction = tf.equal(pred, y)
 
 			accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
 			print("Accuracy: ", accuracy.eval(feed_dict={x: test_x, y: test_y}))
 
 			print(pred.eval({x:test_x}))
+
 
 train_model(x,y)
