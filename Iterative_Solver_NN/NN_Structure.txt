@@ -23,6 +23,8 @@ Model:
 	-If less than 1e-8, = zero
 	-Round other numbers
 
+TO DO:
+	-Sparsekit for more inputs??
 
 EXPORT PLAN:
 	-.csv decoder in TF

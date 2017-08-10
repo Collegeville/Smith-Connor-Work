@@ -106,6 +106,8 @@ def train_model(x,y):
 				print("Epoch: ", epoch, " loss: ", epoch_loss)
 
 
+			saver.save(sess, 'Saved\solver_model')
+
 			correct_prediction = tf.equal(tf.argmax(pred,1), tf.cast(y, tf.int64))
 
 			accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))

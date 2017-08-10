@@ -6,7 +6,7 @@ import numpy as np
 
 DATA_FILE = "shuffled_data.csv"
 
-neurons_layer1 = 5
+neurons_layer1 = 4
 #Best: 5 Acc: 90
 
 x = tf.placeholder(tf.float32, [None,7], name="input")
@@ -47,7 +47,12 @@ def get_data(filename):
 	coord.request_stop()
 	coord.join(threads)
 
-	return feature_list, label_list, test_feature_list, test_label_list
+	features = list()
+	labels = list()
+	test_features = list()
+	test_labels = list()
+
+	return feature_list, labels, test_feature_list, test_label_list
 
 #Design model architecture for best possible accuracy
 def model(input_data):
@@ -56,7 +61,7 @@ def model(input_data):
 	output = {'weights': tf.Variable(tf.random_normal([neurons_layer1, 1])),
 				'biases': tf.Variable(tf.zeros(1))}
 
-	input_data = tf.nn.l2_normalize(input_data,1)
+	input_data = tf.nn.l2_normalize(input_data,0, epsilon=-1)
 
 	layer1 = tf.add(tf.matmul(input_data, hidden1['weights']), hidden1['biases'], name='layer1')
 	layer1 = tf.nn.relu(layer1)
@@ -66,17 +71,17 @@ def model(input_data):
 	return output
 
 def train_model(x,y):
-	batch_size = 256
+	batch_size = 300
 
 	pred = model(x)
 
 	cost = tf.losses.mean_squared_error(y, pred)
 
-	#.1
-	optimizer = tf.train.AdamOptimizer(.0001).minimize(cost)
+	#.01
+	optimizer = tf.train.AdamOptimizer(.001).minimize(cost)
 
 	#1000
-	epochs = 1000
+	epochs = 100
 
 	saver = tf.train.Saver()
 
@@ -107,6 +112,7 @@ def train_model(x,y):
 
 				print("Epoch: ", epoch, " loss: ", epoch_loss)
 
+			saver.save(sess, 'Saved\droptol_model')
 
 			correct_prediction = tf.equal(pred, y)
 

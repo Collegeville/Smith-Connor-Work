@@ -107,6 +107,7 @@ def train_model(x,y):
 
 				print("Epoch: ", epoch, " loss: ", epoch_loss)
 
+			saver.save(sess, 'Saved\precond_model')
 
 			correct_prediction = tf.equal(tf.argmax(pred,1), tf.cast(y, tf.int64))
 

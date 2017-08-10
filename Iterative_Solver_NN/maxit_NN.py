@@ -71,9 +71,9 @@ def train_model(x,y):
 
 	cost = tf.losses.mean_squared_error(y, pred)
 	
-	optimizer = tf.train.AdamOptimizer(.1).minimize(cost)
+	optimizer = tf.train.AdamOptimizer(.001).minimize(cost)
 
-	epochs = 100
+	epochs = 150000
 
 	saver = tf.train.Saver()
 
@@ -104,6 +104,8 @@ def train_model(x,y):
 
 				print("Epoch: ", epoch, " loss: ", epoch_loss)
 
+
+			saver.save(sess, 'Saved\maxit_model')
 
 			correct_prediction = tf.equal(tf.round(pred), tf.round(y))
 
