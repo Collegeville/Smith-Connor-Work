@@ -1,10 +1,8 @@
 
-#(x-min(x))/(max(x)-min(x))
-
 import tensorflow as tf 
 import numpy as np 
 
-DATA_FILE = "shuffled_data.csv"
+DATA_FILE = "encoded.csv"
 
 neurons_layer1 = 10
 #Best: 5 Acc: 90
@@ -58,7 +56,7 @@ def model(input_data):
 				'biases': tf.Variable(tf.zeros(1))}
 
 	#Dim: 0
-	input_data = tf.nn.l2_normalize(input_data,0)
+	#input_data = tf.nn.l2_normalize(input_data,0)
 
 	layer1 = tf.add(tf.matmul(input_data, hidden1['weights']), hidden1['biases'], name='layer1')
 	layer1 = tf.nn.relu(layer1)

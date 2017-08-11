@@ -38,6 +38,22 @@ def decode(col, index):
 	return string_list[index]
 
 
+#y=(x*(B-A)+A*max-B*min)/(max-min) 
+def scale(non_scaled):
+	scaled = list()
+	for i in range(len(non_scaled)):
+		scaled.append((non_scaled[i] * (.8) + .1 * max(non_scaled) - .9 * min(non_scaled)) / (max(non_scaled)-min(non_scaled)))
+
+	return scaled
+
+#yr=(y*(max-min)-A*max+B*min)/(B-A) 
+def rescale(scaled):
+	rescaled = list()
+	for i in range(len(scaled)):
+		rescaled.append((scaled[i]* (max(scaled)-min(scaled)) - .1 * max(scaled) + .9 * min(scaled))/(.8))
+
+	return rescaled
+
 
 def main():
 	#Change which rows are encoded based on where strings are present in .csv file
@@ -58,16 +74,17 @@ def main():
 		col11 = list()
 		for row in csvreader:
 			if count != 0:
-				col0.append(row[0])
-				col1.append(row[1])
+				col0.append(float(row[0]))
+				col1.append(float(row[1]))
 				col2.append(row[2])
 				col3.append(row[3])
 				col4.append(row[4])
-				col7.append(row[7])
+				col7.append(float(row[7]))
 				col8.append(row[8])
 				col10.append(row[10])
 				col11.append(row[11])
 			count += 1
+
 
 
 	#Change name of output file as needed
@@ -79,7 +96,6 @@ def main():
 			csvwriter.writerow([col0[i], col1[i], col2[i], col3[i], col4[i], col5[i], col6[i], col7[i], col8[i], col9[i], col10[i], col11[i]])
 
 
-	
 	
 	
 

@@ -1,12 +1,11 @@
 
-#(x-min(x))/(max(x)-min(x))
-
 import tensorflow as tf 
 import numpy as np 
 
-DATA_FILE = "shuffled_data.csv"
+DATA_FILE = "encoded.csv"
 
-neurons_layer1 = 4
+neurons_layer1 = 3
+neurons_layer2 = 3
 #Best: 5 Acc: 90
 
 x = tf.placeholder(tf.float32, [None,7], name="input")
@@ -47,24 +46,22 @@ def get_data(filename):
 	coord.request_stop()
 	coord.join(threads)
 
-	features = list()
-	labels = list()
-	test_features = list()
-	test_labels = list()
-
-	return feature_list, labels, test_feature_list, test_label_list
+	return feature_list, label_list, test_feature_list, test_label_list
 
 #Design model architecture for best possible accuracy
 def model(input_data):
 	hidden1 = {'weights': tf.Variable(tf.random_normal([7, neurons_layer1])),
 				'biases': tf.Variable(tf.zeros(neurons_layer1))}	
+	hidden2 = {'weights': tf.Variable(tf.random_normal([neurons_layer1, neurons_layer2])),
+				'biases': tf.Variable(tf.zeros(neurons_layer2))}	
 	output = {'weights': tf.Variable(tf.random_normal([neurons_layer1, 1])),
 				'biases': tf.Variable(tf.zeros(1))}
 
-	input_data = tf.nn.l2_normalize(input_data,0, epsilon=-1)
+	input_data = tf.nn.l2_normalize(input_data,1)
 
 	layer1 = tf.add(tf.matmul(input_data, hidden1['weights']), hidden1['biases'], name='layer1')
 	layer1 = tf.nn.relu(layer1)
+
 
 	output = tf.add(tf.matmul(layer1, output['weights']), output['biases'], name='output')
 
@@ -78,10 +75,10 @@ def train_model(x,y):
 	cost = tf.losses.mean_squared_error(y, pred)
 
 	#.01
-	optimizer = tf.train.AdamOptimizer(.001).minimize(cost)
+	optimizer = tf.train.AdamOptimizer(.01).minimize(cost)
 
 	#1000
-	epochs = 100
+	epochs = 1000
 
 	saver = tf.train.Saver()
 
@@ -121,6 +118,5 @@ def train_model(x,y):
 			print("Accuracy: ", accuracy.eval(feed_dict={x: test_x, y: test_y}))
 
 			print(pred.eval({x:test_x}))
-
 
 train_model(x,y)
