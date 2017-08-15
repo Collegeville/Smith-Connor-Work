@@ -7,16 +7,16 @@ def predict():
 	x = tf.placeholder(tf.float32)
 
 	with tf.Session() as sess:
-		sess.run(tf.global_variables_initializer())
-		loader = tf.train.import_meta_graph('iterative-model.meta')
-		loader.restore(sess, 'iterative-model')
-	
-		graph = tf.get_default_graph()
+		solver_loader = tf.train.import_meta_graph('Saved/solver_model.meta')
+		solver_loader.restore(sess, 'Saved/solver_model')
 
-		input_array = np.zeros([1,7])
+		graph = tf.get_default_graph()
 
 		x = graph.get_tensor_by_name("input:0")
 
+		input_array = np.zeros([1,7])
+
+		sess.run(tf.global_variables_initializer())
 		size = float(input("Enter size of square matrix (one side): \n"))
 		input_array[0,0] = size
 
@@ -45,33 +45,43 @@ def predict():
 		input_array[0,6] = tol
 
 		feed_dict = {x:input_array}
-
+	
 		output = graph.get_tensor_by_name("output:0")
 
-		nn_output = sess.run(output, feed_dict)
+		print(input_array)
 
-		predictions = list()
+		solver_int = sess.run(output, feed_dict)
+		print(solver_int)
+		solver = preprocess.decode(6, np.argmax(solver_int))
 
-		for i in range(0,5):
-			p = nn_output[0,i]
-			if p < 1e-8:
-				p = 0.0
-			predictions.append(p)
+		print(solver)
+
+predict()
+
+
+
+		#predictions = list()
+
+		#for i in range(0,5):
+		#	p = nn_output[0,i]
+		#	if p < 1e-8:
+		#		p = 0.0
+		#	predictions.append(p)
 		
-		solver_int = int(round(predictions[0]))
-		solver = preprocess.decode(6,solver_int)
+		#solver_int = int(round(predictions[0]))
+		#solver = preprocess.decode(6,solver_int)
 
-		precond_int = int(round(predictions[2]))
-		precond = preprocess.decode(9, precond_int)
+		#precond_int = int(round(predictions[2]))
+		#precond = preprocess.decode(9, precond_int)
 
-		maxit = round(predictions[1])
+		#maxit = round(predictions[1])
 
-		droptol = predictions[3]
+		#droptol = predictions[3]
 
-		diagcomp = predictions[4]
+		#diagcomp = predictions[4]
 
-		print("Recommended solver: " + solver + "\n")
-		print("Recommended maximum number of iterations: " + str(maxit) + "\n")
-		print("Recommended preconditioner: " + precond + "\n")
-		print("Recommended drop tolerance (if applicable): " + str(droptol) + "\n")
-		print("Recommended diagcomp (if applicable): " + str(diagcomp) + "\n")
+		#print("Recommended solver: " + solver + "\n")
+		#print("Recommended maximum number of iterations: " + str(maxit) + "\n")
+		#print("Recommended preconditioner: " + precond + "\n")
+		#print("Recommended drop tolerance (if applicable): " + str(droptol) + "\n")
+		#print("Recommended diagcomp (if applicable): " + str(diagcomp) + "\n")

@@ -5,7 +5,7 @@ import numpy as np
 
 DATA_FILE = "shuffled_data.csv"
 
-neurons_layer1 = 4
+neurons_layer1 = 1000
 
 x = tf.placeholder(tf.float32, [None,7], name="input")
 y = tf.placeholder(tf.int32, name="targets")
@@ -54,10 +54,8 @@ def model(input_data):
 	output = {'weights': tf.Variable(tf.random_normal([neurons_layer1, 10])),
 				'biases': tf.Variable(tf.zeros(10))}
 
-	#input_data = tf.nn.l2_normalize(input_data,0, epsilon=0)
-
 	layer1 = tf.add(tf.matmul(input_data, hidden1['weights']), hidden1['biases'], name='layer1')
-	layer1 = tf.tanh(layer1)
+	layer1 = tf.nn.dropout(tf.nn.softmax(layer1), .5)
 
 	output = tf.add(tf.matmul(layer1, output['weights']), output['biases'], name='output')
 
@@ -72,10 +70,10 @@ def train_model(x,y):
 	#tf.losses.mean_squared_error(y, pred)
 
 	#.1
-	optimizer = tf.train.AdamOptimizer(.1).minimize(cost)
+	optimizer = tf.train.AdamOptimizer(.01).minimize(cost)
 
 	#1000
-	epochs = 100
+	epochs = 1000
 
 	saver = tf.train.Saver()
 
@@ -109,7 +107,7 @@ def train_model(x,y):
 
 			saver.save(sess, 'Saved\precond_model')
 
-			correct_prediction = tf.equal(tf.argmax(pred,1), tf.cast(y, tf.int64))
+			correct_prediction = tf.equal(tf.argmax(pred), tf.cast(y, tf.int64))
 
 			accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 

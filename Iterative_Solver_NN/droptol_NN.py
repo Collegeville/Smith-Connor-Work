@@ -4,7 +4,7 @@ import numpy as np
 
 DATA_FILE = "encoded.csv"
 
-neurons_layer1 = 3
+neurons_layer1 = 10
 neurons_layer2 = 3
 #Best: 5 Acc: 90
 
@@ -57,10 +57,10 @@ def model(input_data):
 	output = {'weights': tf.Variable(tf.random_normal([neurons_layer1, 1])),
 				'biases': tf.Variable(tf.zeros(1))}
 
-	input_data = tf.nn.l2_normalize(input_data,1)
+	input_data = tf.nn.l2_normalize(input_data,0)
 
 	layer1 = tf.add(tf.matmul(input_data, hidden1['weights']), hidden1['biases'], name='layer1')
-	layer1 = tf.nn.relu(layer1)
+	layer1 = tf.nn.dropout(tf.nn.relu(layer1), .75)
 
 
 	output = tf.add(tf.matmul(layer1, output['weights']), output['biases'], name='output')
@@ -78,7 +78,7 @@ def train_model(x,y):
 	optimizer = tf.train.AdamOptimizer(.01).minimize(cost)
 
 	#1000
-	epochs = 1000
+	epochs = 5
 
 	saver = tf.train.Saver()
 
@@ -118,5 +118,7 @@ def train_model(x,y):
 			print("Accuracy: ", accuracy.eval(feed_dict={x: test_x, y: test_y}))
 
 			print(pred.eval({x:test_x}))
+
+			print(y.eval({y: test_y}))
 
 train_model(x,y)
