@@ -55,10 +55,9 @@ def model(input_data):
 	input_data = tf.nn.l2_normalize(input_data,0)
 
 	layer1 = tf.add(tf.matmul(input_data, hidden1['weights']), hidden1['biases'], name='layer1')
-	layer1 = tf.sigmoid(layer1)
+	layer1 = tf.nn.relu(layer1)
 
-
-	output = tf.add(tf.matmul(layer1, output['weights']), output['biases'], name='output')
+	output = tf.abs(tf.add(tf.matmul(layer1, output['weights']), output['biases'], name='output'))
 
 	return output
 
@@ -69,11 +68,11 @@ def train_model(x,y):
 
 	cost = tf.losses.mean_squared_error(y, pred)
 
-	#.01
-	optimizer = tf.train.AdamOptimizer(.01).minimize(cost)
+	#.0001
+	optimizer = tf.train.AdamOptimizer(.0001).minimize(cost)
 
-	#1000
-	epochs = 1000
+	#100000
+	epochs = 100000
 
 	saver = tf.train.Saver()
 
@@ -114,4 +113,4 @@ def train_model(x,y):
 
 			print(pred.eval({x:test_x}))
 
-train_model(x,y)
+#train_model(x,y)
