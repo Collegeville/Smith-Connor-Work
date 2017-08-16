@@ -1,11 +1,9 @@
-
 import tensorflow as tf 
 import numpy as np 
 
 DATA_FILE = "encoded.csv"
 
 neurons_layer1 = 4
-#Best: 5 Acc: 90
 
 x = tf.placeholder(tf.float32, [None,8], name="diagcomp_input")
 y = tf.placeholder(tf.float32, name="targets")
@@ -55,7 +53,6 @@ def model(input_data):
 	output = {'weights': tf.Variable(tf.random_normal([neurons_layer1, 1])),
 				'biases': tf.Variable(tf.zeros(1))}
 
-	#Dim: 0
 	#input_data = tf.nn.l2_normalize(input_data,0)
 
 	layer1 = tf.add(tf.matmul(input_data, hidden1['weights']), hidden1['biases'], name='layer1')
@@ -72,11 +69,11 @@ def train_model(x,y):
 
 	cost = tf.losses.mean_squared_error(y, pred)
 
-	#.001
+	#.01
 	optimizer = tf.train.AdamOptimizer(.01).minimize(cost)
 
 	#50000
-	epochs = 10000
+	epochs = 50000
 
 	saver = tf.train.Saver()
 

@@ -1,12 +1,9 @@
-
-
 import tensorflow as tf 
 import numpy as np 
 
 DATA_FILE = "encoded.csv"
 
 neurons_layer1 = 4
-#Best: 5 Acc: 90
 
 x = tf.placeholder(tf.float32, [None,7], name="input")
 y = tf.placeholder(tf.float32, name="targets")
@@ -71,8 +68,10 @@ def train_model(x,y):
 
 	cost = tf.losses.mean_squared_error(y, pred)
 	
+	#.001
 	optimizer = tf.train.AdamOptimizer(.001).minimize(cost)
 
+	#150000
 	epochs = 150000
 
 	saver = tf.train.Saver()
@@ -113,7 +112,6 @@ def train_model(x,y):
 
 			print("Accuracy: ", accuracy.eval(feed_dict={x: test_x, y: test_y}))
 
-			#print(x.eval({x:test_x}))
 			print(pred.eval({x:test_x}))
 
 train_model(x,y)

@@ -1,12 +1,9 @@
-
-
 import tensorflow as tf 
 import numpy as np 
 
 DATA_FILE = "encoded.csv"
 
 neurons_layer1 = 4
-#Best: 5 Acc: 90
 
 x = tf.placeholder(tf.float32, name="input")
 y = tf.placeholder(tf.int32, name="targets")
@@ -57,7 +54,6 @@ def model(input_data):
 
 	layer1 = tf.add(tf.matmul(input_data, hidden1['weights']), hidden1['biases'], name='layer1')
 	layer1 = tf.tanh(layer1)
-	#tf.nn.dropout(tf.nn.softmax(layer1), .5)
 
 	output = tf.add(tf.matmul(layer1, output['weights']), output['biases'], name='output')
 
@@ -69,12 +65,11 @@ def train_model(x,y):
 	pred = model(x)
 
 	cost = tf.losses.mean_squared_error(y, pred)
-	#tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_with_logits(labels=y, logits=pred))
 
-	#.1
+	#.01
 	optimizer = tf.train.AdamOptimizer(.01).minimize(cost)
 
-	#1000
+	#10000
 	epochs = 10000
 
 	saver = tf.train.Saver()

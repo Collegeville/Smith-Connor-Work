@@ -5,6 +5,9 @@ import csv
 
 string_file = 'test_data.csv'
 
+####################################################################
+##Convert all strings to int in a specified column within csv file##
+####################################################################
 def to_int(col):
 	with open(string_file, 'r') as arraycsv:
 		csvreader = csv.reader(arraycsv)
@@ -28,35 +31,31 @@ def to_int(col):
 			count += 1
 
 	return intvals, string_list
+####################################################################
 
+
+####################################################
+##Encode strings to use in training and predicting##
+####################################################
 def encode(col, string_val):
 	intvals, string_list = to_int(col)
 	return string_list.index(string_val)
+####################################################
 
+
+#####################################
+##Decode int values back to strings##
+#####################################
 def decode(col, index):
 	intvals, string_list = to_int(col)
 	return string_list[index]
+#####################################
 
 
-#y=(x*(B-A)+A*max-B*min)/(max-min) 
-def scale(non_scaled):
-	scaled = list()
-	for i in range(len(non_scaled)):
-		scaled.append((non_scaled[i] * (.8) + .1 * max(non_scaled) - .9 * min(non_scaled)) / (max(non_scaled)-min(non_scaled)))
-
-	return scaled
-
-#yr=(y*(max-min)-A*max+B*min)/(B-A) 
-def rescale(scaled):
-	rescaled = list()
-	for i in range(len(scaled)):
-		rescaled.append((scaled[i]* (max(scaled)-min(scaled)) - .1 * max(scaled) + .9 * min(scaled))/(.8))
-
-	return rescaled
-
-
+#####################################################
+##Create lists of columns to print out into new csv##
+#####################################################
 def main():
-	#Change which rows are encoded based on where strings are present in .csv file
 	with open(string_file,'r') as stringcsv:
 		csvreader = csv.reader(stringcsv)
 		count = 0
@@ -84,18 +83,19 @@ def main():
 				col10.append(row[10])
 				col11.append(row[11])
 			count += 1
+#####################################################
 
 
-
-	#Change name of output file as needed
+	###########################################
+	##Print encoded columns into new csv file##
+	###########################################
 	int_file = 'encoded.csv'
 	with open(int_file,'w') as intcsv:
 		csvwriter = csv.writer(intcsv, delimiter=',', lineterminator='\n')
 
 		for i in range(0,len(col0)):
 			csvwriter.writerow([col0[i], col1[i], col2[i], col3[i], col4[i], col5[i], col6[i], col7[i], col8[i], col9[i], col10[i], col11[i]])
-
-
+	###########################################
 	
 	
 

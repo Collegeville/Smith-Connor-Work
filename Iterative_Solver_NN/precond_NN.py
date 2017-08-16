@@ -1,5 +1,3 @@
-#Use sparse softmax
-
 import tensorflow as tf 
 import numpy as np 
 
@@ -68,10 +66,10 @@ def train_model(x,y):
 
 	cost = tf.losses.mean_squared_error(y, pred)
 
-	#.1
+	#.01
 	optimizer = tf.train.AdamOptimizer(.01).minimize(cost)
 
-	#1000
+	#10000
 	epochs = 10000
 
 	saver = tf.train.Saver()
