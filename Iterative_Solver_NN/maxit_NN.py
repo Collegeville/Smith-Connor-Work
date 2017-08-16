@@ -3,7 +3,7 @@
 import tensorflow as tf 
 import numpy as np 
 
-DATA_FILE = "shuffled_data.csv"
+DATA_FILE = "encoded.csv"
 
 neurons_layer1 = 4
 #Best: 5 Acc: 90
@@ -105,7 +105,7 @@ def train_model(x,y):
 				print("Epoch: ", epoch, " loss: ", epoch_loss)
 
 
-			saver.save(sess, 'Saved\maxit_model')
+			saver.save(sess, 'Saved\maxit\maxit_model')
 
 			correct_prediction = tf.equal(tf.round(pred), tf.round(y))
 

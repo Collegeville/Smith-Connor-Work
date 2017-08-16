@@ -4,10 +4,10 @@ import numpy as np
 
 DATA_FILE = "encoded.csv"
 
-neurons_layer1 = 10
+neurons_layer1 = 4
 #Best: 5 Acc: 90
 
-x = tf.placeholder(tf.float32, [None,8], name="input")
+x = tf.placeholder(tf.float32, [None,8], name="diagcomp_input")
 y = tf.placeholder(tf.float32, name="targets")
 
 #Reusable method used to read data from .csv file (By Connor Smith)
@@ -61,7 +61,7 @@ def model(input_data):
 	layer1 = tf.add(tf.matmul(input_data, hidden1['weights']), hidden1['biases'], name='layer1')
 	layer1 = tf.nn.relu(layer1)
 
-	output = tf.add(tf.matmul(layer1, output['weights']), output['biases'], name='output')
+	output = tf.add(tf.matmul(layer1, output['weights']), output['biases'], name='diagcomp_output')
 
 	return output
 
@@ -107,7 +107,7 @@ def train_model(x,y):
 
 				print("Epoch: ", epoch, " loss: ", epoch_loss)
 
-			saver.save(sess, 'Saved\diagcomp_model')
+			saver.save(sess, 'Saved\diagcomp\diagcomp_model')
 
 			correct_prediction = tf.equal(pred, y)
 

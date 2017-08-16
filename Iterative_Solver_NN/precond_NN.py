@@ -5,7 +5,7 @@ import numpy as np
 
 DATA_FILE = "shuffled_data.csv"
 
-neurons_layer1 = 1000
+neurons_layer1 = 4
 
 x = tf.placeholder(tf.float32, [None,7], name="input")
 y = tf.placeholder(tf.int32, name="targets")
@@ -51,11 +51,11 @@ def get_data(filename):
 def model(input_data):
 	hidden1 = {'weights': tf.Variable(tf.random_normal([7, neurons_layer1])),
 				'biases': tf.Variable(tf.zeros(neurons_layer1))}	
-	output = {'weights': tf.Variable(tf.random_normal([neurons_layer1, 10])),
-				'biases': tf.Variable(tf.zeros(10))}
+	output = {'weights': tf.Variable(tf.random_normal([neurons_layer1, 1])),
+				'biases': tf.Variable(tf.zeros(1))}
 
 	layer1 = tf.add(tf.matmul(input_data, hidden1['weights']), hidden1['biases'], name='layer1')
-	layer1 = tf.nn.dropout(tf.nn.softmax(layer1), .5)
+	layer1 = tf.tanh(layer1)
 
 	output = tf.add(tf.matmul(layer1, output['weights']), output['biases'], name='output')
 
@@ -66,14 +66,13 @@ def train_model(x,y):
 
 	pred = model(x)
 
-	cost = tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_with_logits(labels=y, logits=pred))
-	#tf.losses.mean_squared_error(y, pred)
+	cost = tf.losses.mean_squared_error(y, pred)
 
 	#.1
 	optimizer = tf.train.AdamOptimizer(.01).minimize(cost)
 
 	#1000
-	epochs = 1000
+	epochs = 10000
 
 	saver = tf.train.Saver()
 
@@ -105,7 +104,7 @@ def train_model(x,y):
 
 				print("Epoch: ", epoch, " loss: ", epoch_loss)
 
-			saver.save(sess, 'Saved\precond_model')
+			saver.save(sess, 'Saved\precond\precond_model')
 
 			correct_prediction = tf.equal(tf.argmax(pred), tf.cast(y, tf.int64))
 

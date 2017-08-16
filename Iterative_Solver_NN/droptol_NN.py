@@ -4,8 +4,7 @@ import numpy as np
 
 DATA_FILE = "encoded.csv"
 
-neurons_layer1 = 10
-neurons_layer2 = 3
+neurons_layer1 = 4
 #Best: 5 Acc: 90
 
 x = tf.placeholder(tf.float32, [None,7], name="input")
@@ -51,16 +50,14 @@ def get_data(filename):
 #Design model architecture for best possible accuracy
 def model(input_data):
 	hidden1 = {'weights': tf.Variable(tf.random_normal([7, neurons_layer1])),
-				'biases': tf.Variable(tf.zeros(neurons_layer1))}	
-	hidden2 = {'weights': tf.Variable(tf.random_normal([neurons_layer1, neurons_layer2])),
-				'biases': tf.Variable(tf.zeros(neurons_layer2))}	
+				'biases': tf.Variable(tf.zeros(neurons_layer1))}		
 	output = {'weights': tf.Variable(tf.random_normal([neurons_layer1, 1])),
 				'biases': tf.Variable(tf.zeros(1))}
 
 	input_data = tf.nn.l2_normalize(input_data,0)
 
 	layer1 = tf.add(tf.matmul(input_data, hidden1['weights']), hidden1['biases'], name='layer1')
-	layer1 = tf.nn.dropout(tf.nn.relu(layer1), .75)
+	layer1 = tf.sigmoid(layer1)
 
 
 	output = tf.add(tf.matmul(layer1, output['weights']), output['biases'], name='output')
@@ -78,7 +75,7 @@ def train_model(x,y):
 	optimizer = tf.train.AdamOptimizer(.01).minimize(cost)
 
 	#1000
-	epochs = 5
+	epochs = 1000
 
 	saver = tf.train.Saver()
 
@@ -109,7 +106,7 @@ def train_model(x,y):
 
 				print("Epoch: ", epoch, " loss: ", epoch_loss)
 
-			saver.save(sess, 'Saved\droptol_model')
+			saver.save(sess, 'Saved\droptol\droptol_model')
 
 			correct_prediction = tf.equal(pred, y)
 
@@ -119,6 +116,6 @@ def train_model(x,y):
 
 			print(pred.eval({x:test_x}))
 
-			print(y.eval({y: test_y}))
+			#print(y.eval({y: test_y}))
 
 train_model(x,y)
