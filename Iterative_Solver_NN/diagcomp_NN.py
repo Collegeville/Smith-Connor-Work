@@ -47,18 +47,17 @@ def get_data(filename):
 
 #Design model architecture for best possible accuracy
 def model(input_data):
-	#stddev: 1e-1
 	hidden1 = {'weights': tf.Variable(tf.random_normal([8, neurons_layer1], mean=-.5)),
 				'biases': tf.Variable(tf.zeros(neurons_layer1))}	
 	output = {'weights': tf.Variable(tf.random_normal([neurons_layer1, 1])),
 				'biases': tf.Variable(tf.zeros(1))}
 
-	#input_data = tf.nn.l2_normalize(input_data,0)
+	input_data = tf.nn.l2_normalize(input_data,0)
 
 	layer1 = tf.add(tf.matmul(input_data, hidden1['weights']), hidden1['biases'], name='layer1')
 	layer1 = tf.nn.relu(layer1)
 
-	output = tf.add(tf.matmul(layer1, output['weights']), output['biases'], name='diagcomp_output')
+	output = tf.abs(tf.add(tf.matmul(layer1, output['weights']), output['biases'], name='diagcomp_output'))
 
 	return output
 
@@ -69,11 +68,11 @@ def train_model(x,y):
 
 	cost = tf.losses.mean_squared_error(y, pred)
 
-	#.01
-	optimizer = tf.train.AdamOptimizer(.01).minimize(cost)
+	#.0001
+	optimizer = tf.train.AdamOptimizer(.0001).minimize(cost)
 
-	#50000
-	epochs = 50000
+	#250000
+	epochs = 250000
 
 	saver = tf.train.Saver()
 
