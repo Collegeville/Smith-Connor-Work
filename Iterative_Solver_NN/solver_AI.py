@@ -129,7 +129,7 @@ def predict():
 		output = droptol_graph.get_tensor_by_name("output:0")
 
 		droptol = droptol_sess.run(output, feed_dict)
-		droptol = droptol[0][0]
+		droptol = abs(droptol[0][0])
 	#####################
 
 
