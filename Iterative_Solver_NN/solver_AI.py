@@ -83,7 +83,7 @@ def predict():
 		output = maxit_graph.get_tensor_by_name("output:0")
 
 		maxit = maxit_sess.run(output, feed_dict)
-		maxit = maxit[0][0]
+		maxit = abs(maxit[0][0])
 	###################
 
 
@@ -157,7 +157,7 @@ def predict():
 		output = diagcomp_graph.get_tensor_by_name("diagcomp_output:0")
 
 		diagcomp = diagcomp_sess.run(output, feed_dict)
-		diagcomp = diagcomp[0][0]
+		diagcomp = abs(diagcomp[0][0])
 	######################
 
 
