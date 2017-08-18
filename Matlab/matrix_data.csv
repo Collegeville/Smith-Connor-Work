@@ -498,89 +498,164 @@ Size,Nonzeros,Symmetry,2D/3D,Pos/Def,Kind,Solver,Tol,Maxit,Precond,droptol,diagc
 4929,33108,0,1,0, power network problem sequence, gmres,0.000001,10, ilu,0.001,0,1,10
 4929,33044,0,1,0, subsequent power network problem, gmres,0.000001,10, ilu,0.001,0,1,10
 113,655,0,1,0, statistical/mathematical problem, gmres,0.000001,10, ilu,0.001,0,1,10
-     2132,    14872,        1,         0,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 0.000000e+00,         0,         0,        10
-      822,     3276,        0,         0,         0, optimization problem sequence, gmres, 1.000000e-06,        10, ilu, 0.000000e+00,         0,         0,        10
-      822,     4661,        0,         0,         0, subsequent optimization problem, gmres, 1.000000e-06,        10, ilu, 0.000000e+00,         0,         0,        10
-      822,     4726,        0,         0,         0, subsequent optimization problem, gmres, 1.000000e-06,        10, ilu, 0.000000e+00,         0,         0,        10
-      822,     4790,        0,         0,         0, subsequent optimization problem, gmres, 1.000000e-06,        10, ilu, 0.000000e+00,         0,         0,        10
-      822,     4841,        0,         0,         0, subsequent optimization problem, gmres, 1.000000e-06,        10, ilu, 0.000000e+00,         0,         0,        10
-      822,     3802,        0,         0,         0, subsequent optimization problem, gmres, 1.000000e-06,        10, ilu, 0.000000e+00,         0,         0,        10
-      822,     4028,        0,         0,         0, subsequent optimization problem, gmres, 1.000000e-06,        10, ilu, 0.000000e+00,         0,         0,        10
-      822,     4172,        0,         0,         0, subsequent optimization problem, gmres, 1.000000e-06,        10, ilu, 0.000000e+00,         0,         0,        10
-      822,     4534,        0,         0,         0, subsequent optimization problem, gmres, 1.000000e-06,        10, ilu, 0.000000e+00,         0,         0,        10
-     1054,    12196,        1,         0,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,        10
-     1072,    12444,        1,         0,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,        10
-      144,     1296,        1,         0,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-      161,     1377,        1,         0,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-      187,     1491,        1,         0,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-      229,     1777,        1,         0,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-       24,      160,        1,         0,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-      256,     2916,        1,         0,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-      268,     3082,        1,         0,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-      292,     2540,        1,         0,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-      445,     3809,        1,         0,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-       61,      557,        1,         0,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-       62,      218,        1,         0,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-      634,     7228,        1,         0,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-      715,     6665,        1,         0,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-       73,      377,        1,         0,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-      838,    10010,        1,         0,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-       96,      768,        1,         0,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-       54,      291,        0,         0,         0, 2D/3D problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-     1005,     8621,        1,         0,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-     1007,     8575,        1,         0,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-     1242,    10426,        1,         0,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-      162,     1182,        1,         0,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-      193,     3493,        1,         0,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-      198,     1392,        1,         0,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-      209,     1743,        1,         0,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-      221,     1629,        1,         0,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-      234,      834,        1,         0,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-      245,     1461,        1,         0,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-     2680,    25026,        1,         0,         0, structural problem, gmres, 1.000000e-06,      1000, ilu, 5.000000e-01,         0,         1,       100
-      307,     2523,        1,         1,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-      310,     2448,        1,         1,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-      346,     3226,        1,         1,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-      361,     2953,        1,         1,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-      419,     3563,        1,         1,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-      492,     3156,        1,         1,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-      503,     6027,        1,         1,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-      512,     3502,        1,         1,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-       59,      267,        1,         1,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-      607,     5131,        1,         1,         0, structural problem, gmres, 1.000000e-06,      1000, ilu, 1.000000e-01,         0,         1,       120
-      592,     5104,        1,         1,         0, structural problem, gmres, 1.000000e-06,      1000, ilu, 1.000000e-01,         0,         1,       120
-       66,      320,        1,         1,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,        10
-       72,      222,        1,         1,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,        10
-      869,     7285,        1,         1,         0, structural problem, gmres, 1.000000e-06,     10000, ilu, 5.000000e-01,         0,         1,       120
-      758,     5994,        1,         1,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
-       87,      541,        1,         1,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-      878,     7448,        1,         1,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
-      918,     7384,        1,         1,         0, structural problem, gmres, 1.000000e-06,       100, ilu, 1.000000e-01,         0,         1,       120
-      992,    16744,        1,         1,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
-     1176,    18552,        1,         1,         0, power network problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
-      183,      998,        0,         1,         0, 2D/3D problem sequence, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,        10
-      183,     1069,        0,         1,         0, subsequent 2D/3D problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,        10
-      183,     1069,        0,         1,         0, subsequent 2D/3D problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,        10
-      183,     1000,        0,         1,         0, subsequent 2D/3D problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,        10
-      541,     4282,        0,         1,         0, 2D/3D problem sequence, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,        10
-      541,     4282,        0,         1,         0, subsequent 2D/3D problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,        10
-      541,     4282,        0,         1,         0, subsequent 2D/3D problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,        10
-      541,     4273,        0,         1,         0, subsequent 2D/3D problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,        10
-      680,     2184,        0,         1,         0, 2D/3D problem sequence, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,        10
-      680,     2424,        0,         1,         0, subsequent 2D/3D problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,        10
-      680,     2471,        0,         1,         0, subsequent 2D/3D problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,        10
-      760,     5739,        0,         1,         0, 2D/3D problem sequence, gmres, 1.000000e-06,        10, ilu, 1.000000e-02,         0,         1,       100
-      760,     5739,        0,         1,         0, subsequent 2D/3D problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-02,         0,         1,       100
-      760,     5816,        0,         1,         0, subsequent 2D/3D problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-02,         0,         1,       100
-     4929,    33108,        0,         0,         0, power network problem sequence, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       100
-     4929,    33044,        0,         0,         0, subsequent power network problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       100
-      113,      655,        0,         0,         0, statistical/mathematical problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-     1107,     5664,        0,         0,         0, directed weighted graph, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-      115,      421,        0,         0,         0, directed weighted graph, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-      185,      975,        0,         0,         0, directed weighted graph, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-      216,      812,        0,         0,         0, directed weighted graph, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-      216,      812,        0,         0,         0, directed weighted graph, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-      343,     1310,        0,         0,         0, directed weighted graph, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-      512,     1976,        0,         0,         0, directed weighted graph, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-      434,     4182,        0,         0,         0, directed weighted graph, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-       32,      126,        0,         0,         0, directed graph, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
+2132,14872,1,0,0, structural problem, gmres,0.000001,10, ilu,0,0,0,10
+822,3276,0,0,0, optimization problem sequence, gmres,0.000001,10, ilu,0,0,0,10
+822,4661,0,0,0, subsequent optimization problem, gmres,0.000001,10, ilu,0,0,0,10
+822,4726,0,0,0, subsequent optimization problem, gmres,0.000001,10, ilu,0,0,0,10
+822,4790,0,0,0, subsequent optimization problem, gmres,0.000001,10, ilu,0,0,0,10
+822,4841,0,0,0, subsequent optimization problem, gmres,0.000001,10, ilu,0,0,0,10
+822,3802,0,0,0, subsequent optimization problem, gmres,0.000001,10, ilu,0,0,0,10
+822,4028,0,0,0, subsequent optimization problem, gmres,0.000001,10, ilu,0,0,0,10
+822,4172,0,0,0, subsequent optimization problem, gmres,0.000001,10, ilu,0,0,0,10
+822,4534,0,0,0, subsequent optimization problem, gmres,0.000001,10, ilu,0,0,0,10
+1054,12196,1,0,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,10
+1072,12444,1,0,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,10
+144,1296,1,0,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,100
+161,1377,1,0,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,100
+187,1491,1,0,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,100
+229,1777,1,0,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,100
+24,160,1,0,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,100
+256,2916,1,0,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,100
+268,3082,1,0,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,100
+292,2540,1,0,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,100
+445,3809,1,0,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,100
+61,557,1,0,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,100
+62,218,1,0,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,100
+634,7228,1,0,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,100
+715,6665,1,0,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,100
+73,377,1,0,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,100
+838,10010,1,0,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,100
+96,768,1,0,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,100
+54,291,0,0,0, 2D/3D problem, gmres,0.000001,10, ilu,0.1,0,1,100
+1005,8621,1,0,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,100
+1007,8575,1,0,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,100
+1242,10426,1,0,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,100
+162,1182,1,0,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,100
+193,3493,1,0,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,100
+198,1392,1,0,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,100
+209,1743,1,0,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,100
+221,1629,1,0,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,100
+234,834,1,0,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,100
+245,1461,1,0,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,100
+2680,25026,1,0,0, structural problem, gmres,0.000001,1000, ilu,0.5,0,1,100
+307,2523,1,1,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,100
+310,2448,1,1,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,100
+346,3226,1,1,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,100
+361,2953,1,1,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,100
+419,3563,1,1,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,100
+492,3156,1,1,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,100
+503,6027,1,1,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,100
+512,3502,1,1,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,100
+59,267,1,1,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,100
+607,5131,1,1,0, structural problem, gmres,0.000001,1000, ilu,0.1,0,1,120
+592,5104,1,1,0, structural problem, gmres,0.000001,1000, ilu,0.1,0,1,120
+66,320,1,1,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,10
+72,222,1,1,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,10
+869,7285,1,1,0, structural problem, gmres,0.000001,10000, ilu,0.5,0,1,120
+758,5994,1,1,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,120
+87,541,1,1,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,100
+878,7448,1,1,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,120
+918,7384,1,1,0, structural problem, gmres,0.000001,100, ilu,0.1,0,1,120
+992,16744,1,1,0, structural problem, gmres,0.000001,10, ilu,0.1,0,1,120
+1176,18552,1,1,0, power network problem, gmres,0.000001,10, ilu,0.001,0,1,120
+183,998,0,1,0, 2D/3D problem sequence, gmres,0.000001,10, ilu,0.1,0,1,10
+183,1069,0,1,0, subsequent 2D/3D problem, gmres,0.000001,10, ilu,0.1,0,1,10
+183,1069,0,1,0, subsequent 2D/3D problem, gmres,0.000001,10, ilu,0.1,0,1,10
+183,1000,0,1,0, subsequent 2D/3D problem, gmres,0.000001,10, ilu,0.1,0,1,10
+541,4282,0,1,0, 2D/3D problem sequence, gmres,0.000001,10, ilu,0.1,0,1,10
+541,4282,0,1,0, subsequent 2D/3D problem, gmres,0.000001,10, ilu,0.1,0,1,10
+541,4282,0,1,0, subsequent 2D/3D problem, gmres,0.000001,10, ilu,0.1,0,1,10
+541,4273,0,1,0, subsequent 2D/3D problem, gmres,0.000001,10, ilu,0.1,0,1,10
+680,2184,0,1,0, 2D/3D problem sequence, gmres,0.000001,10, ilu,0.1,0,1,10
+680,2424,0,1,0, subsequent 2D/3D problem, gmres,0.000001,10, ilu,0.1,0,1,10
+680,2471,0,1,0, subsequent 2D/3D problem, gmres,0.000001,10, ilu,0.1,0,1,10
+760,5739,0,1,0, 2D/3D problem sequence, gmres,0.000001,10, ilu,0.01,0,1,100
+760,5739,0,1,0, subsequent 2D/3D problem, gmres,0.000001,10, ilu,0.01,0,1,100
+760,5816,0,1,0, subsequent 2D/3D problem, gmres,0.000001,10, ilu,0.01,0,1,100
+4929,33108,0,0,0, power network problem sequence, gmres,0.000001,10, ilu,0.001,0,1,100
+4929,33044,0,0,0, subsequent power network problem, gmres,0.000001,10, ilu,0.001,0,1,100
+113,655,0,0,0, statistical/mathematical problem, gmres,0.000001,10, ilu,0.1,0,1,100
+1107,5664,0,0,0, directed weighted graph, gmres,0.000001,10, ilu,0.1,0,1,100
+115,421,0,0,0, directed weighted graph, gmres,0.000001,10, ilu,0.1,0,1,100
+185,975,0,0,0, directed weighted graph, gmres,0.000001,10, ilu,0.1,0,1,100
+216,812,0,0,0, directed weighted graph, gmres,0.000001,10, ilu,0.1,0,1,100
+216,812,0,0,0, directed weighted graph, gmres,0.000001,10, ilu,0.1,0,1,100
+343,1310,0,0,0, directed weighted graph, gmres,0.000001,10, ilu,0.1,0,1,100
+512,1976,0,0,0, directed weighted graph, gmres,0.000001,10, ilu,0.1,0,1,100
+434,4182,0,0,0, directed weighted graph, gmres,0.000001,10, ilu,0.1,0,1,100
+32,126,0,0,0, directed graph, gmres,0.000001,10, ilu,0.1,0,1,100
+207,572,0,0,0, chemical process simulation problem, gmres,0.000001,10, ilu,0.1,0,1,100
+59,271,0,0,0, chemical process simulation problem, gmres,0.000001,10, ilu,0.1,0,1,100
+137,400,0,0,0, chemical process simulation problem, gmres,0.000001,10, ilu,0.1,0,1,100
+425,1255,0,0,0, chemical process simulation problem, gmres,0.000001,10, ilu,0.1,0,1,100
+225,1303,0,0,0, chemical process simulation problem, gmres,0.000001,10, ilu,0.1,0,1,100
+936,6264,1,0,0, 2D/3D problem, gmres,0.000001,10, ilu,0.1,0,1,100
+1009,6865,1,1,0, 2D/3D problem, gmres,0.000001,10, ilu,0.1,0,1,100
+1089,7361,1,1,0, 2D/3D problem, gmres,0.000001,10, ilu,0.1,0,1,100
+1440,9504,1,1,0, 2D/3D problem, gmres,0.000001,10, ilu,0.1,0,1,100
+1180,7750,1,1,0, 2D/3D problem, gmres,0.000001,10, ilu,0.1,0,1,100
+1377,8993,1,1,0, 2D/3D problem, gmres,0.000001,10, ilu,0.1,0,1,100
+1138,7450,1,1,0, 2D/3D problem, gmres,0.000001,10, ilu,0.1,0,1,100
+1141,7465,1,1,0, 2D/3D problem, gmres,0.000001,10, ilu,0.1,0,1,100
+1349,9101,1,1,0, 2D/3D problem, gmres,0.000001,10, ilu,0.1,0,1,100
+9,50,0,1,0, counter-example problem, gmres,0.000001,10, ilu,0.1,0,1,100
+11,76,0,1,0, counter-example problem, gmres,0.000001,10, ilu,0.1,0,1,100
+991,6027,0,1,0, semiconductor device problem, gmres,0.000001,10, ilu,0.1,0,1,100
+131,536,0,1,0, computational fluid dynamics problem, gmres,0.000001,10, ilu,0.1,0,1,100
+3937,25407,0,1,0, computational fluid dynamics problem, gmres,0.000001,10, ilu,0.001,0,1,100
+511,2796,0,1,0, computational fluid dynamics problem, gmres,0.000001,10, ilu,0.01,0,1,100
+3937,25407,0,1,0, computational fluid dynamics problem, gmres,0.000001,10, ilu,0.001,0,1,100
+131,536,0,1,0, computational fluid dynamics problem, gmres,0.000001,10, ilu,0.001,0,1,100
+511,2796,0,1,0, computational fluid dynamics problem, gmres,0.000001,10, ilu,0.001,0,1,100
+1009,6865,1,1,0, duplicate thermal problem, gmres,0.000001,10, ilu,0.001,0,1,100
+1270,8668,1,1,0, thermal problem, gmres,0.000001,10, ilu,0.001,0,1,100
+1561,10681,1,1,0, thermal problem, gmres,0.000001,10, ilu,0.001,0,1,100
+1882,12904,1,1,0, thermal problem, gmres,0.000001,10, ilu,0.001,0,1,100
+2233,15337,1,1,0, thermal problem, gmres,0.000001,10, ilu,0.001,0,1,100
+2614,17980,1,1,0, thermal problem, gmres,0.000001,10, ilu,0.001,0,1,100
+3025,20833,1,1,0, thermal problem, gmres,0.000001,10, ilu,0.001,0,1,100
+3466,23896,1,1,0, thermal problem, gmres,0.000001,10, ilu,0.001,0,1,100
+265,1753,1,1,0, thermal problem, gmres,0.000001,10, ilu,0.1,0,1,100
+406,2716,1,1,0, thermal problem, gmres,0.000001,10, ilu,0.1,0,1,100
+577,3889,1,1,0, thermal problem, gmres,0.000001,10, ilu,0.1,0,1,100
+778,5272,1,1,0, thermal problem, gmres,0.000001,10, ilu,0.1,0,1,100
+1258,7682,0,1,0, economic problem, gmres,0.000001,10, ilu,0.1,0,1,100
+180,2659,0,1,0, 2D/3D problem, gmres,0.000001,10, ilu,0.1,0,1,100
+765,24382,0,1,0, 2D/3D problem, gmres,0.000001,10, ilu,0.1,0,1,100
+1374,8588,0,1,0, 2D/3D problem, gmres,0.000001,10, ilu,0.1,0,1,100
+261,1500,0,1,0, 2D/3D problem, gmres,0.000001,10, ilu,0.1,0,1,100
+666,4032,0,1,0, 2D/3D problem, gmres,0.000001,10, ilu,0.1,0,1,100
+2529,90158,0,1,0, economic problem, gmres,0.000001,10, ilu,0.1,0,1,100
+1030,6858,0,1,0, computational fluid dynamics problem, gmres,0.000001,10, ilu,0.1,0,1,100
+886,5970,0,1,0, computational fluid dynamics problem, gmres,0.000001,10, ilu,0.1,0,1,100
+2205,14133,0,1,0, computational fluid dynamics problem, gmres,0.000001,10, ilu,0.1,0,1,100
+1919,9662,0,1,0, 2D/3D problem, gmres,0.000001,10, ilu,0.01,0,1,100
+362,1760,0,1,0, 2D/3D problem, gmres,0.000001,10, ilu,0.1,0,1,100
+30,180,0,1,0, computational fluid dynamics problem, gmres,0.000001,10, ilu,0.1,0,1,100
+1224,9613,0,1,0, computational fluid dynamics problem, gmres,0.000001,10, ilu,0.001,0,1,100
+532,3474,0,1,0, computational fluid dynamics problem, gmres,0.000001,10, ilu,0.001,0,1,100
+3140,543160,0,0,0, economic problem, gmres,0.000001,10, ilu,0.1,0,1,100
+3140,540022,0,0,0, economic problem, gmres,0.000001,10, ilu,0.1,0,1,100
+3140,543160,0,0,0, economic problem, gmres,0.000001,10, ilu,0.1,0,1,100
+10,76,0,1,0, counter-example problem, gmres,0.000001,10, ilu,0.1,0,1,100
+238,1128,0,1,0, computational fluid dynamics problem, gmres,0.000001,10, ilu,0.1,0,1,100
+1000,3750,1,1,0, computational fluid dynamics problem, gmres,0.000001,10, ilu,0.1,0,1,100
+3564,22316,1,1,0, computational fluid dynamics problem, gmres,0.000001,10, ilu,0.1,0,1,100
+1000,3750,1,1,0, computational fluid dynamics problem, gmres,0.000001,10, ilu,0.1,0,1,100
+1080,23094,0,1,0, computational fluid dynamics problem, gmres,0.000001,10, ilu,0.1,0,1,100
+5005,20033,0,1,0, computational fluid dynamics problem, gmres,0.000001,10, ilu,0.1,0,1,100
+1104,3786,0,1,0, computational fluid dynamics problem, gmres,0.000001,10, ilu,0.1,0,1,100
+3312,20793,0,1,0, computational fluid dynamics problem, gmres,0.000001,10, ilu,0.1,0,1,100
+      663,     1687,        0,         1,         0, optimization problem sequence, gmres, 1.000000e-06,        10, ilu, 1.000000e-02,         0,         1,       100
+      663,     1726,        0,         1,         0, subsequent optimization problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-02,         0,         1,       100
+      663,     1712,        0,         1,         0, subsequent optimization problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-02,         0,         1,       100
+     3345,    22749,        1,         1,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 3.000000e-01,         0,         1,       100
+      240,     2248,        0,         1,         0, computational fluid dynamics problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
+      600,     5660,        0,         1,         0, computational fluid dynamics problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
+       80,      314,        0,         1,         0, computational fluid dynamics problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
+      363,     2454,        0,         1,         0, optimization problem sequence, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
+      363,     3068,        0,         1,         0, subsequent optimization problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
+      363,     3157,        0,         1,         0, subsequent optimization problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
+      363,     3279,        0,         1,         0, subsequent optimization problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
+     1856,    11360,        0,         1,         0, computational fluid dynamics problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
+     1856,    11550,        0,         1,         0, computational fluid dynamics problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
