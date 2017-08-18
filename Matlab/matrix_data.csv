@@ -537,3 +537,50 @@ Size,Nonzeros,Symmetry,2D/3D,Pos/Def,Kind,Solver,Tol,Maxit,Precond,droptol,diagc
       221,     1629,        1,         0,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
       234,      834,        1,         0,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
       245,     1461,        1,         0,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
+     2680,    25026,        1,         0,         0, structural problem, gmres, 1.000000e-06,      1000, ilu, 5.000000e-01,         0,         1,       100
+      307,     2523,        1,         1,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
+      310,     2448,        1,         1,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
+      346,     3226,        1,         1,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
+      361,     2953,        1,         1,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
+      419,     3563,        1,         1,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
+      492,     3156,        1,         1,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
+      503,     6027,        1,         1,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
+      512,     3502,        1,         1,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
+       59,      267,        1,         1,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
+      607,     5131,        1,         1,         0, structural problem, gmres, 1.000000e-06,      1000, ilu, 1.000000e-01,         0,         1,       120
+      592,     5104,        1,         1,         0, structural problem, gmres, 1.000000e-06,      1000, ilu, 1.000000e-01,         0,         1,       120
+       66,      320,        1,         1,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,        10
+       72,      222,        1,         1,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,        10
+      869,     7285,        1,         1,         0, structural problem, gmres, 1.000000e-06,     10000, ilu, 5.000000e-01,         0,         1,       120
+      758,     5994,        1,         1,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+       87,      541,        1,         1,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
+      878,     7448,        1,         1,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+      918,     7384,        1,         1,         0, structural problem, gmres, 1.000000e-06,       100, ilu, 1.000000e-01,         0,         1,       120
+      992,    16744,        1,         1,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+     1176,    18552,        1,         1,         0, power network problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+      183,      998,        0,         1,         0, 2D/3D problem sequence, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,        10
+      183,     1069,        0,         1,         0, subsequent 2D/3D problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,        10
+      183,     1069,        0,         1,         0, subsequent 2D/3D problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,        10
+      183,     1000,        0,         1,         0, subsequent 2D/3D problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,        10
+      541,     4282,        0,         1,         0, 2D/3D problem sequence, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,        10
+      541,     4282,        0,         1,         0, subsequent 2D/3D problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,        10
+      541,     4282,        0,         1,         0, subsequent 2D/3D problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,        10
+      541,     4273,        0,         1,         0, subsequent 2D/3D problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,        10
+      680,     2184,        0,         1,         0, 2D/3D problem sequence, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,        10
+      680,     2424,        0,         1,         0, subsequent 2D/3D problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,        10
+      680,     2471,        0,         1,         0, subsequent 2D/3D problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,        10
+      760,     5739,        0,         1,         0, 2D/3D problem sequence, gmres, 1.000000e-06,        10, ilu, 1.000000e-02,         0,         1,       100
+      760,     5739,        0,         1,         0, subsequent 2D/3D problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-02,         0,         1,       100
+      760,     5816,        0,         1,         0, subsequent 2D/3D problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-02,         0,         1,       100
+     4929,    33108,        0,         0,         0, power network problem sequence, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       100
+     4929,    33044,        0,         0,         0, subsequent power network problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       100
+      113,      655,        0,         0,         0, statistical/mathematical problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
+     1107,     5664,        0,         0,         0, directed weighted graph, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
+      115,      421,        0,         0,         0, directed weighted graph, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
+      185,      975,        0,         0,         0, directed weighted graph, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
+      216,      812,        0,         0,         0, directed weighted graph, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
+      216,      812,        0,         0,         0, directed weighted graph, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
+      343,     1310,        0,         0,         0, directed weighted graph, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
+      512,     1976,        0,         0,         0, directed weighted graph, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
+      434,     4182,        0,         0,         0, directed weighted graph, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
+       32,      126,        0,         0,         0, directed graph, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
