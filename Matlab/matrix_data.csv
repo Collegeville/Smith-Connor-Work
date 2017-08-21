@@ -646,16 +646,102 @@ Size,Nonzeros,Symmetry,2D/3D,Pos/Def,Kind,Solver,Tol,Maxit,Precond,droptol,diagc
 5005,20033,0,1,0, computational fluid dynamics problem, gmres,0.000001,10, ilu,0.1,0,1,100
 1104,3786,0,1,0, computational fluid dynamics problem, gmres,0.000001,10, ilu,0.1,0,1,100
 3312,20793,0,1,0, computational fluid dynamics problem, gmres,0.000001,10, ilu,0.1,0,1,100
-      663,     1687,        0,         1,         0, optimization problem sequence, gmres, 1.000000e-06,        10, ilu, 1.000000e-02,         0,         1,       100
-      663,     1726,        0,         1,         0, subsequent optimization problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-02,         0,         1,       100
-      663,     1712,        0,         1,         0, subsequent optimization problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-02,         0,         1,       100
-     3345,    22749,        1,         1,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 3.000000e-01,         0,         1,       100
-      240,     2248,        0,         1,         0, computational fluid dynamics problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-      600,     5660,        0,         1,         0, computational fluid dynamics problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-       80,      314,        0,         1,         0, computational fluid dynamics problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-      363,     2454,        0,         1,         0, optimization problem sequence, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-      363,     3068,        0,         1,         0, subsequent optimization problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-      363,     3157,        0,         1,         0, subsequent optimization problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-      363,     3279,        0,         1,         0, subsequent optimization problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-     1856,    11360,        0,         1,         0, computational fluid dynamics problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
-     1856,    11550,        0,         1,         0, computational fluid dynamics problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       100
+663,1687,0,1,0, optimization problem sequence, gmres,0.000001,10, ilu,0.01,0,1,100
+663,1726,0,1,0, subsequent optimization problem, gmres,0.000001,10, ilu,0.01,0,1,100
+663,1712,0,1,0, subsequent optimization problem, gmres,0.000001,10, ilu,0.01,0,1,100
+3345,22749,1,1,0, structural problem, gmres,0.000001,10, ilu,0.3,0,1,100
+240,2248,0,1,0, computational fluid dynamics problem, gmres,0.000001,10, ilu,0.1,0,1,100
+600,5660,0,1,0, computational fluid dynamics problem, gmres,0.000001,10, ilu,0.1,0,1,100
+80,314,0,1,0, computational fluid dynamics problem, gmres,0.000001,10, ilu,0.1,0,1,100
+363,2454,0,1,0, optimization problem sequence, gmres,0.000001,10, ilu,0.1,0,1,100
+363,3068,0,1,0, subsequent optimization problem, gmres,0.000001,10, ilu,0.1,0,1,100
+363,3157,0,1,0, subsequent optimization problem, gmres,0.000001,10, ilu,0.1,0,1,100
+363,3279,0,1,0, subsequent optimization problem, gmres,0.000001,10, ilu,0.1,0,1,100
+1856,11360,0,1,0, computational fluid dynamics problem, gmres,0.000001,10, ilu,0.1,0,1,100
+1856,11550,0,1,0, computational fluid dynamics problem, gmres,0.000001,10, ilu,0.1,0,1,100
+36057,335552,0,0,0, frequency-domain circuit simulation problem, gmres,0.000001,10, ilu,0.00000001,0,1,100
+36057,222596,0,0,0, frequency-domain circuit simulation problem, gmres,0.000001,10, ilu,0.00000001,0,1,100
+67,294,0,0,0, chemical process simulation problem, gmres,0.000001,10000, ilu,0.00000001,0,1,120
+132,413,0,0,0, chemical process simulation problem, gmres,0.000001,10000, ilu,0.00000001,0,1,120
+156,362,0,0,0, chemical process simulation problem, gmres,0.000001,10000, ilu,0.00000001,0,1,120
+167,506,0,0,0, chemical process simulation problem, gmres,0.000001,10000, ilu,0.00000001,0,1,120
+381,2134,0,0,0, chemical process simulation problem, gmres,0.000001,10000, ilu,0.00000001,0,1,120
+479,1888,0,0,0, chemical process simulation problem, gmres,0.000001,10000, ilu,0.00000001,0,1,120
+497,1721,0,0,0, chemical process simulation problem, gmres,0.000001,10000, ilu,0.00000001,0,1,120
+655,2808,0,0,0, chemical process simulation problem, gmres,0.000001,10000, ilu,0.00000001,0,1,120
+989,3518,0,0,0, chemical process simulation problem, gmres,0.000001,10000, ilu,0.00000001,0,1,120
+36057,335552,0,0,0, frequency-domain circuit simulation problem, gmres,0.000001,1000, ilu,0.001,0,1,120
+36057,222596,0,0,0, frequency-domain circuit simulation problem, gmres,0.000001,1000, ilu,0.001,0,1,120
+659033,5834044,0,0,0, frequency-domain circuit simulation problem, gmres,0.000001,1000, ilu,0.001,0,1,120
+120750,1206265,0,0,0, frequency-domain circuit simulation problem, gmres,0.000001,1000, ilu,0.001,0,1,120
+2880,18229,0,0,0, economic problem, gmres,0.000001,10, ilu,0.1,0,1,120
+2880,18229,0,0,0, economic problem, gmres,0.000001,10, ilu,0.1,0,1,120
+5850,42568,0,0,0, economic problem, gmres,0.000001,10, ilu,0.1,0,1,120
+5850,42568,0,0,0, economic problem, gmres,0.000001,10, ilu,0.1,0,1,120
+11790,107383,0,0,0, economic problem, gmres,0.000001,1000, ilu,0.01,0,1,120
+11790,107383,0,0,0, economic problem, gmres,0.000001,1000, ilu,0.01,0,1,120
+14760,145157,0,0,0, economic problem, gmres,0.000001,1000, ilu,0.01,0,1,120
+17730,183325,0,0,0, economic problem, gmres,0.000001,1000, ilu,0.01,0,1,120
+17730,183325,0,0,0, economic problem, gmres,0.000001,1000, ilu,0.01,0,1,120
+23670,259648,0,0,0, economic problem, gmres,0.000001,1000, ilu,0.01,0,1,120
+23670,259648,0,0,0, economic problem, gmres,0.000001,1000, ilu,0.01,0,1,120
+29610,335972,0,0,0, economic problem, gmres,0.000001,1000, ilu,0.01,0,1,120
+29610,335972,0,0,0, economic problem, gmres,0.000001,1000, ilu,0.01,0,1,120
+35550,412306,0,0,0, economic problem, gmres,0.000001,10, ilu,0.001,0,1,120
+35550,412306,0,0,0, economic problem, gmres,0.000001,10, ilu,0.001,0,1,120
+41490,488633,0,0,0, economic problem, gmres,0.000001,10, ilu,0.001,0,1,120
+41490,488633,0,0,0, economic problem, gmres,0.000001,10, ilu,0.001,0,1,120
+47430,564952,0,0,0, economic problem, gmres,0.000001,10, ilu,0.001,0,1,120
+47430,564952,0,0,0, economic problem, gmres,0.000001,10, ilu,0.001,0,1,120
+53370,641290,0,0,0, economic problem, gmres,0.000001,10, ilu,0.001,0,1,120
+53370,641290,0,0,0, economic problem, gmres,0.000001,10, ilu,0.001,0,1,120
+59310,717620,0,0,0, economic problem, gmres,0.000001,10, ilu,0.001,0,1,120
+59310,717620,0,0,0, economic problem, gmres,0.000001,10, ilu,0.001,0,1,120
+6774,33744,0,0,0, economic problem, gmres,0.000001,10, ilu,0.001,0,1,120
+6774,33744,0,0,0, economic problem, gmres,0.000001,10, ilu,0.001,0,1,120
+13694,72734,0,0,0, economic problem, gmres,0.000001,10, ilu,0.001,0,1,120
+13694,72734,0,0,0, economic problem, gmres,0.000001,10, ilu,0.001,0,1,120
+20614,111903,0,0,0, economic problem, gmres,0.000001,10, ilu,0.001,0,1,120
+20614,111903,0,0,0, economic problem, gmres,0.000001,10, ilu,0.001,0,1,120
+27534,151063,0,0,0, economic problem, gmres,0.000001,10, ilu,0.001,0,1,120
+27534,151063,0,0,0, economic problem, gmres,0.000001,10, ilu,0.001,0,1,120
+    27534,   151063,        0,         0,         0, economic problem, gmres, 1.000000e-06,      1000, ilu, 1.000000e-03,         0,         1,       120
+    34454,   190224,        0,         0,         0, economic problem, gmres, 1.000000e-06,      1000, ilu, 1.000000e-03,         0,         1,       120
+    34454,   190224,        0,         0,         0, economic problem, gmres, 1.000000e-06,      1000, ilu, 1.000000e-03,         0,         1,       120
+    41374,   229385,        0,         0,         0, economic problem, gmres, 1.000000e-06,      1000, ilu, 1.000000e-03,         0,         1,       120
+    41374,   229385,        0,         0,         0, economic problem, gmres, 1.000000e-06,      1000, ilu, 1.000000e-03,         0,         1,       120
+     9129,    52883,        0,         0,         0, economic problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     9129,    52883,        0,         0,         0, economic problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+    18289,   106803,        0,         0,         0, economic problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+    18289,   106803,        0,         0,         0, economic problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+    27449,   160723,        0,         0,         0, economic problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+    27449,   160723,        0,         0,         0, economic problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+    27449,   160723,        0,         0,         0, economic problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+    36609,   214643,        0,         0,         0, economic problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+    36609,   214643,        0,         0,         0, economic problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+    45769,   268563,        0,         0,         0, economic problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+    45769,   268563,        0,         0,         0, economic problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+    54929,   322483,        0,         0,         0, economic problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+    54929,   322483,        0,         0,         0, economic problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+    64089,   376395,        0,         0,         0, economic problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+    64089,   376395,        0,         0,         0, economic problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+    22695,  1215181,        0,         1,         0, electromagnetics problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+    22695,  1350309,        1,         1,         0, duplicate electromagnetics problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+     1477,    18427,        0,         0,         0, chemical process simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     2954,    36875,        0,         0,         0, chemical process simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     4101,    81057,        0,         0,         0, chemical process simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     4101,    82682,        0,         0,         0, chemical process simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     7337,   154660,        0,         0,         0, chemical process simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     7337,   156508,        0,         0,         0, chemical process simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+    10672,   228395,        0,         0,         0, chemical process simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-04,         0,         1,       120
+    10672,   232633,        0,         0,         0, chemical process simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-04,         0,         1,       120
+    10964,   231806,        0,         0,         0, chemical process simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-04,         0,         1,       120
+    10964,   233741,        0,         0,         0, chemical process simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-04,         0,         1,       120
+    14270,   305750,        0,         0,         0, chemical process simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-04,         0,         1,       120
+    14270,   307858,        0,         0,         0, chemical process simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-04,         0,         1,       120
+    17576,   379761,        0,         0,         0, chemical process simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-04,         0,         1,       120
+    17576,   381975,        0,         0,         0, chemical process simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-04,         0,         1,       120
+    35152,   746972,        0,         0,         0, chemical process simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-04,         0,         1,       120
+    35152,   764014,        0,         0,         0, chemical process simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-04,         0,         1,       120
+    70304,  1494006,        0,         0,         0, chemical process simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-05,         0,         1,       120
+    70304,  1528092,        0,         0,         0, chemical process simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-05,         0,         1,       120
