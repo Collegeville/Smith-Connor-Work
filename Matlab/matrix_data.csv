@@ -745,3 +745,39 @@ Size,Nonzeros,Symmetry,2D/3D,Pos/Def,Kind,Solver,Tol,Maxit,Precond,droptol,diagc
     35152,   764014,        0,         0,         0, chemical process simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-04,         0,         1,       120
     70304,  1494006,        0,         0,         0, chemical process simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-05,         0,         1,       120
     70304,  1528092,        0,         0,         0, chemical process simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-05,         0,         1,       120
+     6691,    26439,        0,         1,         0, duplicate structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+     6019,    23492,        0,         1,         0, duplicate structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+    15606,    61484,        0,         1,         0, duplicate structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+    36519,   326107,        1,         1,         0, duplicate structural problem, gmres, 1.000000e-06,        10, ilu, 3.000000e-01,         0,         1,       120
+    10429,   103599,        1,         1,         0, duplicate structural problem, gmres, 1.000000e-06,        10, ilu, 3.000000e-01,         0,         1,       120
+    12598,   196520,        1,         1,         0, duplicate structural problem, gmres, 1.000000e-06,        10, ilu, 3.000000e-01,         0,         1,       120
+     9506,   725054,        1,         0,         0, theoretical/quantum chemistry problem sequence, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+     9506,   394808,        1,         0,         0, subsequent theoretical/quantum chemistry problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+     9506,   394808,        1,         0,         0, subsequent theoretical/quantum chemistry problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+     9506,   394808,        1,         0,         0, subsequent theoretical/quantum chemistry problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+     9506,   394808,        1,         0,         0, subsequent theoretical/quantum chemistry problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+     9506,   394808,        1,         0,         0, subsequent theoretical/quantum chemistry problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+     9506,   394812,        1,         0,         0, subsequent theoretical/quantum chemistry problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+     9506,   394816,        1,         0,         0, subsequent theoretical/quantum chemistry problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+     9506,   395506,        1,         0,         0, subsequent theoretical/quantum chemistry problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+     9506,   401448,        1,         0,         0, subsequent theoretical/quantum chemistry problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+     9506,   408264,        1,         0,         0, subsequent theoretical/quantum chemistry problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+     9506,   446818,        1,         0,         0, subsequent theoretical/quantum chemistry problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+     9506,   474472,        1,         0,         0, subsequent theoretical/quantum chemistry problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+     9506,   496144,        1,         0,         0, subsequent theoretical/quantum chemistry problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+     9506,   539802,        1,         0,         0, subsequent theoretical/quantum chemistry problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+     9506,   587012,        1,         0,         0, subsequent theoretical/quantum chemistry problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+     9506,   629620,        1,         0,         0, subsequent theoretical/quantum chemistry problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+     9506,   695234,        1,         0,         0, subsequent theoretical/quantum chemistry problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+     9506,   695234,        1,         0,         0, subsequent theoretical/quantum chemistry problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+     9506,   818302,        1,         0,         0, subsequent theoretical/quantum chemistry problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+     9506,   971870,        1,         0,         0, subsequent theoretical/quantum chemistry problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+     9506,  1173746,        1,         0,         0, subsequent theoretical/quantum chemistry problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+     9506,  1358832,        1,         0,         0, subsequent theoretical/quantum chemistry problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+     9506,  1506810,        1,         0,         0, subsequent theoretical/quantum chemistry problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+     9506,  1506550,        1,         0,         0, subsequent theoretical/quantum chemistry problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+     9506,  1511758,        1,         0,         0, subsequent theoretical/quantum chemistry problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+     9506,  1511760,        1,         0,         0, subsequent theoretical/quantum chemistry problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+     8184,   127762,        0,         0,         0, acoustics problem, gmres, 1.000000e-06,       100, ilu, 1.000000e-01,         0,         1,       120
+    48600,  1181120,        0,         1,         0, materials problem, gmres, 1.000000e-06,       100, ilu, 1.000000e-01,         0,         1,       120
+   157464,  3866688,        0,         1,         0, materials problem, gmres, 1.000000e-06,       100, ilu, 1.000000e-01,         0,         1,       120
