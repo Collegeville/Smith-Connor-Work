@@ -781,3 +781,38 @@ Size,Nonzeros,Symmetry,2D/3D,Pos/Def,Kind,Solver,Tol,Maxit,Precond,droptol,diagc
      8184,   127762,        0,         0,         0, acoustics problem, gmres, 1.000000e-06,       100, ilu, 1.000000e-01,         0,         1,       120
     48600,  1181120,        0,         1,         0, materials problem, gmres, 1.000000e-06,       100, ilu, 1.000000e-01,         0,         1,       120
    157464,  3866688,        0,         1,         0, materials problem, gmres, 1.000000e-06,       100, ilu, 1.000000e-01,         0,         1,       120
+    45330,  3213618,        1,         1,         0, computational fluid dynamics problem, gmres, 1.000000e-06,       100, ilu, 1.000000e+00,         0,         1,       120
+   153746,  9080404,        1,         1,         0, structural problem, gmres, 1.000000e-06,      1000, ilu, 1.000000e+00,         0,         1,       120
+    53570,  1173694,        1,         1,         0, structural problem, gmres, 1.000000e-06,      1000, ilu, 1.000000e+00,         0,         1,       120
+     4350,   237798,        1,         1,         0, structural problem, gmres, 1.000000e-06,      1000, ilu, 1.000000e+00,         0,         1,       120
+    76480,   329762,        0,         1,         0, computational fluid dynamics problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+     4720,    20042,        0,         1,         0, computational fluid dynamics problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+    14000,  1853104,        0,         0,         0, directed weighted random graph, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+    38744,  1771722,        0,         1,         0, computational fluid dynamics problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-02,         0,         1,       120
+     3242,   293409,        0,         1,         0, computational fluid dynamics problem sequence, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+     3242,   293551,        0,         1,         0, subsequent computational fluid dynamics problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+    21200,  1488768,        0,         1,         0, computational fluid dynamics problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+     6316,   167178,        0,         1,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+     3402,   130371,        0,         1,         0, structural problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+    62424,  1717792,        0,         1,         0, computational fluid dynamics problem sequence, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+    62424,  1717763,        0,         1,         0, subsequent computational fluid dynamics problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+    62424,  1717777,        0,         1,         0, subsequent computational fluid dynamics problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1700,    21509,        0,         1,         0, electromagnetics problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-02,         0,         1,       120
+      300,     3155,        0,         1,         0, electromagnetics problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-02,         0,         1,       120
+     3060,    42211,        0,         1,         0, electromagnetics problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-02,         0,         1,       120
+     5940,    83842,        0,         1,         0, electromagnetics problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-02,         0,         1,       120
+    41092,  1683902,        0,         1,         0, 2D/3D problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-02,         0,         1,       120
+     3169,    20841,        0,         1,         0, semiconductor device problem sequence, gmres, 1.000000e-06,        10, ilu, 1.000000e-02,         0,         1,       120
+     3169,    20841,        0,         1,         0, subsequent semiconductor device problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-02,         0,         1,       120
+     2903,    19093,        0,         1,         0, semiconductor device problem sequence, gmres, 1.000000e-06,        10, ilu, 1.000000e-02,         0,         1,       120
+     2903,    19093,        0,         1,         0, subsequent semiconductor device problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-02,         0,         1,       120
+    26064,   177168,        0,         1,         0, semiconductor device problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-02,         0,         1,       120
+    26068,   177196,        0,         1,         0, semiconductor device problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-02,         0,         1,       120
+    33861,   166453,        0,         1,         0, electromagnetics problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-02,         0,         1,       120
+    33861,   166453,        0,         1,         0, electromagnetics problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-02,         0,         1,       120
+     2837,    10967,        0,         0,         0, chemical process simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-02,         0,         1,       120
+     5308,    22680,        0,         0,         0, chemical process simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-02,         0,         1,       120
+     1048,    13299,        0,         0,         0, chemical process simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-02,         0,         1,       120
+     4134,    94408,        0,         0,         0, chemical process simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-02,         0,         1,       120
+     3198,    56834,        0,         0,         0, chemical process simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-02,         0,         1,       120
+     2398,    61896,        0,         0,         0, chemical process simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-02,         0,         1,       120
