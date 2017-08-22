@@ -40,6 +40,7 @@ Training/Testing Data:
 
 Results:
 	-Accuracy OK so far, iterative solver/preconditioner expert would help a lot
+	-Main limitation: my knowledge (or lack thereof) of the subject matter
 
 
 
