@@ -1007,3 +1007,25 @@ Size,Nonzeros,Symmetry,2D/3D,Pos/Def,Kind,Solver,Tol,Maxit,Precond,droptol,diagc
     79171,  4352105,        1,         1,         0, duplicate model reduction problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-02,         0,         1,       120
     20360,   509866,        1,         1,         0, duplicate model reduction problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-02,         0,         1,       120
    256000,  1766400,        1,         1,         0, structural problem, gmres, 1.000000e-06,       100, ilu, 1.000000e-02,         0,         1,       120
+    19208,    76832,        1,         1,         0, 2D/3D problem, gmres, 1.000000e-06,       100, ilu, 1.000000e-06,         0,         1,       120
+    20000,    80000,        1,         1,         0, 2D/3D problem, gmres, 1.000000e-06,       100, ilu, 1.000000e-06,         0,         1,       120
+    11664,    69984,        1,         1,         0, 2D/3D problem, gmres, 1.000000e-06,       100, ilu, 1.000000e-06,         0,         1,       120
+    35543,   128115,        1,         1,         0, 2D/3D problem, gmres, 1.000000e-06,       100, ilu, 1.000000e-06,         0,         1,       120
+   116835,   766396,        0,         0,         0, circuit simulation problem sequence, gmres, 1.000000e-06,       100, ilu, 1.000000e-01,         0,         1,       120
+   116835,   766396,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,       100, ilu, 1.000000e-01,         0,         1,       120
+   116835,   766396,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,       100, ilu, 1.000000e-01,         0,         1,       120
+   116835,   749800,        0,         0,         0, circuit simulation problem sequence, gmres, 1.000000e-06,       100, ilu, 1.000000e-01,         0,         1,       120
+   116835,   749800,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,       100, ilu, 1.000000e-01,         0,         1,       120
+    94294,   476766,        0,         0,         0, circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-04,         0,         1,       120
+    94294,   479246,        0,         0,         0, circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-04,         0,         1,       120
+    94294,   479151,        0,         0,         0, circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-04,         0,         1,       120
+     8219,   242669,        1,         0,         0, theoretical/quantum chemistry problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+   221119,  7666057,        1,         0,         0, theoretical/quantum chemistry problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+   113081,  6115633,        1,         0,         0, theoretical/quantum chemistry problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+   133123,  8884839,        1,         0,         0, theoretical/quantum chemistry problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+    99340,   940621,        0,         0,         0, circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+    99190,   578890,        0,         0,         0, circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+   321821,  1931828,        0,         0,         0, circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+   321671,  1316085,        0,         0,         0, circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+   682862,  2638997,        0,         0,         0, circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+   682712,  1693767,        0,         0,         0, circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
