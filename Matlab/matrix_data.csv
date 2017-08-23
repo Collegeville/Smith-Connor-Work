@@ -873,3 +873,137 @@ Size,Nonzeros,Symmetry,2D/3D,Pos/Def,Kind,Solver,Tol,Maxit,Precond,droptol,diagc
      7500,   283992,        0,         1,         0, materials problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
     11532,   551184,        0,         1,         0, materials problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
     16428,   948696,        0,         1,         0, materials problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+    20414,  1679599,        0,         1,         0, computational fluid dynamics problem, gmres, 1.000000e-06,       100, ilu, 1.000000e-01,         0,         1,       120
+      367,     2417,        0,         1,         0, computational fluid dynamics problem, gmres, 1.000000e-06,       100, ilu, 1.000000e-01,         0,         1,       120
+    13514,   352762,        0,         1,         0, computational fluid dynamics problem, gmres, 1.000000e-06,       100, ilu, 1.000000e-01,         0,         1,       120
+    85623,  2374949,        0,         1,         0, computational fluid dynamics problem, gmres, 1.000000e-06,       100, ilu, 1.000000e-01,         0,         1,       120
+      415,     2779,        0,         1,         0, 2D/3D problem, gmres, 1.000000e-06,       100, ilu, 1.000000e-01,         0,         1,       120
+    12504,   874887,        0,         1,         0, structural problem, gmres, 1.000000e-06,       100, ilu, 1.000000e-01,         0,         1,       120
+    29067,  2081063,        0,         1,         0, structural problem, gmres, 1.000000e-06,       100, ilu, 1.000000e-01,         0,         1,       120
+   504855, 17562051,        1,         1,         0, structural problem sequence, gmres, 1.000000e-06,      1000, ilu, 7.500000e-01,         0,         1,       120
+   504855, 17562051,        1,         1,         0, subsequent structural problem, gmres, 1.000000e-06,      1000, ilu, 7.500000e-01,         0,         1,       120
+   504855, 17562051,        1,         1,         0, subsequent structural problem, gmres, 1.000000e-06,      1000, ilu, 7.500000e-01,         0,         1,       120
+   504855, 17562051,        1,         1,         0, subsequent structural problem, gmres, 1.000000e-06,      1000, ilu, 7.500000e-01,         0,         1,       120
+   504855, 17579155,        1,         1,         0, subsequent structural problem, gmres, 1.000000e-06,      1000, ilu, 7.500000e-01,         0,         1,       120
+   504855, 17579155,        1,         1,         0, subsequent structural problem, gmres, 1.000000e-06,      1000, ilu, 7.500000e-01,         0,         1,       120
+   504855, 17579155,        1,         1,         0, subsequent structural problem, gmres, 1.000000e-06,      1000, ilu, 7.500000e-01,         0,         1,       120
+   504855, 17579155,        1,         1,         0, subsequent structural problem, gmres, 1.000000e-06,      1000, ilu, 7.500000e-01,         0,         1,       120
+   504855, 17588845,        1,         1,         0, subsequent structural problem, gmres, 1.000000e-06,      1000, ilu, 7.500000e-01,         0,         1,       120
+    41731,   559341,        1,         0,         0, optimization problem sequence, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+    51035,   707985,        1,         0,         0, optimization problem sequence, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+    49989,   444853,        1,         0,         0, optimization problem sequence, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+    57975,   530229,        1,         0,         0, optimization problem sequence, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+   169422,  1279274,        1,         0,         0, optimization problem sequence, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+    27628,   206670,        0,         1,         0, semiconductor device problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+    54019,   486129,        0,         1,         0, semiconductor device problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+    28984,   285092,        0,         1,         0, semiconductor device problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+    51448,   537038,        0,         1,         0, semiconductor device problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+    51448,   537038,        0,         1,         0, semiconductor device problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+   103430,  1205518,        0,         1,         0, semiconductor device problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+   125329,   893984,        0,         1,         0, semiconductor device problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+   115625,  2158759,        0,         1,         0, subsequent semiconductor device problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+   115625,  2158759,        0,         1,         0, subsequent semiconductor device problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+   115625,  2158759,        0,         1,         0, subsequent semiconductor device problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+   113076,  2129496,        0,         1,         0, semiconductor device problem sequence, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+   113076,  2129496,        0,         1,         0, subsequent semiconductor device problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+   113076,  2129496,        0,         1,         0, subsequent semiconductor device problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+   113076,  2129496,        0,         1,         0, subsequent semiconductor device problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+   115625,  2158759,        0,         1,         0, semiconductor device problem sequence, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+     1813,    11156,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11148,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11107,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11097,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11224,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11226,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11242,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11239,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11232,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11243,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11245,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11245,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11245,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+     1813,    11246,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-03,         0,         1,       120
+    25187,   193276,        0,         0,         0, circuit simulation problem sequence, gmres, 1.000000e-06,        10, ilu, 1.000000e-10,         0,         1,       120
+    25187,   193276,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-10,         0,         1,       120
+    25187,   193216,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-10,         0,         1,       120
+      430,     1544,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 3.000000e-01,         0,         1,       120
+      430,     1544,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 3.000000e-01,         0,         1,       120
+      430,     1544,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 3.000000e-01,         0,         1,       120
+      430,     1544,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 3.000000e-01,         0,         1,       120
+      430,     1544,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 3.000000e-01,         0,         1,       120
+      430,     1544,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 3.000000e-01,         0,         1,       120
+      430,     1544,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 3.000000e-01,         0,         1,       120
+      430,     1544,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 3.000000e-01,         0,         1,       120
+      430,     1544,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 3.000000e-01,         0,         1,       120
+      430,     1544,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 3.000000e-01,         0,         1,       120
+      430,     1544,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 3.000000e-01,         0,         1,       120
+      430,     1544,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 3.000000e-01,         0,         1,       120
+      430,     1544,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 3.000000e-01,         0,         1,       120
+      430,     1544,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 3.000000e-01,         0,         1,       120
+      430,     1544,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 3.000000e-01,         0,         1,       120
+      430,     1544,        0,         0,         0, subsequent circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 3.000000e-01,         0,         1,       120
+      430,     1614,        0,         0,         0, circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 3.000000e-01,         0,         1,       120
+    10922,    46983,        1,         0,         0, circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 3.000000e-01,         0,         1,       120
+    14842,    63913,        1,         0,         0, circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 3.000000e-01,         0,         1,       120
+    19362,    83443,        1,         0,         0, circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 3.000000e-01,         0,         1,       120
+    24482,   105573,        1,         0,         0, circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 3.000000e-01,         0,         1,       120
+    30202,   130303,        1,         0,         0, circuit simulation problem, gmres, 1.000000e-06,        10, ilu, 3.000000e-01,         0,         1,       120
+    11445,   176117,        1,         1,         0, duplicate model reduction problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+     4257,    37465,        1,         1,         0, duplicate model reduction problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-01,         0,         1,       120
+    79171,  4352105,        1,         1,         0, duplicate model reduction problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-02,         0,         1,       120
+    79171,  4352105,        1,         1,         0, duplicate model reduction problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-02,         0,         1,       120
+    20360,   509866,        1,         1,         0, duplicate model reduction problem, gmres, 1.000000e-06,        10, ilu, 1.000000e-02,         0,         1,       120
+   256000,  1766400,        1,         1,         0, structural problem, gmres, 1.000000e-06,       100, ilu, 1.000000e-02,         0,         1,       120
