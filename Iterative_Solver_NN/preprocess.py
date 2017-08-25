@@ -3,7 +3,7 @@
 
 import csv
 
-string_file = 'test_data.csv'
+string_file = 'shuffled_new.csv'
 
 ####################################################################
 ##Convert all strings to int in a specified column within csv file##
@@ -71,6 +71,8 @@ def main():
 		col9, string_list = to_int(9)
 		col10 = list()
 		col11 = list()
+		col12 = list()
+		col13 = list()
 		for row in csvreader:
 			if count != 0:
 				col0.append(float(row[0]))
@@ -82,6 +84,8 @@ def main():
 				col8.append(row[8])
 				col10.append(row[10])
 				col11.append(row[11])
+				col12.append(row[12])
+				col13.append(row[13])
 			count += 1
 #####################################################
 
@@ -89,12 +93,12 @@ def main():
 	###########################################
 	##Print encoded columns into new csv file##
 	###########################################
-	int_file = 'encoded.csv'
+	int_file = 'encoded_new.csv'
 	with open(int_file,'w') as intcsv:
 		csvwriter = csv.writer(intcsv, delimiter=',', lineterminator='\n')
 
 		for i in range(0,len(col0)):
-			csvwriter.writerow([col0[i], col1[i], col2[i], col3[i], col4[i], col5[i], col6[i], col7[i], col8[i], col9[i], col10[i], col11[i]])
+			csvwriter.writerow([col0[i], col1[i], col2[i], col3[i], col4[i], col5[i], col6[i], col7[i], col8[i], col9[i], col10[i], col11[i], col12[i], col13[i]])
 	###########################################
 	
 	
