@@ -1,11 +1,11 @@
 import tensorflow as tf 
 import numpy as np 
 
-DATA_FILE = "encoded.csv"
+DATA_FILE = "encoded_new.csv"
 
 neurons_layer1 = 4
 
-x = tf.placeholder(tf.float32, [None,7], name="input")
+x = tf.placeholder(tf.float32, name="input")
 y = tf.placeholder(tf.float32, name="targets")
 
 #Reusable method used to read data from .csv file (By Connor Smith)
@@ -15,9 +15,9 @@ def get_data(filename):
 	reader = tf.TextLineReader()
 	key, value = reader.read(filename_queue)
 
-	record_defaults = [[1.], [1.], [1.], [1.], [1.], [1.], [1.], [1.], [1.], [1.], [1.], [1.]]
-	col1, col2, col3, col4, col5, col6, col7, col8, col9, col10, col11, col12 = tf.decode_csv(value, record_defaults=record_defaults)
-	features = tf.stack([col1, col2, col3, col4, col5, col6, col8])
+	record_defaults = [[1.], [1.], [1.], [1.], [1.], [1.], [1.], [1.], [1.], [1.], [1.], [1.], [1.], [1.]]
+	col1, col2, col3, col4, col5, col6, col7, col8, col9, col10, col11, col12, col13, col14 = tf.decode_csv(value, record_defaults=record_defaults)
+	features = tf.stack([col2, col3, col4, col5, col6])
 	targets = tf.stack([col9])
 
 	with tf.Session() as sess:
@@ -29,11 +29,11 @@ def get_data(filename):
 		test_feature_list = list()
 		test_label_list = list()
 
-		data_size = 473
+		data_size = 1030
 
 		for i in range(data_size):
 			example, label = sess.run([features, targets])
-			if i <= 380:
+			if i <= 900:
 				feature_list.append(example)
 				label_list.append(label)
 			else:
@@ -47,12 +47,12 @@ def get_data(filename):
 
 #Design model architecture for best possible accuracy
 def model(input_data):
-	hidden1 = {'weights': tf.Variable(tf.random_normal([7, neurons_layer1])),
+	hidden1 = {'weights': tf.Variable(tf.random_normal([5, neurons_layer1])),
 				'biases': tf.Variable(tf.zeros(neurons_layer1))}	
 	output = {'weights': tf.Variable(tf.random_normal([neurons_layer1, 1])),
 				'biases': tf.Variable(tf.zeros(1))}
 
-	input_data = tf.nn.l2_normalize(input_data,0, epsilon=.001)
+	#input_data = tf.nn.l2_normalize(input_data,0, epsilon=.001)
 
 	layer1 = tf.add(tf.matmul(input_data, hidden1['weights']), hidden1['biases'], name='layer1')
 	layer1 = tf.nn.relu(layer1)
@@ -62,17 +62,17 @@ def model(input_data):
 	return output
 
 def train_model(x,y):
-	batch_size = 300
+	batch_size = 600
 
 	pred = model(x)
 
 	cost = tf.losses.mean_squared_error(y, pred)
 	
 	#.001
-	optimizer = tf.train.AdamOptimizer(.0001).minimize(cost)
+	optimizer = tf.train.AdamOptimizer(.01).minimize(cost)
 
 	#150000
-	epochs = 200000
+	epochs = 10000
 
 	saver = tf.train.Saver()
 
@@ -113,5 +113,7 @@ def train_model(x,y):
 			print("Accuracy: ", accuracy.eval(feed_dict={x: test_x, y: test_y}))
 
 			print(pred.eval({x:test_x}))
+
+			#print(y.eval({y: test_y}))
 
 train_model(x,y)
