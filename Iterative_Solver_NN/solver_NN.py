@@ -53,7 +53,7 @@ def model(input_data):
 				'biases': tf.Variable(tf.zeros(2))}
 
 	layer1 = tf.add(tf.matmul(input_data, hidden1['weights']), hidden1['biases'], name='layer1')
-	layer1 = tf.tanh(layer1)
+	layer1 = tf.nn.relu(layer1)
 
 	output = tf.add(tf.matmul(layer1, output['weights']), output['biases'], name='output')
 
