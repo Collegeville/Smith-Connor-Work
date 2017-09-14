@@ -37,6 +37,7 @@ def to_int(col):
 ####################################################
 ##Encode strings to use in training and predicting##
 ####################################################
+
 def encode(col, string_val):
 	intvals, string_list = to_int(col)
 	return string_list.index(string_val)
@@ -87,6 +88,7 @@ def main():
 				col12.append(row[12])
 				col13.append(row[13])
 			count += 1
+#SCALE DATA HERE???
 #####################################################
 
 
