@@ -3,7 +3,7 @@
 
 import csv
 
-string_file = 'shuffled_new.csv'
+string_file = 'shuffled_non_pos_def.csv'
 
 ####################################################################
 ##Convert all strings to int in a specified column within csv file##
@@ -93,7 +93,7 @@ def main():
 	###########################################
 	##Print encoded columns into new csv file##
 	###########################################
-	int_file = 'encoded_new.csv'
+	int_file = 'encoded_non_pos_def.csv'
 	with open(int_file,'w') as intcsv:
 		csvwriter = csv.writer(intcsv, delimiter=',', lineterminator='\n')
 
