@@ -1,7 +1,7 @@
 import tensorflow as tf 
 import numpy as np 
 
-DATA_FILE = "encoded_new.csv"
+DATA_FILE = "encoded_pos_def.csv"
 
 neurons_layer1 = 5
 
@@ -104,7 +104,7 @@ def train_model(x,y):
 				print("Epoch: ", epoch, " loss: ", epoch_loss)
 
 
-			#saver.save(sess, 'Saved\solver\solver_model')
+			saver.save(sess, 'Saved\PosDef\solver\solver_model')
 
 			correct_prediction = tf.equal(tf.arg_max(pred,0), tf.cast(y, tf.int64))
 

@@ -3,7 +3,7 @@ import numpy as np
 
 DATA_FILE = "encoded_new.csv"
 
-neurons_layer1 = 4
+neurons_layer1 = 5
 
 x = tf.placeholder(tf.float32, name="input")
 y = tf.placeholder(tf.float32, name="targets")
@@ -17,7 +17,7 @@ def get_data(filename):
 
 	record_defaults = [[1.], [1.], [1.], [1.], [1.], [1.], [1.], [1.], [1.], [1.], [1.], [1.], [1.], [1.]]
 	col1, col2, col3, col4, col5, col6, col7, col8, col9, col10, col11, col12, col13, col14 = tf.decode_csv(value, record_defaults=record_defaults)
-	features = tf.stack([col1, col2, col5, col9])
+	features = tf.stack([col1, col2, col6, col10])
 	targets = tf.stack([col11])
 
 	with tf.Session() as sess:
@@ -52,10 +52,10 @@ def model(input_data):
 	output = {'weights': tf.Variable(tf.random_normal([neurons_layer1, 1])),
 				'biases': tf.Variable(tf.zeros(1))}
 
-	input_data = tf.nn.l2_normalize(input_data,0)
+	#input_data = tf.nn.l2_normalize(input_data,0)
 
 	layer1 = tf.add(tf.matmul(input_data, hidden1['weights']), hidden1['biases'], name='layer1')
-	layer1 = tf.nn.relu(layer1)
+	layer1 = tf.nn.sigmoid(layer1)
 
 	output = tf.abs(tf.add(tf.matmul(layer1, output['weights']), output['biases'], name='output'))
 
@@ -69,10 +69,10 @@ def train_model(x,y):
 	cost = tf.losses.mean_squared_error(y, pred)
 
 	#.001
-	optimizer = tf.train.AdamOptimizer(.001).minimize(cost)
+	optimizer = tf.train.AdamOptimizer(.01).minimize(cost)
 
 	#300000
-	epochs = 200000
+	epochs = 50000
 
 	saver = tf.train.Saver()
 

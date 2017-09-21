@@ -1,7 +1,7 @@
 import tensorflow as tf 
 import numpy as np 
 
-DATA_FILE = "encoded_new.csv"
+DATA_FILE = "encoded_pos_def.csv"
 
 neurons_layer1 = 4
 
@@ -104,7 +104,7 @@ def train_model(x,y):
 				print("Epoch: ", epoch, " loss: ", epoch_loss)
 
 
-			saver.save(sess, 'Saved\maxit\maxit_model')
+			saver.save(sess, 'Saved\PosDef\maxit\maxit_model')
 
 			correct_prediction = tf.equal(tf.round(pred), tf.round(y))
 

@@ -24,7 +24,7 @@ Model:
 	-Round other numbers
 
 TO DO:
-	-Sparsekit for more inputs??
+	-Try RNN for droptol
 
 EXPORT PLAN:
 	-.csv decoder in TF

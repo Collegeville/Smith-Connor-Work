@@ -1,7 +1,7 @@
 import tensorflow as tf 
 import numpy as np 
 
-DATA_FILE = "encoded_new.csv"
+DATA_FILE = "encoded_non_pos_def.csv"
 
 neurons_layer1 = 4
 
@@ -29,11 +29,11 @@ def get_data(filename):
 		test_feature_list = list()
 		test_label_list = list()
 
-		data_size = 473
+		data_size = 1030
 
 		for i in range(data_size):
 			example, label = sess.run([features, targets])
-			if i <= 380:
+			if i <= 900:
 				feature_list.append(example)
 				label_list.append(label)
 			else:
@@ -60,7 +60,7 @@ def model(input_data):
 	return output
 
 def train_model(x,y):
-	batch_size = 300
+	batch_size = 100
 
 	pred = model(x)
 
@@ -102,7 +102,7 @@ def train_model(x,y):
 
 				print("Epoch: ", epoch, " loss: ", epoch_loss)
 
-			saver.save(sess, 'Saved\precond\precond_model')
+			saver.save(sess, 'Saved\Symm\precond\precond_model')
 
 			correct_prediction = tf.equal(tf.argmax(pred), tf.cast(y, tf.int64))
 
@@ -112,6 +112,6 @@ def train_model(x,y):
 
 			print(pred.eval({x:test_x}))
 
-			print(y.eval({y: test_y}))
+			#print(y.eval({y: test_y}))
 
 train_model(x,y)
