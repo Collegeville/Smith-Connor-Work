@@ -1,0 +1,15 @@
+Inputs:
+	-Matrix values w/ coordinates
+	-***Include 0s?
+		-Save a lot of space
+	-***.csv?
+
+Outputs:
+	-One per network
+		-Symm
+		-Pos/Def
+		-***Ask Dr. Heroux which properties would be useful
+
+Structure:
+	-Number of inputs will vary based on size of matrix
+		-Start with small matrices
