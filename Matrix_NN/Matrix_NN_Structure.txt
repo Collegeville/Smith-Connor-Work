@@ -3,6 +3,7 @@ Inputs:
 	-***Include 0s?
 		-Save a lot of space
 	-***.csv?
+	-Preprocess with sklearn
 
 Outputs:
 	-One per network
@@ -13,3 +14,6 @@ Outputs:
 Structure:
 	-Number of inputs will vary based on size of matrix
 		-Start with small matrices
+	-RNN
+		-LSTM
+		-***Ask Adam about RNNs in Keras
