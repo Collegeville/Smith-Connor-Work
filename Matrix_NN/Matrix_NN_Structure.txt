@@ -3,7 +3,9 @@ Inputs:
 	-***Include 0s?
 		-Save a lot of space
 	-***.csv?
+	-Look into other methods of reading data (lower level to allow multiple input sizes)
 	-Preprocess with sklearn
+	-Pickle, pandas DataFrame
 
 Outputs:
 	-One per network
@@ -17,3 +19,7 @@ Structure:
 	-RNN
 		-LSTM
 		-***Ask Adam about RNNs in Keras
+TO DO:
+	-Step 1: Learn to read pickle data into tensor flow
+	-Step 2: See if NN can deduce size of matrices
+	
