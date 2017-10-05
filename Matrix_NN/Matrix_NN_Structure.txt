@@ -1,11 +1,18 @@
 Inputs:
-	-Matrix values w/ coordinates
-	-***Include 0s?
-		-Save a lot of space
-	-***.csv?
+	-Raw matrix values
+		-.mat files directly from MatLab?
+	-Init. matrices w/ Pandas data frame
+		-Pickle data frames (each data frame contains matrices of same size) (maybe not?)
+		-Read pickled data into TF (access lists with .toList() function?)
 	-Look into other methods of reading data (lower level to allow multiple input sizes)
 	-Preprocess with sklearn
-	-Pickle, pandas DataFrame
+
+	-Steps (for MatLab data):
+		1. Print individual matrices to .csv files, store in folder 
+		2. Load w/ pandas
+		3. Create dataframe for large groups of matrices
+		4. Print dataframe to pickle file
+		5. Load pickle file in tensor flow
 
 Outputs:
 	-One per network
@@ -22,4 +29,7 @@ Structure:
 TO DO:
 	-Step 1: Learn to read pickle data into tensor flow
 	-Step 2: See if NN can deduce size of matrices
+
+Generating Data:
+	-Use loops, np.zeros to create large, sparse matrices
 	
