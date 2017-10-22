@@ -105,11 +105,11 @@ def train_model(x,y):
 
 			#saver.save(sess, 'Saved\droptol\droptol_model')
 
-			correct_prediction = tf.equal(pred, y)
+			#correct_prediction = tf.equal(pred, y)
 
-			accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
+			#accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
-			print("Accuracy: ", accuracy.eval(feed_dict={x: test_x, y: test_y}))
+			#print("Accuracy: ", accuracy.eval(feed_dict={x: test_x, y: test_y}))
 
 			print(pred.eval({x:test_x}))
 
