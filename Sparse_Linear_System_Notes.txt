@@ -36,3 +36,8 @@ same time
 	-Incomplete factorization of A (the Linear system) is often used as preconditioner (not perfect, but generally inexpensive 
 	to compute and effective)
 
+Summer Research:
+****************
+LOOK INTO: Multilevel solvers for sparse linear systems
+	-Muligrid (Algebraic multigrid)
+	
