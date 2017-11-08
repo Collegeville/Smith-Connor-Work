@@ -1,9 +1,9 @@
 import tensorflow as tf 
 import numpy as np 
 
-DATA_FILE = "encoded_new.csv"
+DATA_FILE = "encoded_non_pos_def.csv"
 
-neurons_layer1 = 5
+neurons_layer1 = 25
 
 x = tf.placeholder(tf.float32, name="input")
 y = tf.placeholder(tf.float32, name="targets")
@@ -29,11 +29,11 @@ def get_data(filename):
 		test_feature_list = list()
 		test_label_list = list()
 
-		data_size = 1030
+		data_size = 554
 
 		for i in range(data_size):
 			example, label = sess.run([features, targets])
-			if i <= 900:
+			if i <= 500:
 				feature_list.append(example)
 				label_list.append(label)
 			else:
@@ -72,7 +72,7 @@ def train_model(x,y):
 	optimizer = tf.train.AdamOptimizer(.01).minimize(cost)
 
 	#300000
-	epochs = 50000
+	epochs = 10000
 
 	saver = tf.train.Saver()
 
