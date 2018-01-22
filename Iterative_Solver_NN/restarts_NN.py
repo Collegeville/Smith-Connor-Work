@@ -69,10 +69,10 @@ def train_model(x,y):
 	cost = tf.losses.mean_squared_error(y, pred)
 
 	#.001
-	optimizer = tf.train.AdamOptimizer(.001).minimize(cost)
+	optimizer = tf.train.AdamOptimizer(.01).minimize(cost)
 
 	#300000
-	epochs = 150000
+	epochs = 20000
 
 	saver = tf.train.Saver()
 
@@ -113,7 +113,7 @@ def train_model(x,y):
 
 			print(pred.eval({x:test_x}))
 
-			#print(y.eval({y: test_y}))
+			print(y.eval({y: test_y}))
 
 
 train_model(x,y)
