@@ -1,0 +1,97 @@
+
+
+
+One thing I'd like you to look into is open source alternatives to Avatar that also have C/C++/Fortran (not just Python) bindings and can use 
+off-line trained data.  Tensorflow is an obvious choice (though their build system requires Java of all things).  Others might include things like 
+OpenNN, Torch or mlpack.  There's a bunch.  What I'd like you to do is:
+
+1) Take a few days to inventory potential options.  They need:
+  a) C, C++ or Fortran bindings (and not through weird callbacks to Python),  
+  b) A suitable license for deployment in SNL codes (e.g. LGPL/MIT/BSD are OK, GPL is not). 
+  c) To do training off-line, output the trained model to disk and then read it back in later.
+  d) To provide machine learning algorithms, not just pieces from which you can roll your own.
+ They ideally should:
+  a) Be portable across platforms (e.g. they can use GPUs, but do not require them).
+  b) Use reasonable TPLs for their linear algebra kernels (e.g. BLAS/LAPACK or CuBLAS) rather than rolling their own.
+  c) Not rely too heavily on weird or hard to build TPLs.
+2) Present your conclusions on which ones seem to be good options to our machine learning team.
+3) Test them out on our MueLu data and see if they do a decent job (using Scikit Learn as a benchmark).
+4) Implement interfaces to them in MueLu as alternatives to the Avatar interface you worked on last summer.
+
+
+
+
+OpenNN
+------
+-C++
+-License: LGPL
+-Neural designer: helps build NN models without the need of programming (not necessarily useful but interesting nonetheless)
+-Simple to produce analysis of results, including our old favorite confusion matrices
+-Utilizes UML
+-Can export mathematical expression of the model in plaintext, python, or an R script
+-Provides pieces of NN algorithms, with which you specifiy and assemble NN (might not be high-enough level?)
+-Is portable across platforms
+-Doesn't check off 1(d), but still might be worth a try
+
+
+Torch
+-----
+-Written in lua with C backend 
+-License: BSD
+-Essentially a Tensor library like Numpy, but with strong GPU support
+-Framework itself is low-level, but provides packages that make building NNs relatively simple
+
+
+PyTorch
+-------
+-Written in Python (thus probably not something really worth looking into)
+
+
+mlpack
+------
+-C++
+-License: BSD
+-Built on Armadillo linear algebra library and ensmallen function optimization library, both of which require BLAS and LAPACK
+-Includes very similar ML algorithms to what we've used with Avatar (e.g. Random Forests w/ cross validation)
+	-This could be nice, considering the success we've had with Avatar
+-Simple to save and load trained models (.xml file)
+-Also has support for SVMs, Linear Regression, other techniques (no NN support)
+
+
+FANN
+----
+
+
+keras2cpp
+---------
+-Might be an interesting idea: export trained NN from Tensorflow/Keras to C++
+
+
+Shogun
+------
+
+
+CNTK
+----
+
+
+MXNet
+-----
+
+
+Tensorflow
+----------
+-
+
+Keras
+-----
+
+
+Spark
+-----
+
+
+Random thoughts:
+****************
+-Thus far, it seems if we want to go the NN route, the algorithm itself will require quite a bit of tuning on our part
+-Worth it to ask: should we just throw out Tensorflow/Keras entirely?
