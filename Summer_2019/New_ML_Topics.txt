@@ -25,13 +25,11 @@ OpenNN
 ------
 -C++
 -License: LGPL
--Neural designer: helps build NN models without the need of programming (not necessarily useful but interesting nonetheless)
 -Simple to produce analysis of results, including our old favorite confusion matrices
 -Utilizes UML
 -Can export mathematical expression of the model in plaintext, python, or an R script
 -Provides pieces of NN algorithms, with which you specifiy and assemble NN (might not be high-enough level?)
 -Is portable across platforms
--Doesn't check off 1(d), but still might be worth a try
 
 
 Torch
@@ -60,11 +58,13 @@ mlpack
 
 FANN
 ----
-
-
-keras2cpp
----------
--Might be an interesting idea: export trained NN from Tensorflow/Keras to C++
+-Artificial NN library written in C
+-License: LGPL
+-Relatively simple to implement w/ 4 function calls
+-Also simple to save and load previously created NNs
+-http://fann.sourceforge.net/fann_en.pdf
+-Wrapper for C++ could be useful
+-file:///C:/Users/conds/Downloads/fann_doc_complete_1.0.pdf
 
 
 Shogun
