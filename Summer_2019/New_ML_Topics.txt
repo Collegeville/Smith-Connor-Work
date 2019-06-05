@@ -28,13 +28,13 @@ OpenNN
 -Simple to produce analysis of results, including our old favorite confusion matrices
 -Utilizes UML
 -Can export mathematical expression of the model in plaintext, python, or an R script
--Provides pieces of NN algorithms, with which you specifiy and assemble NN (might not be high-enough level?)
+-Provides pieces of NN algorithms, with which you specifiy and assemble NN 
 -Is portable across platforms
 
 
 Torch
 -----
--Written in lua with C backend 
+-Written in lua with C backend (disqualifying?)
 -License: BSD
 -Essentially a Tensor library like Numpy, but with strong GPU support
 -Framework itself is low-level, but provides packages that make building NNs relatively simple
@@ -49,7 +49,7 @@ mlpack
 ------
 -C++
 -License: BSD
--Built on Armadillo linear algebra library and ensmallen function optimization library, both of which require BLAS and LAPACK
+-Built on Armadillo linear algebra library (does this count as weird or hard to build TPL?)
 -Includes very similar ML algorithms to what we've used with Avatar (e.g. Random Forests w/ cross validation)
 	-This could be nice, considering the success we've had with Avatar
 -Simple to save and load trained models (.xml file)
@@ -69,26 +69,43 @@ FANN
 
 Shogun
 ------
+-C++
+-License: BSD3
+-API includes Random Forests, Nearest Neighbor, SVMs (other classification algorithms as well)
+-Use save_model and load_model to load previously created model
+
 
 
 CNTK
 ----
+-C++
+-License: MIT
+-Open source toolkit for distributed deep learning
+-Seems more optimized for Python than C++
 
 
 MXNet
 -----
+-C++
+-License: Apache
+-Slightly more involved than OpenNN and FANN
+-Includes GPU support
+
+
+Caffe
+-----
+-C++
+-License: BSD
+-Deep learning framework 
+-Includes GPU support
 
 
 Tensorflow
 ----------
--
 
 Keras
 -----
 
-
-Spark
------
 
 
 Random thoughts:
