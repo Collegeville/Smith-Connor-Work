@@ -108,7 +108,8 @@ Keras
 
 
 
-Random thoughts:
+Observations:
 ****************
 -Thus far, it seems if we want to go the NN route, the algorithm itself will require quite a bit of tuning on our part
--Worth it to ask: should we just throw out Tensorflow/Keras entirely?
+-FANN and OpenNN are very similar in practice; FANN has slightly higher level options; worth it to test out both 
+	
