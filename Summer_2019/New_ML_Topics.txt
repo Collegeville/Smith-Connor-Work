@@ -40,11 +40,6 @@ Torch
 -Framework itself is low-level, but provides packages that make building NNs relatively simple
 
 
-PyTorch
--------
--Written in Python (thus probably not something really worth looking into)
-
-
 mlpack
 ------
 -C++
@@ -100,11 +95,6 @@ Caffe
 -Includes GPU support
 
 
-Tensorflow
-----------
-
-Keras
------
 
 
 
