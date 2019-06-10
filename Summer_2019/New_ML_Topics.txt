@@ -70,6 +70,16 @@ Shogun
 -License: BSD3
 -API includes Random Forests, Nearest Neighbor, SVMs (other classification algorithms as well)
 -Use save_model and load_model to load previously created model
+-Lower-level
+-Cannot run from command line like Avatar or mlpack
+
+Dlib
+----
+-C++
+-License: Boost
+-API is broad ranging
+-Limited number of classification algorithms
+-Cannot run from command line
 
 
 
