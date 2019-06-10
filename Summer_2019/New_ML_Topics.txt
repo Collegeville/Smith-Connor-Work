@@ -30,6 +30,7 @@ OpenNN
 -Can export mathematical expression of the model in plaintext, python, or an R script
 -Provides pieces of NN algorithms, with which you specifiy and assemble NN 
 -Is portable across platforms
+-Does require Eigen library for linear algebra
 
 
 Torch
@@ -44,7 +45,8 @@ mlpack
 ------
 -C++
 -License: BSD
--Built on Armadillo linear algebra library (does this count as weird or hard to build TPL?)
+-Built on Armadillo linear algebra library (can be built w/o)
+-Also requires ensmallen library
 -Includes very similar ML algorithms to what we've used with Avatar (e.g. Random Forests w/ cross validation)
 	-This could be nice, considering the success we've had with Avatar
 -Simple to save and load trained models (.xml file)
@@ -102,4 +104,7 @@ Observations:
 ****************
 -Thus far, it seems if we want to go the NN route, the algorithm itself will require quite a bit of tuning on our part
 -FANN and OpenNN are very similar in practice; FANN has slightly higher level options; worth it to test out both 
+-mlpack operates very similar to Avatar, so if we want to continue down that route, this is probably the way to go
+
+-Next: test the compatible frameworks on our current dataset (which I do not currently have)
 	
