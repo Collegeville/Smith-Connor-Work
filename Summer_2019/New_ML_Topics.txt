@@ -18,6 +18,49 @@ OpenNN, Torch or mlpack.  There's a bunch.  What I'd like you to do is:
 3) Test them out on our MueLu data and see if they do a decent job (using Scikit Learn as a benchmark).
 4) Implement interfaces to them in MueLu as alternatives to the Avatar interface you worked on last summer.
 
+-Done some preliminary research into several macahine learning frameworks
+
+-Thus far, the most promising option to continue what we did last summer is mlpack;
+	-Written in C++, and we can use it exactly like we used Avatar from the command line
+	-Also has several other machine learning algorithms that might be worth it to try out on
+	our data set
+	-However, it does require the Armadillo linear algebra library
+
+-One interesting route is FANN, a neural network library written in C
+	-While we have not had great success with NNs in the past, I think it would be worth it
+	to run the FANN algorithms on our data set
+
+-Some other libraries I have looked into include OpenNN (another neural network library) and 
+libsvm, a support vector machine library (runs very similar to Avatar from command line)
+
+mlpack
+------
+-C++
+-License: BSD
+-Built on Armadillo linear algebra library 
+-Also requires ensmallen library
+-Includes very similar ML algorithms to what we've used with Avatar (e.g. Random Forests w/ cross validation)
+	-This could be nice, considering the success we've had with Avatar
+-Can use like a black box w/ executables, or through its C++ API
+
+
+FANN
+----
+-Artificial NN library written in C
+-License: LGPL
+-Relatively simple to implement w/ 4 function calls
+-Also simple to save and load previously created NNs
+-http://fann.sourceforge.net/fann_en.pdf
+-Wrapper for C++ could be useful
+-file:///C:/Users/conds/Downloads/fann_doc_complete_1.0.pdf
+
+
+libsvm
+------
+-C++
+-License: BSD
+-Only uses SVMs for regression/classification
+-Worth at least a try on our data set
 
 
 
@@ -33,36 +76,6 @@ OpenNN
 -Does require Eigen library for linear algebra
 
 
-Torch
------
--Written in lua with C backend (disqualifying?)
--License: BSD
--Essentially a Tensor library like Numpy, but with strong GPU support
--Framework itself is low-level, but provides packages that make building NNs relatively simple
-
-
-mlpack
-------
--C++
--License: BSD
--Built on Armadillo linear algebra library (can be built w/o)
--Also requires ensmallen library
--Includes very similar ML algorithms to what we've used with Avatar (e.g. Random Forests w/ cross validation)
-	-This could be nice, considering the success we've had with Avatar
--Simple to save and load trained models (.xml file)
--Also has support for SVMs, Linear Regression, other techniques (no NN support)
-
-
-FANN
-----
--Artificial NN library written in C
--License: LGPL
--Relatively simple to implement w/ 4 function calls
--Also simple to save and load previously created NNs
--http://fann.sourceforge.net/fann_en.pdf
--Wrapper for C++ could be useful
--file:///C:/Users/conds/Downloads/fann_doc_complete_1.0.pdf
-
 
 Shogun
 ------
@@ -73,6 +86,7 @@ Shogun
 -Lower-level
 -Cannot run from command line like Avatar or mlpack
 
+
 Dlib
 ----
 -C++
@@ -80,6 +94,15 @@ Dlib
 -API is broad ranging
 -Limited number of classification algorithms
 -Cannot run from command line
+
+
+
+Torch
+-----
+-Written in lua with C backend (disqualifying?)
+-License: BSD
+-Essentially a Tensor library like Numpy, but with strong GPU support
+-Framework itself is low-level, but provides packages that make building NNs relatively simple
 
 
 
