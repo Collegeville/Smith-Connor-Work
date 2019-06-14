@@ -1,0 +1,7 @@
+scikit learn (baseline)
+-----------------------
+-Decision Tree = .94
+-Random Forest = .94
+-Nearest Neighbor = .79
+-SVC (linear) = .81
+-SVC (rbf) = .66
