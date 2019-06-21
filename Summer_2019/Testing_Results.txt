@@ -1,7 +1,25 @@
 scikit learn (baseline)
 -----------------------
--Decision Tree = .94
--Random Forest = .94
--Nearest Neighbor = .79
--SVC (linear) = .81
--SVC (rbf) = .66
+Decision Tree = .94 (cross-val)
+Random Forest = .94 (cross-val)
+Nearest Neighbor = .79 (cross-val)
+SVC (linear) = .81 (cross-val)
+SVC (rbf) = .66 (cross-val)
+SVC (poly) = .84 (cross-val)
+AdaBoost = .84 (cross-val)
+Neural Network = .96 (cross-val)
+
+
+
+mlpack
+------
+Random Forest = .96
+Adaboost = .89
+Perceptron = .91
+Naive Bayes = .89
+
+
+
+Libsvm
+------
+SVC (linear) = .91
