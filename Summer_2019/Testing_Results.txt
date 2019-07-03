@@ -23,3 +23,12 @@ Naive Bayes = .89
 Libsvm
 ------
 SVC (linear) = .91
+SVC (poly) = .87
+SVC (rbf) = .84
+
+
+FANN
+----
+Neural Network (fully connected) = .96
+
+
