@@ -1,0 +1,177 @@
+Technical Approaches:
+---------------------
+
+MATLAB:
+*******
+-sustainability at core of ML
+-maintaining sustainability:
+	-converted to C (longer lifespan/more sustainable language)
+	-fixed time between releases
+-quality initiative:
+	-started 20 years in
+	-made 'commitment to quality'
+	-bug removal
+	-consider sources of bugs throughout lifecycle
+	-HIGH emphasis on managing bugs
+-testing & integration
+	-testing occurs all the time (build & test phase)
+	-pkgtests and unittests
+	-performance unit testing 3 times/week
+	-release code breaking is rewarded *
+-define and adopt coding standard * (always seems to be the case, but also
+seems difficult to actually implement)
+-code analyzer in ML editor 
+-important to refine design (bugs introduced @ design time are most expensive
+to fix
+	-aided by codified software design process
+	-design review
+	-effect: simpler design with less surface area
+-manage complexity with layered API
+-important to ask questions about software embedded in ML
+-almost never throw anything away
+-code analyzer helps users keep up to date with newer versions * (great way
+to ensure users are engaging in sustainable practices themselves)
+
+
+Open source as sustainability:
+******************************
+-rare that project actually benefits from community
+-users more of a burden than benefit
+-getting noticed: quality publications, quality of code, "trustworthy"
+-most contributers start as users; but many users never contribute
+-user support -> interest in contributing *
+-users file bug reports and "suggest" enhancements
+	-generally makes things more difficult
+-technical approaches:
+	-critically assess the market to set expectations
+	-license choice is vital (community expectations)
+	-provide quality documentation (user level and developer level)
+	-ensure code quality and understandability (software quality metrics?)
+	-provide tools to facilitate communication
+-strong social aspect, not independent of technical choices
+-code needs to be supported and maintained over time 
+	-who knows enough about the code to keep it going?
+-not common for open source software to just become sustainable by default
+through their community (is this controversial?)
+
+-sometimes, it's best just to stay w/ old tools if they work
+
+
+SLATE project:
+**************
+-design challenges:
+	-no unified model for distributed-memory, multi-GPU systems
+	-no standardized solution for node-level memory coherency
+	-also, no standardized solution for GPU kernels
+	-OpenMP does not mix well w/ MPI
+	-OpenMP does not work well w/ GPU APIs
+	-batched BLAS not great
+-move to C++ has been vital to SLATE's survival
+-low levels in stack must be standard to ensure sustainability
+-generally maintains high level of compactness
+-OO design helps keep layers compact
+-push complexity out of complex layers to simple layers
+
+
+
+
+-increasing sustainability:
+	-automatic build system (CMake/Ctest)
+	-open source repository
+-correctness testing
+	-linear algebra codes are generally easy to test
+-performance autotuning
+	-develop autotuning capability that learns optimal parameter selection
+	and efficiently replaces explicit human-based parameter selections
+
+
+
+-continuous technology refreshment (ctr)
+	-periodic replacement of infrastructure to deliver reliability,
+	speed, etc
+	-in IT, more hardware-centric
+	-can also apply to software
+	-build system: Gmake -> GNU autotools -> Cmake -> spack
+	-components of software development are always changing
+-what drives ctr?
+	-technology obsolescence
+	-expanding dev team
+	-access to larger toolbox
+	-loss of resources
+	-performance/quality improvements
+	-often improves developer's lives but not users *
+-recent CTR experiences for Visit 3.0
+	-binary content in repo (non-support->Git LFS)
+	-revision control system (subversion->github)
+	-issue tracking (redline->github)
+	-documentation
+	-3rd party libraries (VTK: 6->8, OpenGL 2.x->3.x)
+	-branching/merging models
+	-build system
+-software quality engineering standards for libraries vs application
+	-users of libraries care about how they are compiled and installed
+	-API changes break consumers
+	-documentation much more important in libraries
+-useful library practices
+	-initialization/finalization funcs
+	-all API funcs enter-top/leave-bottom
+	-all public symbols in own namespace
+	-never call to abort or throw uncaught exception
+-sustainability of data
+	-reproducibility of results
+	-number representations
+-"us" in sustainability
+	-enthusiasm
+	-beware of cognitive overload
+	-default one hour meetings
+	-more effective communication
+
+
+
+Takeaways:
+**********
+-users are central component in sustainability
+	-investing in usability seems to be key 
+	-MATLAB: code analyzer helps users stay on top of newest version 
+	-second talk (open-source): user support leads to better user 
+	contribution which leads to user-lead sustainability
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
