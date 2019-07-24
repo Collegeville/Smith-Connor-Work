@@ -66,7 +66,8 @@ def train_model(x,y):
 
 	pred = model(x)
 
-	cost = tf.losses.mean_squared_error(y, pred)
+	cost = tf.losses.sparse_softmax_cross_entropy()
+	#tf.losses.mean_squared_error(y, pred)
 	
 	#.001
 	optimizer = tf.train.AdamOptimizer(.01).minimize(cost)
