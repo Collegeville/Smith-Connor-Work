@@ -183,6 +183,225 @@ void MLpackInterface::GenerateFeatureString(const Teuchos::ParameterList & probl
 
 
 
+// ***********************************************************************
+void MLpackInterface::UnpackMueLuMapping() {
+  const Teuchos::ParameterList & mapping = params_.get<Teuchos::ParameterList>("mlpack: muelu parameter mapping");
+  // Each MueLu/MLpack parameter pair gets its own sublist.  These must be numerically ordered with no gap
+
+  bool done=false; 
+  int idx=0;
+  int numParams = mapping.numParams();
+
+  mueluParameterName_.resize(numParams);
+  mlpackParameterName_.resize(numParams);
+  mueluParameterValues_.resize(numParams);
+  mlpackParameterValues_.resize(numParams);
+
+  while(!done) {
+    std::stringstream ss; 
+    ss << "param" << idx;
+    if(mapping.isSublist(ss.str())) {
+      const Teuchos::ParameterList & sublist = mapping.sublist(ss.str());
+
+      // Get the names
+      mueluParameterName_[idx]  = sublist.get<std::string>("muelu parameter");
+      mlpackParameterName_[idx] = sublist.get<std::string>("mlpack parameter");
+
+      // Get the values
+      mueluParameterValues_[idx]  = sublist.get<Teuchos::Array<double> >("muelu values");
+      mlpackParameterValues_[idx] = sublist.get<Teuchos::Array<double> >("mlpack values");            
+
+      idx++;
+    }
+    else {
+      done=true;
+    }
+  }
+
+  if(idx!=numParams) 
+    throw std::runtime_error("MueLu::MLpackInterface::UnpackMueLuMapping(): 'mlpack: muelu parameter mapping' has unknown fields");
+}
 
 
+// ***********************************************************************
+std::string MLpackInterface::ParamsToString(const std::vector<int> & indices) const {
+  std::stringstream ss;
+  for(Teuchos_Ordinal i=0; i<mlpackParameterValues_.size(); i++) {
+    ss << "," << mlpackParameterValues_[i][indices[i]];
+  }
+
+  // Pre-Class dummy variables
+  if (params_.isParameter("mlpack: pre-class dummy variables")) {
+    int num_dummy = params_.get<int>("mlpack: pre-class dummy variables");
+    for(int i=0; i<num_dummy; i++)
+      ss<<",666";
+  }
+  
+  return ss.str();
+}
+
+
+
+// ***********************************************************************
+void MLpackInterface::SetIndices(int id,std::vector<int> & indices) const {
+  // The combo numbering here starts with the first guy
+  int numParams = (int)mlpackParameterValues_.size();
+  int curr_id = id;
+  for(int i=0; i<numParams; i++) {
+    int div = mlpackParameterValues_[i].size();
+    int mod = curr_id % div;
+    indices[i] = mod;
+    curr_id = (curr_id - mod)/div;
+  }
+}
+
+
+// ***********************************************************************
+void MLpackInterface::GenerateMueLuParametersFromIndex(int id,Teuchos::ParameterList & pl) const {
+  // The combo numbering here starts with the first guy
+  int numParams = (int)mlpackParameterValues_.size();
+  int curr_id = id;
+  for(int i=0; i<numParams; i++) {
+    int div = mlpackParameterValues_[i].size();
+    int mod = curr_id % div;
+    pl.set(mueluParameterName_[i],mueluParameterValues_[i][mod]);
+    curr_id = (curr_id - mod)/div;
+  }
+}
+
+
+
+// ***********************************************************************
+void MLpackInterface::SetMueLuParameters(const Teuchos::ParameterList & problemFeatures, Teuchos::ParameterList & mueluParams, bool overwrite) const {
+  Teuchos::ParameterList mlpackParams;
+  std::string paramString;
+
+  if (comm_->getRank() == 0) {
+    // Turn the problem features into a "trial" string to run as test values in mlpack
+    std::string trialString;
+    GenerateFeatureString(problemFeatures,trialString);
+    
+    // Compute the number of things we need to test
+    int numParams = (int)mlpackParameterValues_.size();
+    std::vector<int> indices(numParams);
+    std::vector<int> sizes(numParams);
+    int num_combos = 1;
+    for(int i=0; i<numParams; i++) {
+      sizes[i]    = mlpackParameterValues_[i].size();
+      num_combos *= mlpackParameterValues_[i].size();
+    }
+    GetOStream(Runtime0)<< "MueLu::MLpackInterface: Testing "<< num_combos << " option combinations"<<std::endl;
+
+    // For each input parameter to avatar we iterate over its allowable values and then compute the list of options which MLpack
+    // views as acceptable
+    // FIXME: Find method to find number of classes within mlpack
+    int num_classes = 3;
+    std::vector<int> predictions(num_combos, 0);
+    std::vector<float> probabilities(num_classes * num_combos, 0);
+
+      std::string testString;
+      for(int i=0; i<num_combos; i++) {
+        SetIndices(i,indices);
+        // Now we add the MueLu parameters into one, enormous trial string and run avatar once
+        testString += trialString + ParamsToString(indices) + ",0\n";
+      }
+
+      std::cout<<"** MLpack TestString ***\n"<<testString<<std::endl;//DEBUG
+
+      int bound_check = true;
+      if(params_.isParameter("mlpack: bounds file"))
+         bound_check = checkBounds(testString, boundsString_);
+
+    // *********************************      
+    // FIXME: CLASSIFY TEST STRING HERE (predictions stored in predictions[] vector)
+    // *********************************
+
+    // Look at the list of acceptable combinations of options 
+    std::vector<int> acceptableCombos; acceptableCombos.reserve(100);
+    for(int i=0; i<num_combos; i++) {    
+      if(predictions[i] == mlpackGoodClass_) acceptableCombos.push_back(i);      
+    }
+    GetOStream(Runtime0)<< "MueLu::MLpackInterface: "<< acceptableCombos.size() << " acceptable option combinations found"<<std::endl;
+
+    // Did we have any good combos at all?
+    int chosen_option_id = 0;
+    if(acceptableCombos.size() == 0) { 
+      GetOStream(Runtime0) << "WARNING: MueLu::MLpackInterface: found *no* combinations of options which it believes will perform well on this problem" <<std::endl
+                           << "         An arbitrary set of options will be chosen instead"<<std::endl;    
+    }
+    else {
+      // If there is only one acceptable combination, use it; 
+      // otherwise, find the parameter choice with the highest
+      // probability of success
+      if(acceptableCombos.size() == 1){
+	chosen_option_id = acceptableCombos[0];
+      } 
+      else {
+	switch (heuristicToUse_){
+	  case 1: 
+		chosen_option_id = hybrid(probabilities.data(), acceptableCombos);
+		break;
+	  case 2: 
+		chosen_option_id = highProb(probabilities.data(), acceptableCombos);
+		break;
+	  case 3: 
+		// Choose the first option in the list of acceptable
+		// combinations; the lowest drop tolerance among the 
+		// acceptable combinations
+		chosen_option_id = acceptableCombos[0];
+		break;
+	  case 4: 
+		chosen_option_id = lowCrash(probabilities.data(), acceptableCombos);
+		break;
+	  case 5:
+		chosen_option_id = weighted(probabilities.data(), acceptableCombos);
+		break;
+        }
+
+      }
+    }
+    
+    // If mesh parameters are outside bounding box, set drop tolerance
+    // to 0, otherwise use avatar recommended drop tolerance
+    if (bound_check == 0){
+      GetOStream(Runtime0) << "WARNING: Extrapolation risk detected, setting drop tolerance to 0" <<std::endl;
+      GenerateMueLuParametersFromIndex(0,mlpackParams);
+    } else {
+      GenerateMueLuParametersFromIndex(chosen_option_id,mlpackParams);
+    }
+  } 
+
+  Teuchos::updateParametersAndBroadcast(outArg(mlpackParams),outArg(mueluParams),*comm_,0,overwrite);
+
+
+}
+
+
+
+int MLpackInterface::checkBounds(std::string trialString, Teuchos::ArrayRCP<std::string> boundsString) const {
+  std::stringstream ss(trialString);
+  std::vector<double> vect;
+
+  double b; 
+  while (ss >> b)  {
+    vect.push_back(b);
+    if (ss.peek() == ',') ss.ignore();
+  }
+  
+  std::stringstream ssBounds(boundsString[0]);
+  std::vector<double> boundsVect;
+
+  while (ssBounds >> b) {
+    boundsVect.push_back(b);    
+    if (ssBounds.peek() == ',') ssBounds.ignore();
+  }
+
+  int min_idx = (int) std::min(vect.size(),boundsVect.size()/2);
+
+  bool inbounds=true;
+  for(int i=0; inbounds && i<min_idx; i++) 
+    inbounds =  boundsVect[2*i] <= vect[i] && vect[i] <= boundsVect[2*i+1];
+
+  return (int) inbounds;
+}
 
