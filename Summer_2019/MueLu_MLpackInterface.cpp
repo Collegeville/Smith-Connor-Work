@@ -43,7 +43,7 @@
 // ***********************************************************************
 //
 // @HEADER
-#include "MueLu_AvatarInterface.hpp"
+#include "MueLu_MLpackInterface.hpp"
 
 #include <string> 
 #include <fstream> 
@@ -83,6 +83,12 @@
 
 #ifdef HAVE_MUELU_MLPACK
 
+extern {
+#include "rf_api.hpp"
+}
+
+namespace MueLu {
+
 // ***********************************************************************
 RCP<const ParameterList> MLpackInterface::GetValidParameterList() const {
   RCP<ParameterList> validParamList = rcp(new ParameterList());
@@ -94,7 +100,7 @@ RCP<const ParameterList> MLpackInterface::GetValidParameterList() const {
   // Files from which to load mlpack model
   validParamList->set<Teuchos::Array<std::string> >("mlpack: model files",ar_dummy,"Names of MLpack model files");
 
-  // This should be a MueLu parameter-to-Avatar parameter mapping (e.g. if mlpack doesn't like spaces)
+  // This should be a MueLu parameter-to-MLpack parameter mapping (e.g. if mlpack doesn't like spaces)
   validParamList->set<Teuchos::ParameterList>("mlpack: muelu parameter mapping",pl_dummy,"Mapping of MueLu to MLpack Parameters");
 
   // "Good" Class ID for mlpack
@@ -144,10 +150,13 @@ void MLpackInterface::Setup() {
   // Sanity check
   if(comm_.is_null()) throw std::runtime_error("MueLu::MLpackInterface::Setup(): Communicator cannot be null");
 
-  // Get the avatar strings (NOTE: Only exist on proc 0)
-  mlpackStrings_ = params_.get<Teuchos::Array<std::string>>("mlpack: model files");
+  // Get the mlpack strings (NOTE: Only exist on proc 0)
+  mlpackModel_ = params_.get<Teuchos::Array<std::string>>("mlpack: model files");
   if(params_.isParameter("mlpack: bounds file"))
     boundsString_ = ReadFromFiles("mlpack: bounds file");
+
+
+  // FIXME: create/load mlpack "handle" from api
 
   // Which class does MLpack consider "good"
   mlpackGoodClass_ = params_.get<int>("mlpack: good class");
@@ -157,6 +166,14 @@ void MLpackInterface::Setup() {
   // Unpack the MueLu Mapping into something actionable
   UnpackMueLuMapping();
 
+}
+
+
+
+// ***********************************************************************
+void MLpackInterface::Cleanup(){
+  // TODO: look into better way to do this
+  mlpack_rf_cleanup(mlpackModel, testString, predictions, probabilities);
 }
 
 
@@ -292,29 +309,28 @@ void MLpackInterface::SetMueLuParameters(const Teuchos::ParameterList & problemF
     }
     GetOStream(Runtime0)<< "MueLu::MLpackInterface: Testing "<< num_combos << " option combinations"<<std::endl;
 
-    // For each input parameter to avatar we iterate over its allowable values and then compute the list of options which MLpack
+    // For each input parameter to mlpack we iterate over its allowable values and then compute the list of options which MLpack
     // views as acceptable
     // FIXME: Find method to find number of classes within mlpack
     int num_classes = 3;
     std::vector<int> predictions(num_combos, 0);
     std::vector<float> probabilities(num_classes * num_combos, 0);
 
-      std::string testString;
-      for(int i=0; i<num_combos; i++) {
-        SetIndices(i,indices);
-        // Now we add the MueLu parameters into one, enormous trial string and run avatar once
-        testString += trialString + ParamsToString(indices) + ",0\n";
-      }
+    std::string testString;
+    for(int i=0; i<num_combos; i++) {
+      SetIndices(i,indices);
+      // Now we add the MueLu parameters into one, enormous trial string and run mlpack once
+      testString += trialString + ParamsToString(indices) + ",0\n";
+    }
 
-      std::cout<<"** MLpack TestString ***\n"<<testString<<std::endl;//DEBUG
+    std::cout<<"** MLpack TestString ***\n"<<testString<<std::endl;//DEBUG
 
-      int bound_check = true;
-      if(params_.isParameter("mlpack: bounds file"))
-         bound_check = checkBounds(testString, boundsString_);
+    int bound_check = true;
+    if(params_.isParameter("mlpack: bounds file"))
+       bound_check = checkBounds(testString, boundsString_);
 
-    // *********************************      
-    // FIXME: CLASSIFY TEST STRING HERE (predictions stored in predictions[] vector)
-    // *********************************
+    // Classify the testString parameter combination
+    mlpack_rf_classify(mlpackModel, testString, predictions.data(), probabilities.data());
 
     // Look at the list of acceptable combinations of options 
     std::vector<int> acceptableCombos; acceptableCombos.reserve(100);
@@ -362,7 +378,7 @@ void MLpackInterface::SetMueLuParameters(const Teuchos::ParameterList & problemF
     }
     
     // If mesh parameters are outside bounding box, set drop tolerance
-    // to 0, otherwise use avatar recommended drop tolerance
+    // to 0, otherwise use mlpack recommended drop tolerance
     if (bound_check == 0){
       GetOStream(Runtime0) << "WARNING: Extrapolation risk detected, setting drop tolerance to 0" <<std::endl;
       GenerateMueLuParametersFromIndex(0,mlpackParams);
@@ -377,7 +393,7 @@ void MLpackInterface::SetMueLuParameters(const Teuchos::ParameterList & problemF
 }
 
 
-
+// ***********************************************************************
 int MLpackInterface::checkBounds(std::string trialString, Teuchos::ArrayRCP<std::string> boundsString) const {
   std::stringstream ss(trialString);
   std::vector<double> vect;
@@ -404,4 +420,104 @@ int MLpackInterface::checkBounds(std::string trialString, Teuchos::ArrayRCP<std:
 
   return (int) inbounds;
 }
+
+
+// ***********************************************************************
+int MLpackInterface::hybrid(float * probabilities, std::vector<int> acceptableCombos) const{
+  float low_crash = probabilities[0];
+  float best_prob = probabilities[2];
+  float diff;
+  int this_combo;
+  int chosen_option_id = acceptableCombos[0];
+  for(int x=0; x<(int)acceptableCombos.size(); x++){
+    this_combo = acceptableCombos[x] * 3;
+    diff = probabilities[this_combo] - low_crash;
+     // If this parameter combination has a crash
+     // probability .2 lower than the current "best", we 
+     // will use this drop tolerance
+    if(diff < -.2){
+      low_crash =  probabilities[this_combo];
+      best_prob = probabilities[this_combo + 2];
+      chosen_option_id = acceptableCombos[x];
+    } 
+    // If this parameter combination has the same
+    // or slightly lower crash probability than the
+    // current best, we compare their "GOOD" probabilities 
+    else if(diff <= 0 && probabilities[this_combo + 2] > best_prob){
+      low_crash =  probabilities[this_combo];
+      best_prob = probabilities[this_combo + 2];
+      chosen_option_id = acceptableCombos[x];
+    }
+  }
+  return chosen_option_id;
+}
+
+// ***********************************************************************
+int MLpackInterface::highProb(float * probabilities, std::vector<int> acceptableCombos) const{
+  float high_prob = probabilities[2];
+  int this_combo;
+  int chosen_option_id = acceptableCombos[0];
+  for(int x=0; x<(int)acceptableCombos.size(); x++){
+    this_combo = acceptableCombos[x] * 3;
+    // If this parameter combination has a higher "GOOD" 
+    // probability, use this combination
+    if(probabilities[this_combo + 2] > high_prob){
+      high_prob = probabilities[this_combo + 2];
+      chosen_option_id = acceptableCombos[x]; 
+    }
+  }
+  return chosen_option_id;
+}
+
+// ***********************************************************************
+int MLpackInterface::lowCrash(float * probabilities, std::vector<int> acceptableCombos) const{
+  float low_crash = probabilities[0];
+  int this_combo;
+  int chosen_option_id = acceptableCombos[0];
+  for(int x=0; x<(int)acceptableCombos.size(); x++){
+    this_combo = acceptableCombos[x] * 3;
+    // If this parameter combination has a lower "CRASH"
+    // probability, use this combination
+    if(probabilities[this_combo] < low_crash){
+      low_crash = probabilities[this_combo];
+      chosen_option_id = acceptableCombos[x]; 
+    }
+  }
+  return chosen_option_id;
+}
+
+// ***********************************************************************
+int MLpackInterface::weighted(float * probabilities, std::vector<int> acceptableCombos) const{
+  float low_crash = probabilities[0];
+  float best_prob = probabilities[2];
+  float diff;
+  int this_combo;
+  int chosen_option_id = acceptableCombos[0];
+  for(int x=0; x<(int)acceptableCombos.size(); x++){
+    this_combo = acceptableCombos[x] * 3;
+    diff = probabilities[this_combo] - low_crash;
+     // If this parameter combination has a crash
+     // probability .2 lower than the current "best", we 
+     // will use this drop tolerance
+    if(diff < -.2){
+      low_crash =  probabilities[this_combo];
+      best_prob = probabilities[this_combo + 2];
+      chosen_option_id = acceptableCombos[x];
+    } 
+    // If this parameter combination is within .1
+    // or has a slightly lower crash probability than the
+    // current best, we compare their "GOOD" probabilities 
+    else if(diff <= .1 && probabilities[this_combo + 2] > best_prob){
+      low_crash =  probabilities[this_combo];
+      best_prob = probabilities[this_combo + 2];
+      chosen_option_id = acceptableCombos[x];
+    }
+  }
+  return chosen_option_id;
+}
+
+
+} // namespace MueLu
+
+#endif // HAVE_MUELU_MLPACK
 

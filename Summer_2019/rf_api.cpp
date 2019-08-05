@@ -22,6 +22,19 @@ using namespace mlpack;
 using namespace mlpack::tree;
 
 
-void mlpack_rf_test(const char* model_file, const MatType& data, arma::Row<size_t>& predictions, arma::mat& probabilities) { }
+void mlpack_rf_classify(std::string model_file, std::string data, std::vector<int> predictions, std::vector<float> probabilities) { 
+  arma::mat test_data;
+  arma::mat probabilities;
+  arma::Row<size_t> predictions;
 
-  void mlpack_cleanup(const char* model_file, const MatType& data, arma::Row<size_t>& predictions, arma::mat& probabilities) { } 
+  //TODO: load model_file from csv
+
+  RandomForest<> rf;
+
+  //RandomForestModel* rfModel = model_file;
+
+  rfModel->rf.Classify(test_data, predictions, probabilities);
+
+}
+
+void mlpack_rf_cleanup(std::string model_file, std::string data, std::vector<int> predictions, std::vector<float> probabilities) { } 

@@ -32,7 +32,7 @@ class RandomForestAPI
    * @param predictions Vector to store predictions on dataset.
    * @param probabilities Output matrix of class probabilities for each point.
    */
-  void mlpack_rf_test(const char* model_file, const MatType& data, arma::Row<size_t>& predictions, arma::mat& probabilities)
+  void mlpack_rf_classify(std::string model_file, std::string data, std::vector<int> predictions, std::vector<float> probabilities)
 
 
   /**
@@ -43,7 +43,7 @@ class RandomForestAPI
    * @param predictions Vector previously used to store predictions.
    * @param probabilities Probability matrix used to store probabilites of each prediction.
    */
-  void mlpack_cleanup(const char* model_file, const MatType& data, arma::Row<size_t>& predictions, arma::mat& probabilities)
+  void mlpack_rf_cleanup(std::string model_file, std::string data, std::vector<int> predictions, std::vector<float> probabilities)
 
 
 };
