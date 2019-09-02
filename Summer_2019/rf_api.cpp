@@ -14,9 +14,12 @@
 
 #include <rf_api.hpp>
 
+extern "C++" {
 #include <mlpack/core.hpp>
 #include <mlpack/methods/random_forest/random_forest.hpp>
 #include <mlpack/methods/decision_tree/random_dimension_select.hpp>
+}
+
 
 using namespace mlpack;
 using namespace mlpack::tree;
